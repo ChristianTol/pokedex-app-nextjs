@@ -41,9 +41,8 @@ const Pokemon = ({ pokemon, index }) => {
               <Image
                 src={`/icons/${type.type.name}.svg`}
                 alt={`${type.type.name}`}
-                width={20}
-                height={20}
-                effect="blur"
+                width={15}
+                height={15}
               />
               {capitalizeFirstLetter(type.type.name)}
             </span>
