@@ -28,8 +28,8 @@ const Pokemon = ({ pokemon, index }) => {
           <LazyLoadImage
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeIndex}.png`}
             alt={pokemon.name}
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             effect="blur"
           />
         </div>

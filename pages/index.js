@@ -36,7 +36,7 @@ export default function Home({ initialPokemon }) {
 
   return (
     <Layout title="Pokedex">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-2 mx-5 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {pokemon.map((pokemon, index) => (
           <Pokemon key={index} pokemon={pokemon} index={index + offset} />
         ))}
