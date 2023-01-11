@@ -41,10 +41,12 @@ const Pokemon = ({ pokemon, index }) => {
               <Image
                 src={`/icons/${type.type.name}.svg`}
                 alt={`${type.type.name}`}
-                width={15}
-                height={15}
+                width={20}
+                height={20}
               />
-              {capitalizeFirstLetter(type.type.name)}
+              <p className="hidden md:inline">
+                {capitalizeFirstLetter(type.type.name)}
+              </p>
             </span>
           ))}
         </div>
