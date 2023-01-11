@@ -4,7 +4,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        statSlideIn: {
+          "0%": { maxWidth: "5%" },
+          "100%": { maxWidth: "100%" },
+        },
+      },
+    },
   },
   plugins: [],
-}
+};

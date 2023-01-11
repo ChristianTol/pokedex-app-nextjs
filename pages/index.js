@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Pokemon from "../components/Pokemon";
 
 export default function Home({ initialPokemon }) {
-  const [pokemon, setPokemon] = useState(initialPokemon);
+  const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
 
   const fetchPokemon = async (url, next) => {
@@ -12,12 +12,32 @@ export default function Home({ initialPokemon }) {
 
     setOffset(next ? offset + 20 : offset - 20);
     setPokemon(nextPokemon);
+    getAllPokemonDetails(nextPokemon);
   };
 
+  const getAllPokemonDetails = async () => {
+    const promises = initialPokemon.results.map(async (pokemon) => {
+      const response = await fetch(pokemon.url);
+      const data = await response.json();
+
+      return data;
+    });
+
+    await Promise.all(promises).then((detailResults) => {
+      setPokemon([...pokemon, ...detailResults]);
+    });
+
+    console.log(pokemon);
+  };
+
+  useEffect(() => {
+    getAllPokemonDetails();
+  }, []);
+
   return (
-    <Layout>
+    <Layout title="Pokedex">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-        {pokemon.results.map((pokemon, index) => (
+        {pokemon.map((pokemon, index) => (
           <Pokemon key={index} pokemon={pokemon} index={index + offset} />
         ))}
       </div>
@@ -43,7 +63,7 @@ export default function Home({ initialPokemon }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon");
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=905");
   const initialPokemon = await response.json();
 
   return {
