@@ -26,12 +26,10 @@ const Pokemon = ({ pokemon, index }) => {
         </span>
         <div className="mt-3">
           <LazyLoadImage
-            className="w-250 h-250"
+            className="w-[180px] h-[180px] md:w-[250px] sm:h-[250px]"
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeIndex}.png`}
             alt={pokemon.name}
             effect="blur"
-            width={180}
-            height={180}
           />
         </div>
         <div className="flex gap-2 my-2">
