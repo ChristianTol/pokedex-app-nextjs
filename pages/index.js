@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Pokemon from "../components/Pokemon";
