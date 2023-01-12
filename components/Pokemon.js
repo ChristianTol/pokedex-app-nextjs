@@ -17,7 +17,7 @@ const Pokemon = ({ pokemon, index }) => {
 
   return (
     <div
-      className="rounded-md p-5 flex flex-col justify-center items-center relative cursor-pointer"
+      className="rounded-md p-5 hover:scale-110 ease-in-out duration-200 flex flex-col justify-center items-center relative cursor-pointer"
       style={{
         background: `radial-gradient(circle at top, ${typeColorGradient[0]} 35%, ${typeColorGradient[1]}) 100%`,
       }}
