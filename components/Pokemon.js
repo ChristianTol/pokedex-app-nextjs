@@ -9,6 +9,7 @@ import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 const Pokemon = ({ pokemon, index }) => {
   const pokeIndex = ("000" + (index + 1)).slice(index > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
+  const [changeImage, setChangeImage] = useState(false);
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
 
@@ -23,13 +24,13 @@ const Pokemon = ({ pokemon, index }) => {
     >
       <button
         onClick={() => setShiny(!shiny)}
-        className="absolute top-0 right-0 rounded-md flex"
+        className="absolute top-1 right-1 rounded-md flex"
       >
         <Image
-          src="https://lh3.googleusercontent.com/N10LUCsco4kztQR4f6uanUM7l1BuDun4KrP3v1FNoR-U_1S7E6UFg9_oBf5J0EtH9Ev-fnWk2JNXq0LSCmOj05dIv_QzBH6XvQIbURdxpVcF-SU"
+          src={shiny ? "/sparkles-shiny.png" : "/sparkles-white.png"}
           alt="shiny"
-          width={45}
-          height={45}
+          width={35}
+          height={35}
         />
       </button>
       <span className="absolute text-2xl top-1 left-3 font-bold">
