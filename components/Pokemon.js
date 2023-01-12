@@ -27,9 +27,9 @@ const Pokemon = ({ pokemon, index }) => {
       >
         <Image
           src="https://lh3.googleusercontent.com/N10LUCsco4kztQR4f6uanUM7l1BuDun4KrP3v1FNoR-U_1S7E6UFg9_oBf5J0EtH9Ev-fnWk2JNXq0LSCmOj05dIv_QzBH6XvQIbURdxpVcF-SU"
-          alt="pokeball"
-          width={50}
-          height={50}
+          alt="shiny"
+          width={45}
+          height={45}
         />
       </button>
       <span className="absolute text-2xl top-1 left-3 font-bold">
