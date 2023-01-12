@@ -1,11 +1,18 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Filters from "../components/Filters";
 import Layout from "../components/Layout";
 import Pokemon from "../components/Pokemon";
 
 export default function Home({ initialPokemon }) {
   const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [filters, setFilters] = useState({
+    region: "all",
+    type: "all",
+    sortBy: "id",
+    searchTerm: "",
+  });
 
   const fetchPokemon = async (url, next) => {
     const response = await fetch(url);
@@ -37,7 +44,8 @@ export default function Home({ initialPokemon }) {
 
   return (
     <Layout title="Pokedex">
-      <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-10">
+      <Filters filters={filters} />
+      <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
         {pokemon.map((pokemon, index) => (
           <Pokemon key={index} pokemon={pokemon} index={index + offset} />
         ))}

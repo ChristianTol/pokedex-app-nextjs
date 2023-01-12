@@ -116,7 +116,7 @@ export const TYPE_SECONDARY_COLORS = {
   fairy: "#f1a2c9",
 };
 
-export const SORT_BY = ["id", "name"];
+export const SORT_BY = ["number", "name"];
 
 export const STAT_COLORS = {
   hp: "#ff0100",
