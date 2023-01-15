@@ -1,4 +1,4 @@
-export const POKEMON_PER_LOAD = 10;
+export const POKEMON_PER_LOAD = 15;
 
 export const REGIONS = [
   "all",
