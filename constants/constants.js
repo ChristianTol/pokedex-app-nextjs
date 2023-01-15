@@ -52,7 +52,7 @@ export const REGION_INFO = {
   },
   hisui: {
     start: 898,
-    limit: 6,
+    limit: 7,
   },
 };
 
