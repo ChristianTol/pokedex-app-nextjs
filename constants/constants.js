@@ -1,4 +1,4 @@
-export const POKEMON_PER_LOAD = 20;
+export const POKEMON_PER_LOAD = 10;
 
 export const REGIONS = [
   "all",
@@ -10,12 +10,13 @@ export const REGIONS = [
   "kalos",
   "alola",
   "galar",
+  "hisui",
 ];
 
 export const REGION_INFO = {
   all: {
     start: 0,
-    limit: 898,
+    limit: 905,
   },
   kanto: {
     start: 0,
@@ -48,6 +49,10 @@ export const REGION_INFO = {
   galar: {
     start: 809,
     limit: 89,
+  },
+  hisui: {
+    start: 898,
+    limit: 6,
   },
 };
 
@@ -116,7 +121,7 @@ export const TYPE_SECONDARY_COLORS = {
   fairy: "#f1a2c9",
 };
 
-export const SORT_BY = ["number", "name"];
+export const SORT_BY = ["Number (Low-High)", "Number (High-Low)", "A-Z", "Z-A"];
 
 export const STAT_COLORS = {
   hp: "#ff0100",

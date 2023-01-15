@@ -70,15 +70,30 @@ export default function Home({ initialPokemon }) {
           .includes(filters.searchTerm.toLowerCase());
       });
 
-    // Sort
-    if (filters.sortBy === "name") {
+    // Sort by
+    if (filters.sortBy === "Number (Low-High)") {
+      filteredPokemon.sort((p1, p2) => p1.id - p2.id);
+    }
+
+    if (filters.sortBy === "Number (High-Low)") {
+      filteredPokemon.sort((p1, p2) => p2.id - p1.id);
+    }
+
+    if (filters.sortBy === "A-Z") {
       filteredPokemon.sort((p1, p2) =>
         p1.species.name.localeCompare(p2.species.name)
       );
     }
 
+    if (filters.sortBy === "Z-A") {
+      filteredPokemon.sort((p1, p2) =>
+        p2.species.name.localeCompare(p1.species.name)
+      );
+    }
+
     setDisplayedPokemon(filteredPokemon);
-    setNumPokemon(POKEMON_PER_LOAD);
+
+    setNumPokemon(20);
   }, [allPokemonDetails, filters]);
 
   const updateFilters = (newFilters) => {
