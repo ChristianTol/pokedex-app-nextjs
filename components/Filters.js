@@ -4,10 +4,10 @@ import { REGIONS, TYPES, SORT_BY } from "../constants/constants";
 const Filters = ({ filters, updateFilters }) => {
   return (
     <div className="grid grid-cols-2 mb-20 lg:grid-cols-4">
-      <div className="flex flex-col mb-10 justify-center items-center gap-2 text-white lg:mb-0">
+      <div className="flex flex-col mb-10 justify-center items-center gap-2 text-amber-400 lg:mb-0">
         <label
           htmlFor="region-filter"
-          className="text-white font-semibold text-2xl"
+          className="text-amber-400 font-semibold text-2xl"
         >
           Region
         </label>
@@ -25,10 +25,10 @@ const Filters = ({ filters, updateFilters }) => {
         </select>
       </div>
 
-      <div className="flex flex-col mb-10 justify-center items-center gap-2 text-white lg:mb-0">
+      <div className="flex flex-col mb-10 justify-center items-center gap-2 text-amber-400 lg:mb-0">
         <label
           htmlFor="type-filter"
-          className="text-white font-semibold text-2xl"
+          className="text-amber-400 font-semibold text-2xl"
         >
           Type
         </label>
@@ -52,10 +52,10 @@ const Filters = ({ filters, updateFilters }) => {
         </select>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-2 text-white">
+      <div className="flex flex-col justify-center items-center gap-2 text-amber-400">
         <label
           htmlFor="sort-filter"
-          className="text-white font-semibold text-2xl"
+          className="text-amber-400 font-semibold text-2xl"
         >
           Sort By
         </label>
@@ -73,10 +73,10 @@ const Filters = ({ filters, updateFilters }) => {
         </select>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-2 text-white">
+      <div className="flex flex-col justify-center items-center gap-2 text-amber-400">
         <label
           htmlFor="search-filter"
-          className="text-white font-semibold text-2xl"
+          className="text-amber-400 font-semibold text-2xl"
         >
           Search
         </label>
