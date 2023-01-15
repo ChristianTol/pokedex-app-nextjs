@@ -6,10 +6,10 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 
-const Pokemon = ({ pokemon, index }) => {
-  const pokeIndex = ("000" + (index + 1)).slice(index > 999 ? -4 : -3);
+const Pokemon = ({ pokemon }) => {
+  const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
-  const [changeImage, setChangeImage] = useState(false);
+  // const [changeImage, setChangeImage] = useState(false);
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
 

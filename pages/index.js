@@ -4,17 +4,21 @@ import Filters from "../components/Filters";
 import Layout from "../components/Layout";
 import { Loader } from "../components/Loader";
 import Pokemon from "../components/Pokemon";
+import { POKEMON_PER_LOAD, REGION_INFO } from "../constants/constants";
 
 export default function Home({ initialPokemon }) {
-  const [pokemon, setPokemon] = useState([]);
+  const [numPokemon, setNumPokemon] = useState(20);
   const [loading, setLoading] = useState(true);
-  const [offset, setOffset] = useState(0);
+  const [allPokemonDetails, setAllPokemonDetails] = useState([]);
+  const [displayedPokemon, setDisplayedPokemon] = useState([]);
   const [filters, setFilters] = useState({
     region: "all",
     type: "all",
-    sortBy: "id",
+    sortBy: "number",
     searchTerm: "",
   });
+
+  const [detailPokemon, setDetailPokemon] = useState({});
 
   // const fetchPokemon = async (url, next) => {
   //   const response = await fetch(url);
@@ -35,7 +39,7 @@ export default function Home({ initialPokemon }) {
       });
 
       await Promise.all(promises).then((detailResults) => {
-        setPokemon(detailResults);
+        setAllPokemonDetails(detailResults);
       });
     } catch (error) {
       console.log(error);
@@ -48,16 +52,64 @@ export default function Home({ initialPokemon }) {
     getAllPokemonDetails();
   }, [getAllPokemonDetails]);
 
+  // Filters
+  useEffect(() => {
+    const start = REGION_INFO[filters.region].start;
+    const limit = REGION_INFO[filters.region].limit;
+    const filteredPokemon = allPokemonDetails
+      .slice(start, start + limit)
+      .filter((pokemon) => {
+        return (
+          filters.type === "all" ||
+          pokemon.types.map((type) => type.type.name).includes(filters.type)
+        );
+      })
+      .filter((pokemon) => {
+        return pokemon.species.name
+          .toLowerCase()
+          .includes(filters.searchTerm.toLowerCase());
+      });
+
+    // Sort
+    if (filters.sortBy === "name") {
+      filteredPokemon.sort((p1, p2) =>
+        p1.species.name.localeCompare(p2.species.name)
+      );
+    }
+
+    setDisplayedPokemon(filteredPokemon);
+    setNumPokemon(POKEMON_PER_LOAD);
+  }, [allPokemonDetails, filters]);
+
+  const updateFilters = (newFilters) => {
+    setFilters({ ...filters, ...newFilters });
+  };
+
+  const loadMorePokemon = () => {
+    setNumPokemon(numPokemon + POKEMON_PER_LOAD);
+  };
+
   return (
     <Layout title="Pokedex">
-      <Filters filters={filters} />
+      <Filters filters={filters} updateFilters={updateFilters} />
       {loading ? (
         <Loader />
       ) : (
         <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
-          {pokemon.map((pokemon, index) => (
-            <Pokemon key={index} pokemon={pokemon} index={index + offset} />
+          {displayedPokemon.slice(0, numPokemon).map((pokemon) => (
+            <Pokemon key={pokemon.id} pokemon={pokemon} />
           ))}
+        </div>
+      )}
+
+      {numPokemon < displayedPokemon.length && (
+        <div className="flex justify-center my-10">
+          <button
+            className="load-more bg-slate-800 border-slate-900 border-2 text-amber-400"
+            onClick={loadMorePokemon}
+          >
+            Load more Pokémon
+          </button>
         </div>
       )}
 
