@@ -2,10 +2,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Filters from "../components/Filters";
 import Layout from "../components/Layout";
+import { Loader } from "../components/Loader";
 import Pokemon from "../components/Pokemon";
 
 export default function Home({ initialPokemon }) {
   const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
   const [filters, setFilters] = useState({
     region: "all",
@@ -14,14 +16,14 @@ export default function Home({ initialPokemon }) {
     searchTerm: "",
   });
 
-  const fetchPokemon = async (url, next) => {
-    const response = await fetch(url);
-    const nextPokemon = await response.json();
+  // const fetchPokemon = async (url, next) => {
+  //   const response = await fetch(url);
+  //   const nextPokemon = await response.json();
 
-    setOffset(next ? offset + 20 : offset - 20);
-    setPokemon(nextPokemon);
-    getAllPokemonDetails(nextPokemon);
-  };
+  //   setOffset(next ? offset + 20 : offset - 20);
+  //   setPokemon(nextPokemon);
+  //   getAllPokemonDetails(nextPokemon);
+  // };
 
   const getAllPokemonDetails = async () => {
     const promises = initialPokemon.results.map(async (pokemon) => {
@@ -35,23 +37,29 @@ export default function Home({ initialPokemon }) {
       setPokemon([...pokemon, ...detailResults]);
     });
 
+    setLoading(false);
+
     console.log(pokemon);
   };
 
   useEffect(() => {
     getAllPokemonDetails();
-  }, []);
+  }, [loading]);
 
   return (
     <Layout title="Pokedex">
       <Filters filters={filters} />
-      <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
-        {pokemon.map((pokemon, index) => (
-          <Pokemon key={index} pokemon={pokemon} index={index + offset} />
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
+          {pokemon.map((pokemon, index) => (
+            <Pokemon key={index} pokemon={pokemon} index={index + offset} />
+          ))}
+        </div>
+      )}
 
-      <div className="flex justify-center my-10 gap-5">
+      {/* <div className="flex justify-center my-10 gap-5">
         <button
           disabled={!pokemon.previous}
           className="disabled:bg-gray-500 px-3 py-1 bg-slate-900"
@@ -66,7 +74,7 @@ export default function Home({ initialPokemon }) {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </Layout>
   );
 }
