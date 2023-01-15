@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { lazy, useCallback, useEffect, useState } from "react";
 import Filters from "../components/Filters";
 import Layout from "../components/Layout";
 import { Loader } from "../components/Loader";
@@ -25,26 +25,28 @@ export default function Home({ initialPokemon }) {
   //   getAllPokemonDetails(nextPokemon);
   // };
 
-  const getAllPokemonDetails = async () => {
-    const promises = initialPokemon.results.map(async (pokemon) => {
-      const response = await fetch(pokemon.url);
-      const data = await response.json();
+  const getAllPokemonDetails = useCallback(async () => {
+    try {
+      const promises = initialPokemon.results.map(async (pokemon) => {
+        const response = await fetch(pokemon.url);
+        const data = await response.json();
 
-      return data;
-    });
+        return data;
+      });
 
-    await Promise.all(promises).then((detailResults) => {
-      setPokemon([...pokemon, ...detailResults]);
-    });
-
-    setLoading(false);
-
-    console.log(pokemon);
-  };
+      await Promise.all(promises).then((detailResults) => {
+        setPokemon(detailResults);
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }, [initialPokemon.results]);
 
   useEffect(() => {
     getAllPokemonDetails();
-  }, [loading]);
+  }, [getAllPokemonDetails]);
 
   return (
     <Layout title="Pokedex">
