@@ -32,11 +32,11 @@ export const REGION_INFO = {
   },
   sinnoh: {
     start: 386,
-    limit: 108,
+    limit: 107,
   },
   unova: {
-    start: 494,
-    limit: 155,
+    start: 493,
+    limit: 156,
   },
   kalos: {
     start: 649,
