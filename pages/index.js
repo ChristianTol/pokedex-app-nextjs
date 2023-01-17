@@ -127,26 +127,27 @@ export default function Home({ initialPokemon }) {
   };
 
   return (
-    <Layout title="Pokedex">
-      <Filters filters={filters} updateFilters={updateFilters} />
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
-          {displayedPokemon.slice(0, numPokemon).map((pokemon) => (
-            <Pokemon key={pokemon.id} pokemon={pokemon} />
-          ))}
-        </div>
-      )}
-
-      {infiniteLoading ||
-        (numPokemon < displayedPokemon.length && (
-          <div className="flex justify-center my-10">
-            <Loader />
+    <>
+      <Layout title="Pokedex">
+        <Filters filters={filters} updateFilters={updateFilters} />
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
+            {displayedPokemon.slice(0, numPokemon).map((pokemon) => (
+              <Pokemon key={pokemon.id} pokemon={pokemon} />
+            ))}
           </div>
-        ))}
+        )}
 
-      {/* {numPokemon < displayedPokemon.length && (
+        {infiniteLoading ||
+          (numPokemon < displayedPokemon.length && (
+            <div className="flex justify-center my-10">
+              <Loader />
+            </div>
+          ))}
+
+        {/* {numPokemon < displayedPokemon.length && (
         <div className="flex justify-center my-10">
           <button
             className="load-more bg-slate-800 border-slate-900 border-2 text-amber-400"
@@ -157,7 +158,7 @@ export default function Home({ initialPokemon }) {
         </div>
       )} */}
 
-      {/* <div className="flex justify-center my-10 gap-5">
+        {/* <div className="flex justify-center my-10 gap-5">
         <button
           disabled={!pokemon.previous}
           className="disabled:bg-gray-500 px-3 py-1 bg-slate-900"
@@ -173,7 +174,14 @@ export default function Home({ initialPokemon }) {
           Next
         </button>
       </div> */}
-    </Layout>
+      </Layout>
+
+      {!loading && (
+        <a href="#" className="top">
+          Back to Top &#8593;
+        </a>
+      )}
+    </>
   );
 }
 

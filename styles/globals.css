@@ -41,6 +41,29 @@
     --color-speed: #fa92b2;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
+.top {
+  --offset: 50px;
+
+  position: sticky;
+  bottom: 20px;
+  margin-right: 10px;
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+
+  /* visual styling */
+  text-decoration: none;
+  padding: 10px;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
 /* Types */
 
 .water {
