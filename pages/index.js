@@ -58,10 +58,10 @@ export default function Home({ initialPokemon }) {
       window.innerHeight + document.documentElement.scrollTop + 1 >=
       document.documentElement.offsetHeight
     ) {
-      setInfiniteLoading(true);
       setTimeout(() => {
+        setInfiniteLoading(true);
         loadMorePokemon();
-      }, 1000);
+      }, 500);
       setInfiniteLoading(false);
     }
   };
