@@ -9,6 +9,7 @@ import { POKEMON_PER_LOAD, REGION_INFO } from "../constants/constants";
 export default function Home({ initialPokemon }) {
   const [numPokemon, setNumPokemon] = useState(20);
   const [loading, setLoading] = useState(true);
+  const [infiniteLoading, setInfiniteLoading] = useState(true);
   const [allPokemonDetails, setAllPokemonDetails] = useState([]);
   const [displayedPokemon, setDisplayedPokemon] = useState([]);
   const [filters, setFilters] = useState({
@@ -46,11 +47,32 @@ export default function Home({ initialPokemon }) {
     } finally {
       setLoading(false);
     }
-  }, [initialPokemon.results]);
+  }, [initialPokemon.results, loading]);
 
   useEffect(() => {
     getAllPokemonDetails();
   }, [getAllPokemonDetails]);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.offsetHeight
+    ) {
+      setInfiniteLoading(true);
+      setTimeout(() => {
+        loadMorePokemon();
+      }, 1000);
+      setInfiniteLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [numPokemon, infiniteLoading]);
 
   // Filters
   useEffect(() => {
@@ -117,7 +139,14 @@ export default function Home({ initialPokemon }) {
         </div>
       )}
 
-      {numPokemon < displayedPokemon.length && (
+      {infiniteLoading ||
+        (numPokemon < displayedPokemon.length && (
+          <div className="flex justify-center my-10">
+            <Loader />
+          </div>
+        ))}
+
+      {/* {numPokemon < displayedPokemon.length && (
         <div className="flex justify-center my-10">
           <button
             className="load-more bg-slate-800 border-slate-900 border-2 text-amber-400"
@@ -126,7 +155,7 @@ export default function Home({ initialPokemon }) {
             Load more Pokémon
           </button>
         </div>
-      )}
+      )} */}
 
       {/* <div className="flex justify-center my-10 gap-5">
         <button
