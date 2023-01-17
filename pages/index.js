@@ -177,7 +177,10 @@ export default function Home({ initialPokemon }) {
       </Layout>
 
       {!loading && (
-        <a href="#" className="top">
+        <a
+          href="#"
+          className="top bg-slate-800 border-slate-900 border-2 text-amber-400 font-semibold bottom-5 p-3 rounded-xl left-[180px]"
+        >
           Back to Top &#8593;
         </a>
       )}
