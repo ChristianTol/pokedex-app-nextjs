@@ -13,8 +13,6 @@ const Pokemon = ({ pokemon }) => {
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
 
-  console.log(pokemon);
-
   return (
     <div
       className="rounded-md p-5 hover:scale-110 ease-in-out duration-200 flex flex-col justify-center items-center relative cursor-pointer shadow"
