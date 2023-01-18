@@ -155,6 +155,12 @@ export default function Home({ initialPokemon }) {
       setDetailPokemon({});
     }
     setShowDetailModal((value) => !value);
+
+    if (!showDetailModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
 
   return (
