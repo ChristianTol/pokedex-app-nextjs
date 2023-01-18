@@ -419,13 +419,13 @@ html, body {
 }
 
 .right-section h5 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .right-section p {
   /* font-weight: 700; */
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 5px;
   /* text-shadow: 2px 2px 5px #3c3636; */
 }
@@ -445,7 +445,7 @@ html, body {
 }
 
 .parameter-section h6 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-right: 14px;
   text-align: right;
   width: 100px;
