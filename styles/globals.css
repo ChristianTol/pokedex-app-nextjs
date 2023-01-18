@@ -419,13 +419,13 @@ html, body {
 }
 
 .right-section h5 {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 .right-section p {
   /* font-weight: 700; */
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-top: 5px;
   /* text-shadow: 2px 2px 5px #3c3636; */
 }
