@@ -268,16 +268,19 @@ html, body {
 
 .modal-container {
   height: calc(100vh - 70px);
-  max-height: 615px;
-  width: 65%;
+  /* max-height: 615px; */
+  max-height: 700px; 
+  /* width: 65%; */
+  width: 85%;
   background-color: #e3e3e3;
   border-radius: 1rem;
-  padding: 15px;
+  padding: 20px;
   position: relative;
   display: flex;
   animation: dropDown 0.4s ease-in-out;
   overflow-y: scroll;
-  max-width: 960px;
+  /* max-width: 960px; */
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -451,7 +454,7 @@ html, body {
 .statbar-container {
   height: 18px;
   width: 100%;
-  background-color: #a7a7a7;
+  background-color: rgb(0,0,0,0.3);
   border-radius: 1rem;
   margin-top: 3px;
 }
