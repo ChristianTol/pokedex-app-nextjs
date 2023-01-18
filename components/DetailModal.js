@@ -81,9 +81,15 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
               effect="blur"
             />
           </div>
-          <h3 className="">{formatPokemonName(pokemonDetails.species.name)}</h3>
+          <h3 className="tracking-wider">
+            {formatPokemonName(pokemonDetails.species.name)}
+          </h3>
           <div className="pokemon-genera">
-            {loading ? "Loading..." : speciesInfo.genera[7].genus}
+            {loading
+              ? "Loading..."
+              : speciesInfo.genera[
+                  pokemonDetails.id >= 899 && pokemonDetails.id <= 905 ? 4 : 7
+                ].genus}
           </div>
           <div className="flex gap-2 my-2">
             {pokemonDetails.types?.map((type) => (
