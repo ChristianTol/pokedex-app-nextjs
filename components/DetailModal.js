@@ -179,7 +179,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             )}
           </div>
           <div className="pokemon-stats right-section">
-            <h5 className="pokemon-text">Stats</h5>
+            <h5 className="pokemon-text">Basic Statistics</h5>
             <div className="parameter-container">
               {pokemonDetails.stats.map((stat) => {
                 return (
