@@ -20,6 +20,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const [speciesInfo, setSpeciesInfo] = useState();
   const [evolutionInfo, setEvolutionInfo] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState(false);
+  const [shiny, setShiny] = useState(false);
 
   useEffect(() => {
     const getSpeciesInfo = async () => {
@@ -50,6 +52,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
 
   const changeCurrentPokemon = (pokemonId) => {
     setPokemonDetails(allPokemonDetails[pokemonId - 1]);
+    setActive(true);
   };
 
   return (
@@ -71,11 +74,17 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             src={pokeballIcon}
             alt="pokeball icon"
           /> */}
-          <div className="modal-sprite-container">
+          <div
+            className="modal-sprite-container"
+            onClick={() => setShiny(!shiny)}
+          >
             <LazyLoadImage
               className="pokemon-sprite"
               src={
-                pokemonDetails.sprites.other["official-artwork"].front_default
+                shiny
+                  ? pokemonDetails.sprites.other["official-artwork"].front_shiny
+                  : pokemonDetails.sprites.other["official-artwork"]
+                      .front_default
               }
               alt={pokemonDetails.name}
               effect="blur"
@@ -229,7 +238,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                       {column.map((item) => (
                         <div
                           key={item}
-                          className="evolution-item"
+                          className={`evolution-item ${active && "scale-120"}`}
                           onClick={() => changeCurrentPokemon(item)}
                         >
                           <div className="evolution-sprite-container">
