@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { lazy, useCallback, useEffect, useState } from "react";
+import { getPokemonDetails, getPokemonList } from "../components/Api";
+import DetailModal from "../components/DetailModal";
 import Filters from "../components/Filters";
 import Layout from "../components/Layout";
 import { Loader } from "../components/Loader";
@@ -19,6 +21,7 @@ export default function Home({ initialPokemon }) {
     searchTerm: "",
   });
 
+  const [showDetailModal, setShowDetailModal] = useState(false);
   const [detailPokemon, setDetailPokemon] = useState({});
 
   // const fetchPokemon = async (url, next) => {
@@ -30,28 +33,47 @@ export default function Home({ initialPokemon }) {
   //   getAllPokemonDetails(nextPokemon);
   // };
 
-  const getAllPokemonDetails = useCallback(async () => {
-    try {
-      const promises = initialPokemon.results.map(async (pokemon) => {
-        const response = await fetch(pokemon.url);
-        const data = await response.json();
-
-        return data;
-      });
-
-      await Promise.all(promises).then((detailResults) => {
-        setAllPokemonDetails(detailResults);
-      });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  }, [initialPokemon.results, loading]);
-
+  // Load all Pokemon
   useEffect(() => {
+    const getAllPokemonDetails = async () => {
+      const pokemonList = await getPokemonList(
+        "https://pokeapi.co/api/v2/pokemon?limit=905"
+      );
+
+      const allResponses = await Promise.all(
+        pokemonList.map((pokemon) => getPokemonDetails(pokemon.url))
+      );
+
+      setAllPokemonDetails(allResponses);
+      setDisplayedPokemon(allResponses);
+      setLoading(false);
+    };
+
     getAllPokemonDetails();
-  }, [getAllPokemonDetails]);
+  }, []);
+
+  // const getAllPokemonDetails = useCallback(async () => {
+  //   try {
+  //     const promises = initialPokemon.results.map(async (pokemon) => {
+  //       const response = await fetch(pokemon.url);
+  //       const data = await response.json();
+
+  //       return data;
+  //     });
+
+  //     await Promise.all(promises).then((detailResults) => {
+  //       setAllPokemonDetails(detailResults);
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, [initialPokemon.results, loading]);
+
+  // useEffect(() => {
+  //   getAllPokemonDetails();
+  // }, [getAllPokemonDetails]);
 
   const handleScroll = () => {
     if (
@@ -126,6 +148,15 @@ export default function Home({ initialPokemon }) {
     setNumPokemon(numPokemon + POKEMON_PER_LOAD);
   };
 
+  const toggleModal = (pokemonDetails) => {
+    if (pokemonDetails) {
+      setDetailPokemon(pokemonDetails);
+    } else {
+      setDetailPokemon({});
+    }
+    setShowDetailModal((value) => !value);
+  };
+
   return (
     <>
       <Layout title="Pokedex">
@@ -135,9 +166,21 @@ export default function Home({ initialPokemon }) {
         ) : (
           <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
             {displayedPokemon.slice(0, numPokemon).map((pokemon) => (
-              <Pokemon key={pokemon.id} pokemon={pokemon} />
+              <Pokemon
+                key={pokemon.id}
+                pokemon={pokemon}
+                toggleModal={toggleModal}
+              />
             ))}
           </div>
+        )}
+
+        {showDetailModal && (
+          <DetailModal
+            detailPokemon={detailPokemon}
+            allPokemonDetails={allPokemonDetails}
+            toggleModal={toggleModal}
+          />
         )}
 
         {infiniteLoading ||
@@ -188,13 +231,13 @@ export default function Home({ initialPokemon }) {
   );
 }
 
-export async function getStaticProps() {
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=905");
-  const initialPokemon = await response.json();
+// export async function getStaticProps() {
+//   const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=905");
+//   const initialPokemon = await response.json();
 
-  return {
-    props: {
-      initialPokemon,
-    },
-  };
-}
+//   return {
+//     props: {
+//       initialPokemon,
+//     },
+//   };
+// }

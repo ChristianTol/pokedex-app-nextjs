@@ -6,7 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 
-const Pokemon = ({ pokemon }) => {
+const Pokemon = ({ pokemon, toggleModal }) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
   // const [changeImage, setChangeImage] = useState(false);
@@ -34,19 +34,17 @@ const Pokemon = ({ pokemon }) => {
       <span className="absolute text-2xl top-1 left-3 font-bold">
         No. {pokeIndex}
       </span>
-      <div className="mt-3">
-        <Link href={`/pokemon/${pokemon.name}`} passHref>
-          <LazyLoadImage
-            className="w-[180px] h-[180px] md:w-[250px] sm:h-[250px]"
-            src={
-              shiny
-                ? pokemon.sprites.other["official-artwork"].front_shiny
-                : pokemon.sprites.other["official-artwork"].front_default
-            }
-            alt={pokemon.name}
-            effect="blur"
-          />
-        </Link>
+      <div className="mt-3" onClick={() => toggleModal(pokemon)}>
+        <LazyLoadImage
+          className="w-[180px] h-[180px] md:w-[250px] sm:h-[250px]"
+          src={
+            shiny
+              ? pokemon.sprites.other["official-artwork"].front_shiny
+              : pokemon.sprites.other["official-artwork"].front_default
+          }
+          alt={pokemon.name}
+          effect="blur"
+        />
       </div>
       <div className="flex gap-2 my-2">
         {pokemon.types?.map((type) => (
