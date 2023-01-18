@@ -170,7 +170,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
         </div>
         <div className="info-box-right">
           <div className="pokemon-description right-section">
-            <h5 className="pokemon-text">Description</h5>
+            <h5 className="text-[1rem] md:text[1.1rem]">Description</h5>
             {loading ? (
               <p>Loading...</p>
             ) : (
@@ -185,12 +185,12 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             )}
           </div>
           <div className="pokemon-stats right-section">
-            <h5 className="pokemon-text">Basic Statistics</h5>
+            <h5 className="text-[1rem] md:text[1.1rem]">Basic Statistics</h5>
             <div className="parameter-container">
               {pokemonDetails.stats.map((stat) => {
                 return (
                   <div key={stat.stat.name} className="parameter-section">
-                    <h6 className="info-text">
+                    <h6 className="info-text text-[0.7rem] md:text-[0.9rem]">
                       {formatStatName(stat.stat.name)}
                     </h6>
                     <div className="statbar-container">
@@ -212,7 +212,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             </div>
           </div>
           <div className="pokemon-evolution right-section">
-            <h5 className="pokemon-text">Evolution</h5>
+            <h5 className="text-[1rem] md:text[1.1rem]">Evolution</h5>
             <div className="evolution-container">
               {!loading ? (
                 evolutionInfo.map((column, i) => (
