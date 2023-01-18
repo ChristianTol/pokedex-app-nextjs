@@ -304,7 +304,7 @@ html, body {
   align-items: center;
   justify-content: space-evenly;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 15px;
   position: relative;
   margin: auto;
 }
@@ -445,7 +445,7 @@ html, body {
 }
 
 .parameter-section h6 {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding-right: 14px;
   text-align: right;
   width: 100px;
