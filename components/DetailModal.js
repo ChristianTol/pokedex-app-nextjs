@@ -204,7 +204,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                 return (
                   <h6
                     key={ability.ability.name}
-                    className="text-[0.7rem] md:text-[0.9rem]"
+                    className="text-[0.9rem] md:text-[0.9rem]"
                   >
                     {formatPokemonName(ability.ability.name)}
                   </h6>
@@ -213,7 +213,9 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             </div>
           </div>
           <div className="pokemon-stats right-section">
-            <h5 className="text-[1rem] md:text[1.1rem]">Basic Statistics</h5>
+            <h5 className="text-[1rem] md:text[1.1rem] font-bold">
+              Basic Statistics
+            </h5>
             <div className="parameter-container">
               {pokemonDetails.stats.map((stat) => {
                 return (
@@ -240,7 +242,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             </div>
           </div>
           <div className="pokemon-evolution right-section">
-            <h5 className="text-[1rem] md:text[1.1rem]">Evolution</h5>
+            <h5 className="text-[1rem] md:text[1.1rem] font-bold">Evolution</h5>
             <div className="evolution-container">
               {!loading ? (
                 evolutionInfo.map((column, i) => (
