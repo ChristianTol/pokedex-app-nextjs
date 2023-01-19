@@ -22,6 +22,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
   const [shiny, setShiny] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const getSpeciesInfo = async () => {
@@ -35,6 +36,12 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
 
       setLoading(false);
     };
+
+    if (window.innerWidth < 720) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
 
     setLoading(true);
     if (pokemonDetails != null) {
@@ -243,7 +250,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
           </div>
           <div className="pokemon-evolution right-section">
             <h5 className="text-[1rem] md:text[1.1rem] font-bold">Evolution</h5>
-            <div className="evolution-container">
+            <div className="flex flex-col items-center md:flex md:flex-row md:justify-center">
               {!loading ? (
                 evolutionInfo.map((column, i) => (
                   <React.Fragment key={i}>
@@ -279,7 +286,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                     </div>
                     {i + 1 !== evolutionInfo.length && (
                       <div className="evolution-arrow">
-                        <span>&#10145;</span>
+                        {mobile ? <span>&#11015;</span> : <span>&#10145;</span>}
                       </div>
                     )}
                   </React.Fragment>
