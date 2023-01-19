@@ -68,7 +68,9 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
         }}
       >
         <div className="info-box-sprite info-text">
-          <h4 className="">{"No. " + ("00" + pokemonDetails.id).slice(-3)}</h4>
+          <h4 className="font-bold">
+            {"No. " + ("00" + pokemonDetails.id).slice(-3)}
+          </h4>
           {/* <img
             className="pokeball-icon"
             src={pokeballIcon}
@@ -179,11 +181,13 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
         </div>
         <div className="info-box-right">
           <div className="pokemon-description right-section">
-            <h5 className="text-[1rem] md:text[1.1rem]">Description</h5>
+            <h5 className="text-[1rem] md:text[1.1rem] font-bold">
+              Description
+            </h5>
             {loading ? (
               <p>Loading...</p>
             ) : (
-              <p>
+              <p className="mb-5">
                 {
                   speciesInfo.flavor_text_entries
                     .slice()
@@ -192,6 +196,21 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                 }
               </p>
             )}
+            <h5 className="text-[1rem] md:text[1.1rem] mb-2 font-bold">
+              Abilities
+            </h5>
+            <div>
+              {pokemonDetails.abilities.map((ability) => {
+                return (
+                  <h6
+                    key={ability.ability.name}
+                    className="text-[0.7rem] md:text-[0.9rem]"
+                  >
+                    {formatPokemonName(ability.ability.name)}
+                  </h6>
+                );
+              })}
+            </div>
           </div>
           <div className="pokemon-stats right-section">
             <h5 className="text-[1rem] md:text[1.1rem]">Basic Statistics</h5>
