@@ -13,6 +13,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 // import loadingIcon from "../assets/img/pikachu-running.gif";
 import { Loader } from "./Loader";
 import Image from "next/image";
+import axios from "axios";
 
 const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const modalBackground = useRef();
@@ -23,6 +24,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const [active, setActive] = useState(false);
   const [shiny, setShiny] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const [abilities, setAbilities] = useState([]);
 
   useEffect(() => {
     const getSpeciesInfo = async () => {
@@ -36,6 +38,10 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
 
       setLoading(false);
     };
+
+    pokemonDetails.abilities.forEach((a) => {
+      bringAbilityInfo(a.ability.name, a.is_hidden, a.ability.url);
+    });
 
     if (window.innerWidth < 720) {
       setMobile(true);
@@ -54,6 +60,23 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
       toggleModal();
     }
   };
+
+  const bringAbilityInfo = (abilityName, isHidden, abilityURL) => {
+    // setModal(true);
+    axios.get(abilityURL).then((res) => {
+      res.data.effect_entries.forEach((a) => {
+        if (a.language.name === "en") {
+          setAbilities((abilities) => [
+            ...abilities,
+            { name: abilityName, isHidden: isHidden, effect: a.effect },
+          ]);
+          return;
+        }
+      });
+    });
+  };
+
+  console.log(abilities);
 
   const typeColorGradient = getTypeColorGradient(pokemonDetails.types);
 
@@ -203,20 +226,24 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                 }
               </p>
             )}
+          </div>
+          <div className="pokemon-abilities right-section">
             <h5 className="text-[1rem] md:text[1.1rem] mb-2 font-bold">
               Abilities
             </h5>
             <div>
-              {pokemonDetails.abilities.map((ability) => {
-                return (
-                  <h6
-                    key={ability.ability.name}
-                    className="text-[0.9rem] md:text-[0.9rem]"
-                  >
-                    {formatPokemonName(ability.ability.name)}
-                  </h6>
-                );
-              })}
+              {abilities.map((ability, index) => (
+                <>
+                  <div key={index} className="mb-5">
+                    <h6 className="text-[0.9rem] md:text-[0.9rem] font-semibold">
+                      {ability.isHidden
+                        ? formatPokemonName(ability.name) + " " + "(Hidden)"
+                        : formatPokemonName(ability.name)}
+                    </h6>
+                    <p>{ability.effect}</p>
+                  </div>
+                </>
+              ))}
             </div>
           </div>
           <div className="pokemon-stats right-section">
