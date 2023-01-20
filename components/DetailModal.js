@@ -39,9 +39,11 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
       setLoading(false);
     };
 
-    pokemonDetails.abilities.forEach((a) => {
+    pokemonDetails.abilities.map((a) => {
       bringAbilityInfo(a.ability.name, a.is_hidden, a.ability.url);
     });
+
+    setAbilities([]);
 
     if (window.innerWidth < 720) {
       setMobile(true);

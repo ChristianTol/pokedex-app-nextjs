@@ -269,7 +269,7 @@ html, body {
 .modal-container {
   height: calc(100vh - 70px);
   /* max-height: 615px; */
-  max-height: 700px; 
+  max-height: 850px; 
   /* width: 65%; */
   width: 85%;
   background-color: #e3e3e3;
