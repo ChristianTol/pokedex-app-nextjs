@@ -82,8 +82,19 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     const splitDesc = desc.split(".");
     const dotCount = desc.split(".").length;
 
-    const twoSentences = splitDesc.slice(0, 3).join(".");
-    const shortDesc = dotCount >= 4 ? twoSentences + "." : twoSentences;
+    const twoSentences = splitDesc.slice(0, 2).join(".");
+    const threeSentences = splitDesc.slice(0, 3).join(".");
+    const lastCharacter = twoSentences.charAt(twoSentences.length - 1);
+
+    let shortDesc;
+
+    if (isNaN(lastCharacter) === false && dotCount >= 3) {
+      shortDesc = threeSentences + ".";
+    } else if (isNaN(lastCharacter) === true && dotCount >= 3) {
+      shortDesc = twoSentences + ".";
+    } else {
+      shortDesc = twoSentences;
+    }
 
     return shortDesc;
   };
