@@ -78,7 +78,15 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     });
   };
 
-  console.log(abilities);
+  const getShortDescription = (desc) => {
+    const splitDesc = desc.split(".");
+    const dotCount = desc.split(".").length;
+
+    const twoSentences = splitDesc.slice(0, 3).join(".");
+    const shortDesc = dotCount >= 4 ? twoSentences + "." : twoSentences;
+
+    return shortDesc;
+  };
 
   const typeColorGradient = getTypeColorGradient(pokemonDetails.types);
 
@@ -229,25 +237,31 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
               </p>
             )}
           </div>
-          <div className="pokemon-abilities right-section">
-            <h5 className="text-[1rem] md:text[1.1rem] mb-2 font-bold">
-              Abilities
-            </h5>
-            <div>
-              {abilities.map((ability, index) => (
-                <>
-                  <div key={index} className="mb-5">
-                    <h6 className="text-[0.9rem] md:text-[0.9rem] font-semibold">
-                      {ability.isHidden
-                        ? formatPokemonName(ability.name) + " " + "(Hidden)"
-                        : formatPokemonName(ability.name)}
-                    </h6>
-                    <p>{ability.effect}</p>
-                  </div>
-                </>
-              ))}
+          {abilities && (
+            <div className="pokemon-abilities right-section">
+              <h5 className="text-[1rem] md:text[1.1rem] mb-2 font-bold">
+                Abilities
+              </h5>
+              <div>
+                {abilities.map((ability, index) => (
+                  <>
+                    <div key={index} className="mb-5">
+                      <h6 className="text-[0.9rem] md:text-[0.9rem] font-semibold">
+                        {ability.isHidden
+                          ? formatPokemonName(ability.name) + " " + "(Hidden)"
+                          : formatPokemonName(ability.name)}
+                      </h6>
+                      {loading ? (
+                        <p>Loading...</p>
+                      ) : (
+                        <p>{getShortDescription(ability.effect)}</p>
+                      )}
+                    </div>
+                  </>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           <div className="pokemon-stats right-section">
             <h5 className="text-[1rem] md:text[1.1rem] font-bold">
               Basic Statistics
