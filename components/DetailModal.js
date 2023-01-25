@@ -237,7 +237,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
               </p>
             )}
           </div>
-          {abilities && (
+          {abilities.length > 0 && (
             <div className="pokemon-abilities right-section">
               <h5 className="text-[1rem] md:text[1.1rem] mb-2 font-bold">
                 Abilities
