@@ -6,7 +6,7 @@ import {
   getPokemonEvolutions,
 } from "./Api";
 import { getTypeColorGradient } from "./Pokemon";
-import { TYPE_COLORS, STAT_COLORS } from "../constants/constants";
+import { TYPE_COLORS, STAT_COLORS, SORT_BY } from "../constants/constants";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 // import pokeballIcon from "../assets/img/pokeball-icon.png";
@@ -40,7 +40,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     };
 
     pokemonDetails.abilities.map((a) => {
-      bringAbilityInfo(a.ability.name, a.is_hidden, a.ability.url);
+      bringAbilityInfo(a.ability.name, a.slot, a.is_hidden, a.ability.url);
+      abilities.sort((a, b) => a.slot - b.slot);
     });
 
     setAbilities([]);
@@ -63,20 +64,28 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     }
   };
 
-  const bringAbilityInfo = (abilityName, isHidden, abilityURL) => {
+  const bringAbilityInfo = (abilityName, slot, isHidden, abilityURL) => {
     // setModal(true);
     axios.get(abilityURL).then((res) => {
       res.data.effect_entries.forEach((a) => {
         if (a.language.name === "en") {
           setAbilities((abilities) => [
             ...abilities,
-            { name: abilityName, isHidden: isHidden, effect: a.effect },
+            {
+              name: abilityName,
+              slot: slot,
+              isHidden: isHidden,
+              effect: a.effect,
+            },
           ]);
+
           return;
         }
       });
     });
   };
+
+  console.log(abilities);
 
   const getShortDescription = (desc) => {
     const splitDesc = desc.split(".");
@@ -84,11 +93,15 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
 
     const twoSentences = splitDesc.slice(0, 2).join(".");
     const threeSentences = splitDesc.slice(0, 3).join(".");
+    const fourSentences = splitDesc.slice(0, 4).join(".");
     const lastCharacter = twoSentences.charAt(twoSentences.length - 1);
+    const nextCharacter = threeSentences.charAt(twoSentences.length + 1);
 
     let shortDesc;
 
-    if (isNaN(lastCharacter) === false && dotCount >= 3) {
+    if (lastCharacter === "e" && nextCharacter === "g") {
+      shortDesc = fourSentences + ".";
+    } else if (isNaN(lastCharacter) === false && dotCount >= 3) {
       shortDesc = threeSentences + ".";
     } else if (isNaN(lastCharacter) === true && dotCount >= 3) {
       shortDesc = twoSentences + ".";
