@@ -387,13 +387,13 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                             {item.min_happiness != null &&
                               item.time_of_day != "" && (
                                 <p>
-                                  {item.min_happiness}+ Hapiness during{" "}
+                                  {item.min_happiness}+ Happiness during{" "}
                                   {item.time_of_day}
                                 </p>
                               )}
                             {item.min_happiness != null &&
                               item.time_of_day === "" && (
-                                <p>{item.min_happiness}+ Hapiness</p>
+                                <p>{item.min_happiness}+ Happiness</p>
                               )}
                             {item.known_move_type != null && (
                               <p>
