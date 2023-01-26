@@ -90,6 +90,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     });
   };
 
+  console.log(abilities);
+
   const getShortDescription = (desc) => {
     const splitDesc = desc.split(".");
     const dotCount = desc.split(".").length;
@@ -367,6 +369,30 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                                 <p>
                                   Level up at{" "}
                                   {formatPokemonName(item.location.name)}
+                                </p>
+                              )}
+                            {item.trigger_name === "level-up" &&
+                              item.held_item !== null &&
+                              item.time_of_day !== "" && (
+                                <p>
+                                  Level up holding (
+                                  {formatPokemonName(item.held_item.name)})
+                                  during {item.time_of_day}
+                                </p>
+                              )}
+                            {item.trigger_name === "level-up" &&
+                              item.held_item !== null &&
+                              item.time_of_day === "" && (
+                                <p>
+                                  Level up holding (
+                                  {formatPokemonName(item.held_item.name)})
+                                </p>
+                              )}
+                            {item.trigger_name === "level-up" &&
+                              item.known_move !== null && (
+                                <p>
+                                  Level up knowing (
+                                  {formatPokemonName(item.known_move.name)})
                                 </p>
                               )}
                             {item.trigger_name === "use-item" && (
