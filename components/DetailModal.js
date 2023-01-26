@@ -34,7 +34,10 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
       const evolutionData = await getPokemonEvolutions(
         speciesData.evolution_chain.url
       );
+
       setEvolutionInfo(evolutionData);
+
+      console.log(evolutionData);
 
       setLoading(false);
     };
@@ -64,6 +67,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     }
   };
 
+  console.log(evolutionInfo);
+
   const bringAbilityInfo = (abilityName, slot, isHidden, abilityURL) => {
     // setModal(true);
     axios.get(abilityURL).then((res) => {
@@ -84,8 +89,6 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
       });
     });
   };
-
-  console.log(abilities);
 
   const getShortDescription = (desc) => {
     const splitDesc = desc.split(".");
@@ -331,24 +334,75 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                       }`}
                     >
                       {column.map((item) => (
-                        <div
-                          key={item}
-                          className={`evolution-item ${active && "scale-120"}`}
-                          onClick={() => changeCurrentPokemon(item)}
-                        >
-                          <div className="evolution-sprite-container">
-                            <LazyLoadImage
-                              className="evolution-sprite"
-                              src={
-                                allPokemonDetails[item - 1].sprites.other[
-                                  "official-artwork"
-                                ].front_default
-                              }
-                              alt={allPokemonDetails[item - 1].name}
-                              effect="blur"
-                            />
+                        <>
+                          <div className="flex justify-center items-center flex-col">
+                            <div
+                              key={item.id}
+                              className={`evolution-item ${
+                                active && "scale-120"
+                              }`}
+                              onClick={() => changeCurrentPokemon(item.id)}
+                            >
+                              <div className="evolution-sprite-container">
+                                <LazyLoadImage
+                                  className="evolution-sprite"
+                                  src={
+                                    allPokemonDetails[item.id - 1].sprites
+                                      .other["official-artwork"].front_default
+                                  }
+                                  alt={allPokemonDetails[item.id - 1].name}
+                                  effect="blur"
+                                />
+                              </div>
+                            </div>
+                            {item.min_level === 1 &&
+                              !mobile &&
+                              evolutionInfo.length > 1 && <p>Level 1</p>}
+                            {item.trigger_name === "level-up" &&
+                              item.min_level !== null && (
+                                <p>At level {item.min_level}</p>
+                              )}
+                            {item.trigger_name === "level-up" &&
+                              item.location !== null && (
+                                <p>
+                                  Level up at{" "}
+                                  {formatPokemonName(item.location.name)}
+                                </p>
+                              )}
+                            {item.trigger_name === "use-item" && (
+                              <p>{formatPokemonName(item.item.name)}</p>
+                            )}
+                            {item.trigger_name === "trade" &&
+                              item.held_item === null && (
+                                <p>{formatStatName(item.trigger_name)}</p>
+                              )}
+
+                            {item.trigger_name === "trade" &&
+                              item.held_item !== null && (
+                                <p>
+                                  {formatStatName(item.trigger_name)} holding (
+                                  {formatPokemonName(item.held_item.name)})
+                                </p>
+                              )}
+                            {item.min_happiness != null &&
+                              item.time_of_day != "" && (
+                                <p>
+                                  {item.min_happiness}+ Hapiness during{" "}
+                                  {item.time_of_day}
+                                </p>
+                              )}
+                            {item.min_happiness != null &&
+                              item.time_of_day === "" && (
+                                <p>{item.min_happiness}+ Hapiness</p>
+                              )}
+                            {item.known_move_type != null && (
+                              <p>
+                                {formatPokemonName(item.known_move_type.name)}{" "}
+                                Move
+                              </p>
+                            )}
                           </div>
-                        </div>
+                        </>
                       ))}
                     </div>
                     {i + 1 !== evolutionInfo.length && (
