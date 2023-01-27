@@ -358,7 +358,6 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                               </div>
                             </div>
                             {item.min_level === 1 &&
-                              !mobile &&
                               evolutionInfo.length > 1 && <p>Level 1</p>}
                             {item.trigger_name === "level-up" &&
                               item.min_level !== null && (
