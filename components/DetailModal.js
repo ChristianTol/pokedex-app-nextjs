@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Dialog } from "@reach/dialog";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import "@reach/dialog/styles.css";
 import {
   getPokemonDetails,
   formatPokemonName,
@@ -357,6 +360,9 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                                 />
                               </div>
                             </div>
+                            <p className="text-[0.8rem] md:text-[0.9rem] font-semibold">
+                              {formatPokemonName(item.species_name)}
+                            </p>
                             {item.min_level === 1 &&
                               evolutionInfo.length > 1 && <p>Level 1</p>}
                             {item.trigger_name === "level-up" &&
