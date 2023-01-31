@@ -95,6 +95,9 @@ const getPokemonEvolutions = async (url) => {
       known_move_type: !evoDetails ? null : evoDetails.known_move_type,
       held_item: !evoDetails ? null : evoDetails.held_item,
       location: !evoDetails ? null : evoDetails.location,
+      needs_overworld_rain: !evoDetails
+        ? null
+        : evoDetails.needs_overworld_rain,
     });
     node.evolves_to.forEach((child) => traverseEvolutionTree(child, level + 1));
   };

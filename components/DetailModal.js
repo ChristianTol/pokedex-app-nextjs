@@ -366,7 +366,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                             {item.min_level === 1 &&
                               evolutionInfo.length > 1 && <p>Level 1</p>}
                             {item.trigger_name === "level-up" &&
-                              item.min_level !== null && (
+                              item.min_level !== null &&
+                              !item.needs_overworld_rain && (
                                 <p>At level {item.min_level}</p>
                               )}
                             {item.trigger_name === "level-up" &&
@@ -374,6 +375,13 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                                 <p>
                                   Level up at{" "}
                                   {formatPokemonName(item.location.name)}
+                                </p>
+                              )}
+                            {item.trigger_name === "level-up" &&
+                              item.needs_overworld_rain && (
+                                <p>
+                                  At level {item.min_level} level up while
+                                  raining
                                 </p>
                               )}
                             {item.trigger_name === "level-up" &&
@@ -428,8 +436,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                               )}
                             {item.known_move_type != null && (
                               <p>
-                                {formatPokemonName(item.known_move_type.name)}{" "}
-                                Move
+                                Level up knowing a {item.known_move_type.name}{" "}
+                                type move
                               </p>
                             )}
                           </div>
