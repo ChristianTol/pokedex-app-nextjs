@@ -3,7 +3,13 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formatPokemonName } from "./Api";
 
-const SpriteInfo = ({ pokemonDetails, shiny, loading, speciesInfo }) => {
+const SpriteInfo = ({
+  pokemonDetails,
+  shiny,
+  setShiny,
+  loading,
+  speciesInfo,
+}) => {
   return (
     <div className="info-box-sprite info-text">
       <h4 className="font-bold">
