@@ -76,7 +76,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
                 activeTab === "tab1" ? "active-tab" : "tab"
               }`}
             >
-              Info
+              General
             </Tab>
             <Tab
               id="tab2"
