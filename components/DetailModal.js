@@ -9,6 +9,7 @@ import SpriteInfo from "./SpriteInfo";
 import Abilities from "./Abilities";
 import BaseStats from "./BaseStats";
 import EvolutionTree from "./EvolutionTree";
+import Moves from "./Moves";
 
 const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const modalBackground = useRef();
@@ -20,6 +21,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const [shiny, setShiny] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
+
+  console.log("pokemonDetails", pokemonDetails);
 
   useEffect(() => {
     const getSpeciesInfo = async () => {
@@ -72,8 +75,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             <Tab
               id="tab1"
               onClick={() => setActiveTab("tab1")}
-              className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0  mx-0 ${
-                activeTab === "tab1" ? "active-tab" : "tab"
+              className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0 mx-0 ${
+                activeTab === "tab1" ? "active-tab border-l-0" : "tab"
               }`}
             >
               General
@@ -91,7 +94,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
               id="tab3"
               onClick={() => setActiveTab("tab3")}
               className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-l-0 mx-0 ${
-                activeTab === "tab3" ? "active-tab" : "tab"
+                activeTab === "tab3" ? "active-tab border-r-0" : "tab"
               }`}
             >
               Strategy
@@ -131,7 +134,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             {/* <h2>Any content 2</h2> */}
           </TabPanel>
           <TabPanel className="flex">
-            <h2>Any content 2</h2>
+            <Moves moves={pokemonDetails.moves} />
           </TabPanel>
         </Tabs>
       </div>

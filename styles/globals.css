@@ -594,3 +594,13 @@ html, body {
   background: none;
   border-color: rgba(0, 0, 0, 0.2);
 }
+
+.game-dropdown {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.move-list {
+  background: rgba(0, 0, 0, 0.3);
+}
