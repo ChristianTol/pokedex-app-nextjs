@@ -35,13 +35,16 @@ const SpriteInfo = ({
       <h3 className="tracking-wider">
         {formatPokemonName(pokemonDetails.species.name)}
       </h3>
-      <div className="pokemon-genera">
-        {loading
-          ? "Loading..."
-          : speciesInfo.genera[
-              pokemonDetails.id >= 899 && pokemonDetails.id <= 905 ? 4 : 7
-            ].genus}
-      </div>
+      {loading
+        ? "Loading..."
+        : speciesInfo?.genera?.[
+            pokemonDetails.id >= 899 && pokemonDetails.id <= 905
+              ? 5
+              : pokemonDetails.id >= 906 && pokemonDetails.id <= 1010
+              ? 3
+              : 7
+          ]?.genus}
+
       <div className="flex gap-2 my-2">
         {pokemonDetails.types?.map((type) => (
           <span

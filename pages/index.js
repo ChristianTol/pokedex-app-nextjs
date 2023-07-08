@@ -37,7 +37,7 @@ export default function Home({ initialPokemon }) {
   useEffect(() => {
     const getAllPokemonDetails = async () => {
       const pokemonList = await getPokemonList(
-        "https://pokeapi.co/api/v2/pokemon?limit=905"
+        "https://pokeapi.co/api/v2/pokemon?limit=1010"
       );
 
       const allResponses = await Promise.all(
