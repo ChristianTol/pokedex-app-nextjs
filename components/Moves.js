@@ -78,8 +78,6 @@ const Moves = ({ moves, baseColor }) => {
           singleMoveFromAPI.move.name.replace("-", "")
       );
 
-      console.log(moveStatsFromBigFat);
-
       const moveURL = singleMoveFromAPI.move.url;
 
       const gamesWithThisMove = [];
@@ -108,6 +106,10 @@ const Moves = ({ moves, baseColor }) => {
         ml && moveStatsFromBigFat[0].ename
           ? moveStatsFromBigFat[0].ename
           : null;
+      const category =
+        ml && moveStatsFromBigFat[0].category
+          ? moveStatsFromBigFat[0].category
+          : null;
       const power =
         ml && moveStatsFromBigFat[0].power ? moveStatsFromBigFat[0].power : "-";
       const accuracy =
@@ -126,8 +128,10 @@ const Moves = ({ moves, baseColor }) => {
         methodAndLevel[0].learn_method === learnMethod &&
         name
       ) {
+        console.log(category);
         return {
           name: name,
+          category: category,
           level: methodAndLevel[0].level_learned_at,
           power: power,
           pp: pp,
@@ -148,6 +152,10 @@ const Moves = ({ moves, baseColor }) => {
           key={move.name}
           onClick={(e) => bringMovesData(e, move.url)}
         >
+          {learnMethod === "level-up" ? (
+            <div className="w-1/12 text-[1.1rem]">{move.level}</div>
+          ) : null}
+          <div className="w-2/12 text-[1.1rem]">{move.name}</div>
           <div
             className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden ${move.type.toLowerCase()}`}
           >
@@ -157,14 +165,27 @@ const Moves = ({ moves, baseColor }) => {
               width={20}
               alt="type-icon"
             />
-            <p className="text-[1.1rem] pl-1">{move.name}</p>
+            <p className="text-[1.1rem] pl-1">{move.type}</p>
           </div>
-          {learnMethod === "level-up" ? (
-            <div className="w-2/12 text-[1.1rem]">{move.level}</div>
-          ) : null}
           <div className="w-1/12 text-[1.1rem]">{move.power}</div>
-          <div className="w-1/12 text-[1.1rem]">{move.pp}</div>
+          {/* <div className="w-1/12 text-[1.1rem]">{move.pp}</div> */}
           <div className="w-1/12 text-[1.1rem]">{move.accuracy}</div>
+          <div
+            className={`py-2 rounded-md flex w-1/12 justify-center items-center overflow-hidden`}
+          >
+            <img
+              src={`icons/${
+                move.category === "\u7269\u7406"
+                  ? "physical2"
+                  : move.category === "\u7279\u6b8a"
+                  ? "special2"
+                  : "status2"
+              }.png`}
+              height={45}
+              width={45}
+              alt="type-icon"
+            />
+          </div>
           {/* <div className="w-1/12">
           <div
             className={`icon ${move.type.toLowerCase()} w-[50px] p-2 rounded-md flex`}
@@ -319,14 +340,15 @@ const Moves = ({ moves, baseColor }) => {
           <div
             className={`row flex justify-between w-full border-b-2 shadow-2xl pr-4 font-bold ${baseColor}-color text-sm lg:text-lg`}
           >
-            <div className="w-2/12 lg:pl-4">Name</div>
             {learnMethod === "level-up" ? (
-              <div className="w-2/12">Level Learned</div>
+              <div className="w-1/12">Lvl.</div>
             ) : null}
+            <div className="w-2/12 lg:pl-4">Move</div>
+            <div className="w-2/12 lg:pl-4">Type</div>
             <div className="w-1/12">Power</div>
-            <div className="w-1/12">PP</div>
+            {/* <div className="w-1/12">PP</div> */}
             <div className="w-1/12">Accuracy</div>
-            {/* <div className="w-1/12">Type</div> */}
+            <div className="w-1/12">Category</div>
           </div>
           <div className="overflow-y-scroll overflow-x-hidden py-3 bg-transparent border-b border-gray-300">
             {finalMoves}
