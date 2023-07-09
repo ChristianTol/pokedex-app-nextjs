@@ -1,7 +1,7 @@
 export const allMoves = [
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u62cd\u51fb",
     ename: "Pound",
     id: 1,
@@ -12,7 +12,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u624b\u5200",
     ename: "Karate Chop",
     id: 2,
@@ -23,7 +23,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fde\u73af\u5df4\u638c",
     ename: "Double Slap",
     id: 3,
@@ -34,7 +34,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fde\u7eed\u62f3",
     ename: "Comet Punch",
     id: 4,
@@ -45,7 +45,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u767e\u4e07\u5428\u62f3\u51fb",
     ename: "Mega Punch",
     id: 5,
@@ -56,7 +56,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u805a\u5b9d\u529f",
     ename: "Pay Day",
     id: 6,
@@ -67,7 +67,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u706b\u7130\u62f3",
     ename: "Fire Punch",
     id: 7,
@@ -78,7 +78,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6025\u51bb\u62f3",
     ename: "Ice Punch",
     id: 8,
@@ -89,7 +89,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u96f7\u5149\u638c",
     ename: "Thunder Punch",
     id: 9,
@@ -100,7 +100,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5229\u722a",
     ename: "Scratch",
     id: 10,
@@ -111,7 +111,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u526a\u65ad",
     ename: "Vice Grip",
     id: 11,
@@ -122,7 +122,7 @@ export const allMoves = [
   },
   {
     accuracy: 30,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u526a\u5200\u65ad\u5934\u53f0",
     ename: "Guillotine",
     id: 12,
@@ -133,7 +133,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u65cb\u98ce\u5200",
     ename: "Razor Wind",
     id: 13,
@@ -144,7 +144,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5251\u821e",
     ename: "Swords Dance",
     id: 14,
@@ -156,7 +156,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e00\u5b57\u65a9",
     ename: "Cut",
     id: 15,
@@ -167,7 +167,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u70c8\u66b4\u98ce",
     ename: "Gust",
     id: 16,
@@ -178,7 +178,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7fc5\u8180\u653b\u51fb",
     ename: "Wing Attack",
     id: 17,
@@ -189,7 +189,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u65cb\u98ce",
     ename: "Whirlwind",
     id: 18,
@@ -200,7 +200,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u7fd4",
     ename: "Fly",
     id: 19,
@@ -211,7 +211,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7ed1\u7d27",
     ename: "Bind",
     id: 20,
@@ -222,7 +222,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53e9\u6253",
     ename: "Slam",
     id: 21,
@@ -233,7 +233,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u85e4\u97ad",
     ename: "Vine Whip",
     id: 22,
@@ -244,7 +244,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8df5\u8e0f",
     ename: "Stomp",
     id: 23,
@@ -255,7 +255,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fde\u73af\u817f",
     ename: "Double Kick",
     id: 24,
@@ -266,7 +266,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u767e\u4e07\u5428\u98de\u817f",
     ename: "Mega Kick",
     id: 25,
@@ -277,7 +277,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u8e22",
     ename: "Jump Kick",
     id: 26,
@@ -288,7 +288,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u65cb\u98ce\u817f",
     ename: "Rolling Kick",
     id: 27,
@@ -299,7 +299,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u98de\u6c99\u811a",
     ename: "Sand Attack",
     id: 28,
@@ -310,7 +310,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u94c1\u5934\u529f",
     ename: "Headbutt",
     id: 29,
@@ -321,7 +321,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u89d2\u649e",
     ename: "Horn Attack",
     id: 30,
@@ -332,7 +332,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u75af\u72c2\u653b\u51fb",
     ename: "Fury Attack",
     id: 31,
@@ -343,7 +343,7 @@ export const allMoves = [
   },
   {
     accuracy: 30,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u72ec\u89d2\u94bb",
     ename: "Horn Drill",
     id: 32,
@@ -354,7 +354,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b2\u51fb",
     ename: "Tackle",
     id: 33,
@@ -365,7 +365,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6cf0\u5c71\u538b\u9876",
     ename: "Body Slam",
     id: 34,
@@ -376,7 +376,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6346\u7ed1",
     ename: "Wrap",
     id: 35,
@@ -387,7 +387,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u731b\u649e",
     ename: "Take Down",
     id: 36,
@@ -398,7 +398,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6a2a\u51b2\u76f4\u649e",
     ename: "Thrash",
     id: 37,
@@ -409,7 +409,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u820d\u8eab\u653b\u51fb",
     ename: "Double-Edge",
     id: 38,
@@ -420,7 +420,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6447\u5c3e\u5df4",
     ename: "Tail Whip",
     id: 39,
@@ -431,7 +431,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6bd2\u9488",
     ename: "Poison Sting",
     id: 40,
@@ -442,7 +442,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53cc\u9488",
     ename: "Twineedle",
     id: 41,
@@ -453,7 +453,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u5f39\u9488",
     ename: "Pin Missile",
     id: 42,
@@ -464,7 +464,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u77aa\u773c",
     ename: "Leer",
     id: 43,
@@ -475,7 +475,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u54ac\u54ac",
     ename: "Bite",
     id: 44,
@@ -486,7 +486,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u568e\u53eb",
     ename: "Growl",
     id: 45,
@@ -497,7 +497,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u543c\u53eb",
     ename: "Roar",
     id: 46,
@@ -509,7 +509,7 @@ export const allMoves = [
   },
   {
     accuracy: 55,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5531\u6b4c",
     ename: "Sing",
     id: 47,
@@ -520,7 +520,7 @@ export const allMoves = [
   },
   {
     accuracy: 55,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8d85\u97f3\u6ce2",
     ename: "Supersonic",
     id: 48,
@@ -531,7 +531,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u97f3\u7206",
     ename: "Sonic Boom",
     id: 49,
@@ -542,7 +542,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u77f3\u5316\u529f",
     ename: "Disable",
     id: 50,
@@ -553,7 +553,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6eb6\u89e3\u6db2",
     ename: "Acid",
     id: 51,
@@ -564,7 +564,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u706b\u82b1",
     ename: "Ember",
     id: 52,
@@ -575,7 +575,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u55b7\u5c04\u706b\u7130",
     ename: "Flamethrower",
     id: 53,
@@ -587,7 +587,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u767d\u96fe",
     ename: "Mist",
     id: 54,
@@ -598,7 +598,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c34\u67aa",
     ename: "Water Gun",
     id: 55,
@@ -609,7 +609,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c34\u70ae",
     ename: "Hydro Pump",
     id: 56,
@@ -620,7 +620,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u51b2\u6d6a",
     ename: "Surf",
     id: 57,
@@ -631,7 +631,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6025\u51bb\u5149\u7ebf",
     ename: "Ice Beam",
     id: 58,
@@ -643,7 +643,7 @@ export const allMoves = [
   },
   {
     accuracy: 70,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u66b4\u98ce\u96ea",
     ename: "Blizzard",
     id: 59,
@@ -655,7 +655,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5e7b\u8c61\u5149",
     ename: "Psybeam",
     id: 60,
@@ -666,7 +666,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce1\u6cab\u5149\u7ebf",
     ename: "Bubble Beam",
     id: 61,
@@ -677,7 +677,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6781\u5149\u675f",
     ename: "Aurora Beam",
     id: 62,
@@ -688,7 +688,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7834\u574f\u6b7b\u5149",
     ename: "Hyper Beam",
     id: 63,
@@ -700,7 +700,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5544",
     ename: "Peck",
     id: 64,
@@ -711,7 +711,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b2\u94bb",
     ename: "Drill Peck",
     id: 65,
@@ -722,7 +722,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5730\u72f1\u6eda\u52a8",
     ename: "Submission",
     id: 66,
@@ -733,7 +733,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e0b\u8e22",
     ename: "Low Kick",
     id: 67,
@@ -744,7 +744,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fd4\u62f3",
     ename: "Counter",
     id: 68,
@@ -755,7 +755,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5730\u7403\u4e0a\u6295",
     ename: "Seismic Toss",
     id: 69,
@@ -766,7 +766,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u52b2\u529b",
     ename: "Strength",
     id: 70,
@@ -777,7 +777,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5438\u6536",
     ename: "Absorb",
     id: 71,
@@ -788,7 +788,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u767e\u4e07\u5428\u5438\u6536",
     ename: "Mega Drain",
     id: 72,
@@ -799,7 +799,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5bc4\u751f\u79cd\u5b50",
     ename: "Leech Seed",
     id: 73,
@@ -810,7 +810,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u751f\u957f",
     ename: "Growth",
     id: 74,
@@ -821,7 +821,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u53f6\u5feb\u5200",
     ename: "Razor Leaf",
     id: 75,
@@ -832,7 +832,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9633\u5149\u70c8\u7130",
     ename: "Solar Beam",
     id: 76,
@@ -844,7 +844,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6bd2\u7c89\u672b",
     ename: "Poison Powder",
     id: 77,
@@ -855,7 +855,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9ebb\u75f9\u7c89",
     ename: "Stun Spore",
     id: 78,
@@ -866,7 +866,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7761\u7720\u7c89",
     ename: "Sleep Powder",
     id: 79,
@@ -877,7 +877,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u82b1\u4e4b\u821e",
     ename: "Petal Dance",
     id: 80,
@@ -888,7 +888,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5410\u4e1d",
     ename: "String Shot",
     id: 81,
@@ -899,7 +899,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9f99\u4e4b\u6012",
     ename: "Dragon Rage",
     id: 82,
@@ -910,7 +910,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u706b\u7130\u6f29\u6da1",
     ename: "Fire Spin",
     id: 83,
@@ -921,7 +921,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7535\u51fb",
     ename: "Thunder Shock",
     id: 84,
@@ -932,7 +932,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5341\u4e07\u4f0f\u7279",
     ename: "Thunderbolt",
     id: 85,
@@ -944,7 +944,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7535\u78c1\u6ce2",
     ename: "Thunder Wave",
     id: 86,
@@ -956,7 +956,7 @@ export const allMoves = [
   },
   {
     accuracy: 70,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6253\u96f7",
     ename: "Thunder",
     id: 87,
@@ -968,7 +968,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6eda\u77f3",
     ename: "Rock Throw",
     id: 88,
@@ -979,7 +979,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5730\u9707",
     ename: "Earthquake",
     id: 89,
@@ -991,7 +991,7 @@ export const allMoves = [
   },
   {
     accuracy: 30,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5730\u88c2",
     ename: "Fissure",
     id: 90,
@@ -1002,7 +1002,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6316\u5730\u6d1e",
     ename: "Dig",
     id: 91,
@@ -1014,7 +1014,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u731b\u6bd2\u7d20",
     ename: "Toxic",
     id: 92,
@@ -1026,7 +1026,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5ff5\u529b",
     ename: "Confusion",
     id: 93,
@@ -1037,7 +1037,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5e7b\u8c61\u672f",
     ename: "Psychic",
     id: 94,
@@ -1049,7 +1049,7 @@ export const allMoves = [
   },
   {
     accuracy: 60,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u50ac\u7720\u672f",
     ename: "Hypnosis",
     id: 95,
@@ -1060,7 +1060,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u745c\u4f3d\u59ff\u52bf",
     ename: "Meditate",
     id: 96,
@@ -1071,7 +1071,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9ad8\u901f\u79fb\u52a8",
     ename: "Agility",
     id: 97,
@@ -1082,7 +1082,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7535\u5149\u4e00\u95ea",
     ename: "Quick Attack",
     id: 98,
@@ -1093,7 +1093,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6124\u6012",
     ename: "Rage",
     id: 99,
@@ -1104,7 +1104,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u77ac\u95f4\u79fb\u52a8",
     ename: "Teleport",
     id: 100,
@@ -1115,7 +1115,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9ed1\u591c\u8bc5\u5492",
     ename: "Night Shade",
     id: 101,
@@ -1126,7 +1126,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6a21\u4eff",
     ename: "Mimic",
     id: 102,
@@ -1137,7 +1137,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u566a\u97f3",
     ename: "Screech",
     id: 103,
@@ -1148,7 +1148,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5f71\u5b50\u5206\u8eab",
     ename: "Double Team",
     id: 104,
@@ -1160,7 +1160,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u81ea\u6211\u590d\u539f",
     ename: "Recover",
     id: 105,
@@ -1171,7 +1171,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u786c\u6886\u6886",
     ename: "Harden",
     id: 106,
@@ -1182,7 +1182,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7f29\u5c0f",
     ename: "Minimize",
     id: 107,
@@ -1193,7 +1193,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u70df\u5e55",
     ename: "Smokescreen",
     id: 108,
@@ -1204,7 +1204,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5947\u5f02\u5149\u7ebf",
     ename: "Confuse Ray",
     id: 109,
@@ -1215,7 +1215,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7f29\u58f3",
     ename: "Withdraw",
     id: 110,
@@ -1226,7 +1226,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9632\u536b\u5377",
     ename: "Defense Curl",
     id: 111,
@@ -1237,7 +1237,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u969c\u788d",
     ename: "Barrier",
     id: 112,
@@ -1248,7 +1248,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5149\u5899",
     ename: "Light Screen",
     id: 113,
@@ -1260,7 +1260,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9ed1\u96fe",
     ename: "Haze",
     id: 114,
@@ -1271,7 +1271,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u51cf\u534a\u53cd\u5c04",
     ename: "Reflect",
     id: 115,
@@ -1283,7 +1283,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u96c6\u6c14",
     ename: "Focus Energy",
     id: 116,
@@ -1294,7 +1294,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5fcd\u5fcd",
     ename: "Bide",
     id: 117,
@@ -1305,7 +1305,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6325\u6307\u529f",
     ename: "Metronome",
     id: 118,
@@ -1316,7 +1316,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5b66\u820c\u672f",
     ename: "Mirror Move",
     id: 119,
@@ -1327,7 +1327,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u81ea\u7206",
     ename: "Self-Destruct",
     id: 120,
@@ -1338,7 +1338,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u70b8\u86cb",
     ename: "Egg Bomb",
     id: 121,
@@ -1349,7 +1349,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8214\u820c\u5934",
     ename: "Lick",
     id: 122,
@@ -1360,7 +1360,7 @@ export const allMoves = [
   },
   {
     accuracy: 70,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8ff7\u96fe",
     ename: "Smog",
     id: 123,
@@ -1371,7 +1371,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce5\u6d46\u653b\u51fb",
     ename: "Sludge",
     id: 124,
@@ -1382,7 +1382,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9aa8\u68d2",
     ename: "Bone Club",
     id: 125,
@@ -1393,7 +1393,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5927\u5b57\u7206",
     ename: "Fire Blast",
     id: 126,
@@ -1405,7 +1405,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9c7c\u8dc3\u9f99\u95e8",
     ename: "Waterfall",
     id: 127,
@@ -1416,7 +1416,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5939\u58f3",
     ename: "Clamp",
     id: 128,
@@ -1427,7 +1427,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9ad8\u901f\u661f\u661f",
     ename: "Swift",
     id: 129,
@@ -1438,7 +1438,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u706b\u7bad\u5934\u69cc",
     ename: "Skull Bash",
     id: 130,
@@ -1449,7 +1449,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5c16\u523a\u52a0\u519c\u70ae",
     ename: "Spike Cannon",
     id: 131,
@@ -1460,7 +1460,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7ea0\u7f20",
     ename: "Constrict",
     id: 132,
@@ -1471,7 +1471,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u77ac\u95f4\u5931\u5fc6",
     ename: "Amnesia",
     id: 133,
@@ -1482,7 +1482,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6298\u5f2f\u6c64\u5319",
     ename: "Kinesis",
     id: 134,
@@ -1493,7 +1493,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u751f\u86cb",
     ename: "Soft-Boiled",
     id: 135,
@@ -1504,7 +1504,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u819d\u649e",
     ename: "High Jump Kick",
     id: 136,
@@ -1515,7 +1515,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5927\u86c7\u77aa\u773c",
     ename: "Glare",
     id: 137,
@@ -1526,7 +1526,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u98df\u68a6",
     ename: "Dream Eater",
     id: 138,
@@ -1538,7 +1538,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6bd2\u74e6\u65af",
     ename: "Poison Gas",
     id: 139,
@@ -1549,7 +1549,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e22\u7403",
     ename: "Barrage",
     id: 140,
@@ -1560,7 +1560,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5438\u8840",
     ename: "Leech Life",
     id: 141,
@@ -1571,7 +1571,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6076\u9b54\u4e4b\u543b",
     ename: "Lovely Kiss",
     id: 142,
@@ -1582,7 +1582,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9ad8\u7a7a\u653b\u51fb",
     ename: "Sky Attack",
     id: 143,
@@ -1593,7 +1593,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u53d8\u8eab",
     ename: "Transform",
     id: 144,
@@ -1604,7 +1604,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce1\u6ce1",
     ename: "Bubble",
     id: 145,
@@ -1615,7 +1615,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8ff7\u660f\u62f3",
     ename: "Dizzy Punch",
     id: 146,
@@ -1626,7 +1626,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8611\u83c7\u5b62\u5b50",
     ename: "Spore",
     id: 147,
@@ -1637,7 +1637,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u95ea\u5149",
     ename: "Flash",
     id: 148,
@@ -1649,7 +1649,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5e7b\u8c61\u6ce2",
     ename: "Psywave",
     id: 149,
@@ -1660,7 +1660,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6c34\u6e85\u8dc3",
     ename: "Splash",
     id: 150,
@@ -1671,7 +1671,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6eb6\u5316",
     ename: "Acid Armor",
     id: 151,
@@ -1682,7 +1682,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8783\u87f9\u62f3",
     ename: "Crabhammer",
     id: 152,
@@ -1693,7 +1693,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5927\u7206\u70b8",
     ename: "Explosion",
     id: 153,
@@ -1705,7 +1705,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u75af\u72c2\u4e71\u6293",
     ename: "Fury Swipes",
     id: 154,
@@ -1716,7 +1716,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9aa8\u5934\u56de\u529b\u9556",
     ename: "Bonemerang",
     id: 155,
@@ -1727,7 +1727,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7761\u89c9",
     ename: "Rest",
     id: 156,
@@ -1739,7 +1739,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5c71\u5d29\u5730\u88c2",
     ename: "Rock Slide",
     id: 157,
@@ -1751,7 +1751,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5fc5\u6740\u95e8\u7259",
     ename: "Hyper Fang",
     id: 158,
@@ -1762,7 +1762,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u68f1\u89d2",
     ename: "Sharpen",
     id: 159,
@@ -1773,7 +1773,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u53d8\u6027",
     ename: "Conversion",
     id: 160,
@@ -1784,7 +1784,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u4e09\u89d2\u653b\u51fb",
     ename: "Tri Attack",
     id: 161,
@@ -1795,7 +1795,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6124\u6012\u4e4b\u7259",
     ename: "Super Fang",
     id: 162,
@@ -1806,7 +1806,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5288\u5f00",
     ename: "Slash",
     id: 163,
@@ -1817,7 +1817,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u66ff\u8eab",
     ename: "Substitute",
     id: 164,
@@ -1829,7 +1829,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6323\u624e",
     ename: "Struggle",
     id: 165,
@@ -1840,7 +1840,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5199\u751f",
     ename: "Sketch",
     id: 166,
@@ -1851,7 +1851,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e09\u500d\u8db3\u653b",
     ename: "Triple Kick",
     id: 167,
@@ -1862,7 +1862,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5c0f\u5077",
     ename: "Thief",
     id: 168,
@@ -1874,7 +1874,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u86db\u4e1d",
     ename: "Spider Web",
     id: 169,
@@ -1885,7 +1885,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5fc3\u773c",
     ename: "Mind Reader",
     id: 170,
@@ -1896,7 +1896,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6076\u68a6",
     ename: "Nightmare",
     id: 171,
@@ -1907,7 +1907,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u706b\u7130\u8f6e",
     ename: "Flame Wheel",
     id: 172,
@@ -1918,7 +1918,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6253\u9f3e",
     ename: "Snore",
     id: 173,
@@ -1929,7 +1929,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5492\u8bed",
     ename: "Curse",
     id: 174,
@@ -1940,7 +1940,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u624b\u8db3\u614c\u4e71",
     ename: "Flail",
     id: 175,
@@ -1951,7 +1951,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u53d8\u6027II",
     ename: "Conversion 2",
     id: 176,
@@ -1962,7 +1962,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7a7a\u6c14\u7206\u70b8",
     ename: "Aeroblast",
     id: 177,
@@ -1973,7 +1973,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u68c9\u5b62\u5b50",
     ename: "Cotton Spore",
     id: 178,
@@ -1984,7 +1984,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8d77\u6b7b\u56de\u751f",
     ename: "Reversal",
     id: 179,
@@ -1995,7 +1995,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u75db\u6068",
     ename: "Spite",
     id: 180,
@@ -2006,7 +2006,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7ec6\u96ea",
     ename: "Powder Snow",
     id: 181,
@@ -2017,7 +2017,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5b88\u4f4f",
     ename: "Protect",
     id: 182,
@@ -2029,7 +2029,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u97f3\u901f\u62f3",
     ename: "Mach Punch",
     id: 183,
@@ -2040,7 +2040,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9b3c\u8138",
     ename: "Scary Face",
     id: 184,
@@ -2051,7 +2051,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u865a\u6643\u4e00\u62db",
     ename: "Feint Attack",
     id: 185,
@@ -2062,7 +2062,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5929\u4f7f\u4e4b\u543b",
     ename: "Sweet Kiss",
     id: 186,
@@ -2073,7 +2073,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u809a\u5b50\u5927\u9f13",
     ename: "Belly Drum",
     id: 187,
@@ -2084,7 +2084,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u81ed\u6ce5\u7206\u5f39",
     ename: "Sludge Bomb",
     id: 188,
@@ -2096,7 +2096,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce5\u6c64",
     ename: "Mud-Slap",
     id: 189,
@@ -2107,7 +2107,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7ae0\u9c7c\u6876\u70ae",
     ename: "Octazooka",
     id: 190,
@@ -2118,7 +2118,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6ee1\u5730\u661f",
     ename: "Spikes",
     id: 191,
@@ -2129,7 +2129,7 @@ export const allMoves = [
   },
   {
     accuracy: 50,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7535\u78c1\u70ae",
     ename: "Zap Cannon",
     id: 192,
@@ -2140,7 +2140,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u770b\u7834",
     ename: "Foresight",
     id: 193,
@@ -2151,7 +2151,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u540c\u547d",
     ename: "Destiny Bond",
     id: 194,
@@ -2162,7 +2162,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u706d\u4ea1\u4e4b\u6b4c",
     ename: "Perish Song",
     id: 195,
@@ -2173,7 +2173,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u51bb\u98ce",
     ename: "Icy Wind",
     id: 196,
@@ -2184,7 +2184,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5148\u51b3",
     ename: "Detect",
     id: 197,
@@ -2195,7 +2195,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9aa8\u51fb\u4e00\u6c14",
     ename: "Bone Rush",
     id: 198,
@@ -2206,7 +2206,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9501\u5b9a",
     ename: "Lock-On",
     id: 199,
@@ -2217,7 +2217,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9f99\u9cde\u4e4b\u6012",
     ename: "Outrage",
     id: 200,
@@ -2228,7 +2228,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6c99\u96f9",
     ename: "Sandstorm",
     id: 201,
@@ -2240,7 +2240,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8d85\u7ea7\u5438\u6536",
     ename: "Giga Drain",
     id: 202,
@@ -2251,7 +2251,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5fcd\u8010",
     ename: "Endure",
     id: 203,
@@ -2262,7 +2262,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6492\u5a07",
     ename: "Charm",
     id: 204,
@@ -2273,7 +2273,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6eda\u52a8",
     ename: "Rollout",
     id: 205,
@@ -2284,7 +2284,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5200\u80cc\u51fb\u6253",
     ename: "False Swipe",
     id: 206,
@@ -2296,7 +2296,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u88c5\u8154\u4f5c\u52bf",
     ename: "Swagger",
     id: 207,
@@ -2308,7 +2308,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u996e\u5976",
     ename: "Milk Drink",
     id: 208,
@@ -2319,7 +2319,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u95ea\u7535",
     ename: "Spark",
     id: 209,
@@ -2330,7 +2330,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fde\u5207",
     ename: "Fury Cutter",
     id: 210,
@@ -2341,7 +2341,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u94a2\u7ffc",
     ename: "Steel Wing",
     id: 211,
@@ -2353,7 +2353,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9ed1\u8272\u773c\u5149",
     ename: "Mean Look",
     id: 212,
@@ -2364,7 +2364,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8ff7\u4eba",
     ename: "Attract",
     id: 213,
@@ -2376,7 +2376,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u68a6\u8bdd",
     ename: "Sleep Talk",
     id: 214,
@@ -2388,7 +2388,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6cbb\u6108\u94c3\u58f0",
     ename: "Heal Bell",
     id: 215,
@@ -2399,7 +2399,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u62a5\u6069",
     ename: "Return",
     id: 216,
@@ -2411,7 +2411,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u793c\u7269",
     ename: "Present",
     id: 217,
@@ -2422,7 +2422,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7275\u8fde",
     ename: "Frustration",
     id: 218,
@@ -2434,7 +2434,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u795e\u79d8\u62a4\u8eab",
     ename: "Safeguard",
     id: 219,
@@ -2446,7 +2446,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5206\u4eab\u75db\u695a",
     ename: "Pain Split",
     id: 220,
@@ -2457,7 +2457,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5723\u4e4b\u706b",
     ename: "Sacred Fire",
     id: 221,
@@ -2468,7 +2468,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9707\u7ea7",
     ename: "Magnitude",
     id: 222,
@@ -2479,7 +2479,7 @@ export const allMoves = [
   },
   {
     accuracy: 50,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7206\u88c2\u62f3",
     ename: "Dynamic Punch",
     id: 223,
@@ -2490,7 +2490,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u767e\u4e07\u5428\u89d2\u51fb",
     ename: "Megahorn",
     id: 224,
@@ -2501,7 +2501,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9f99\u5438",
     ename: "Dragon Breath",
     id: 225,
@@ -2512,7 +2512,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u63a5\u68d2",
     ename: "Baton Pass",
     id: 226,
@@ -2523,7 +2523,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u518d\u6765\u4e00\u6b21",
     ename: "Encore",
     id: 227,
@@ -2534,7 +2534,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8ffd\u6253",
     ename: "Pursuit",
     id: 228,
@@ -2545,7 +2545,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9ad8\u901f\u56de\u8f6c",
     ename: "Rapid Spin",
     id: 229,
@@ -2556,7 +2556,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u751c\u6c14",
     ename: "Sweet Scent",
     id: 230,
@@ -2567,7 +2567,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u94c1\u5c3e",
     ename: "Iron Tail",
     id: 231,
@@ -2578,7 +2578,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5408\u91d1\u722a",
     ename: "Metal Claw",
     id: 232,
@@ -2589,7 +2589,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e00\u62db\u5236\u654c",
     ename: "Vital Throw",
     id: 233,
@@ -2600,7 +2600,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6668\u5149",
     ename: "Morning Sun",
     id: 234,
@@ -2611,7 +2611,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5149\u5b66\u5408\u6210",
     ename: "Synthesis",
     id: 235,
@@ -2622,7 +2622,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6708\u5149",
     ename: "Moonlight",
     id: 236,
@@ -2633,7 +2633,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u50ac\u9192",
     ename: "Hidden Power",
     id: 237,
@@ -2645,7 +2645,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5341\u5b57\u5207",
     ename: "Cross Chop",
     id: 238,
@@ -2656,7 +2656,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9f99\u5377\u98ce",
     ename: "Twister",
     id: 239,
@@ -2667,7 +2667,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4e5e\u96e8",
     ename: "Rain Dance",
     id: 240,
@@ -2679,7 +2679,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5927\u6674\u5929",
     ename: "Sunny Day",
     id: 241,
@@ -2691,7 +2691,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u54ac\u788e",
     ename: "Crunch",
     id: 242,
@@ -2702,7 +2702,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8868\u9762\u6d82\u5c42",
     ename: "Mirror Coat",
     id: 243,
@@ -2713,7 +2713,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u81ea\u6211\u6697\u793a",
     ename: "Psych Up",
     id: 244,
@@ -2725,7 +2725,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u795e\u901f",
     ename: "Extreme Speed",
     id: 245,
@@ -2736,7 +2736,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u539f\u59cb\u4e4b\u529b",
     ename: "Ancient Power",
     id: 246,
@@ -2747,7 +2747,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5f71\u5b50\u7403",
     ename: "Shadow Ball",
     id: 247,
@@ -2759,7 +2759,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5148\u77e5",
     ename: "Future Sight",
     id: 248,
@@ -2770,7 +2770,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5ca9\u77f3\u7c89\u788e",
     ename: "Rock Smash",
     id: 249,
@@ -2782,7 +2782,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6f6e\u65cb",
     ename: "Whirlpool",
     id: 250,
@@ -2793,7 +2793,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u75db\u6253\u4e00\u6c14",
     ename: "Beat Up",
     id: 251,
@@ -2804,7 +2804,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5047\u52a8\u4f5c",
     ename: "Fake Out",
     id: 252,
@@ -2815,7 +2815,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5435\u95f9",
     ename: "Uproar",
     id: 253,
@@ -2826,7 +2826,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u50a8\u5b58",
     ename: "Stockpile",
     id: 254,
@@ -2837,7 +2837,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u55b7\u51fa",
     ename: "Spit Up",
     id: 255,
@@ -2848,7 +2848,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u541e\u4e0b",
     ename: "Swallow",
     id: 256,
@@ -2859,7 +2859,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u70ed\u98ce",
     ename: "Heat Wave",
     id: 257,
@@ -2870,7 +2870,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u51b0\u96f9",
     ename: "Hail",
     id: 258,
@@ -2882,7 +2882,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5047\u6307\u63a7",
     ename: "Torment",
     id: 259,
@@ -2894,7 +2894,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u717d\u60d1",
     ename: "Flatter",
     id: 260,
@@ -2905,7 +2905,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9b3c\u706b",
     ename: "Will-O-Wisp",
     id: 261,
@@ -2917,7 +2917,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4e34\u522b\u793c\u7269",
     ename: "Memento",
     id: 262,
@@ -2928,7 +2928,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5047\u52c7\u6562",
     ename: "Facade",
     id: 263,
@@ -2940,7 +2940,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u96c6\u4e2d\u731b\u51fb",
     ename: "Focus Punch",
     id: 264,
@@ -2951,7 +2951,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u82cf\u9192",
     ename: "Smelling Salts",
     id: 265,
@@ -2962,7 +2962,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8ddf\u6211\u6765",
     ename: "Follow Me",
     id: 266,
@@ -2973,7 +2973,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u81ea\u7136\u80fd\u529b",
     ename: "Nature Power",
     id: 267,
@@ -2985,7 +2985,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5145\u7535",
     ename: "Charge",
     id: 268,
@@ -2996,7 +2996,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6311\u62e8",
     ename: "Taunt",
     id: 269,
@@ -3008,7 +3008,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5e2e\u52a9",
     ename: "Helping Hand",
     id: 270,
@@ -3019,7 +3019,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9a97\u672f",
     ename: "Trick",
     id: 271,
@@ -3030,7 +3030,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u89d2\u8272\u626e\u6f14",
     ename: "Role Play",
     id: 272,
@@ -3041,7 +3041,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7948\u6c42",
     ename: "Wish",
     id: 273,
@@ -3052,7 +3052,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u534f\u52a9",
     ename: "Assist",
     id: 274,
@@ -3063,7 +3063,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6839\u6df1\u8482\u56fa",
     ename: "Ingrain",
     id: 275,
@@ -3074,7 +3074,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u86ee\u529b",
     ename: "Superpower",
     id: 276,
@@ -3085,7 +3085,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9b54\u672f\u5916\u8863",
     ename: "Magic Coat",
     id: 277,
@@ -3096,7 +3096,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u56de\u6536",
     ename: "Recycle",
     id: 278,
@@ -3107,7 +3107,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u62a5\u4ec7",
     ename: "Revenge",
     id: 279,
@@ -3118,7 +3118,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5288\u74e6",
     ename: "Brick Break",
     id: 280,
@@ -3130,7 +3130,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u54c8\u6b20",
     ename: "Yawn",
     id: 281,
@@ -3141,7 +3141,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u843d\u62f3",
     ename: "Knock Off",
     id: 282,
@@ -3152,7 +3152,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5f3a\u653b",
     ename: "Endeavor",
     id: 283,
@@ -3163,7 +3163,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u55b7\u706b",
     ename: "Eruption",
     id: 284,
@@ -3174,7 +3174,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4ea4\u6362\u7edd\u62db",
     ename: "Skill Swap",
     id: 285,
@@ -3185,7 +3185,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5c01\u5370",
     ename: "Imprison",
     id: 286,
@@ -3196,7 +3196,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6e05\u65b0",
     ename: "Refresh",
     id: 287,
@@ -3207,7 +3207,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6028\u6068",
     ename: "Grudge",
     id: 288,
@@ -3218,7 +3218,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u62a2\u593a",
     ename: "Snatch",
     id: 289,
@@ -3229,7 +3229,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u795e\u79d8\u529b\u91cf",
     ename: "Secret Power",
     id: 290,
@@ -3240,7 +3240,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6f5c\u6c34",
     ename: "Dive",
     id: 291,
@@ -3251,7 +3251,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u731b\u63a8",
     ename: "Arm Thrust",
     id: 292,
@@ -3262,7 +3262,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4fdd\u62a4\u8272",
     ename: "Camouflage",
     id: 293,
@@ -3273,7 +3273,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8424\u706b",
     ename: "Tail Glow",
     id: 294,
@@ -3284,7 +3284,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6d01\u51c0\u5149\u6cfd",
     ename: "Luster Purge",
     id: 295,
@@ -3295,7 +3295,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8584\u96fe\u7403",
     ename: "Mist Ball",
     id: 296,
@@ -3306,7 +3306,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7fbd\u6bdb\u821e",
     ename: "Feather Dance",
     id: 297,
@@ -3317,7 +3317,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6447\u6643\u821e",
     ename: "Teeter Dance",
     id: 298,
@@ -3328,7 +3328,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u706b\u7130\u8e22",
     ename: "Blaze Kick",
     id: 299,
@@ -3339,7 +3339,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u73a9\u6ce5\u5df4",
     ename: "Mud Sport",
     id: 300,
@@ -3350,7 +3350,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b0\u7403",
     ename: "Ice Ball",
     id: 301,
@@ -3361,7 +3361,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9488\u53f6\u6697\u5668",
     ename: "Needle Arm",
     id: 302,
@@ -3372,7 +3372,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u61d2\u60f0",
     ename: "Slack Off",
     id: 303,
@@ -3383,7 +3383,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9ad8\u97f3",
     ename: "Hyper Voice",
     id: 304,
@@ -3394,7 +3394,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6bd2\u6db2\u7259",
     ename: "Poison Fang",
     id: 305,
@@ -3405,7 +3405,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7a81\u51fb\u722a",
     ename: "Crush Claw",
     id: 306,
@@ -3416,7 +3416,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7206\u70b8\u71c3\u70e7",
     ename: "Blast Burn",
     id: 307,
@@ -3427,7 +3427,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c34\u7535\u70ae",
     ename: "Hydro Cannon",
     id: 308,
@@ -3438,7 +3438,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6d41\u661f\u62f3",
     ename: "Meteor Mash",
     id: 309,
@@ -3449,7 +3449,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u60ca\u5413",
     ename: "Astonish",
     id: 310,
@@ -3460,7 +3460,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c14\u8c61\u7403",
     ename: "Weather Ball",
     id: 311,
@@ -3471,7 +3471,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u82b3\u9999\u6cbb\u7597",
     ename: "Aromatherapy",
     id: 312,
@@ -3482,7 +3482,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5047\u54ed",
     ename: "Fake Tears",
     id: 313,
@@ -3493,7 +3493,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7834\u7a7a\u65a9",
     ename: "Air Cutter",
     id: 314,
@@ -3504,7 +3504,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8fc7\u70ed",
     ename: "Overheat",
     id: 315,
@@ -3516,7 +3516,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6c14\u5473\u4fa6\u6d4b",
     ename: "Odor Sleuth",
     id: 316,
@@ -3527,7 +3527,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5ca9\u77f3\u5c01\u95ed",
     ename: "Rock Tomb",
     id: 317,
@@ -3539,7 +3539,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u94f6\u8272\u65cb\u98ce",
     ename: "Silver Wind",
     id: 318,
@@ -3550,7 +3550,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u91d1\u5c5e\u97f3",
     ename: "Metal Sound",
     id: 319,
@@ -3561,7 +3561,7 @@ export const allMoves = [
   },
   {
     accuracy: 55,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8349\u7b1b\u9b54\u97f3",
     ename: "Grass Whistle",
     id: 320,
@@ -3572,7 +3572,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6414\u75d2",
     ename: "Tickle",
     id: 321,
@@ -3583,7 +3583,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u65e0\u9650\u80fd\u91cf",
     ename: "Cosmic Power",
     id: 322,
@@ -3594,7 +3594,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u55b7\u6c34",
     ename: "Water Spout",
     id: 323,
@@ -3605,7 +3605,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u4fe1\u53f7\u5149\u675f",
     ename: "Signal Beam",
     id: 324,
@@ -3616,7 +3616,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5f71\u5b50\u62f3",
     ename: "Shadow Punch",
     id: 325,
@@ -3627,7 +3627,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u795e\u901a\u529b",
     ename: "Extrasensory",
     id: 326,
@@ -3638,7 +3638,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4e0a\u5929\u62f3",
     ename: "Sky Uppercut",
     id: 327,
@@ -3649,7 +3649,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6d41\u6c99\u5730\u72f1",
     ename: "Sand Tomb",
     id: 328,
@@ -3660,7 +3660,7 @@ export const allMoves = [
   },
   {
     accuracy: 30,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7edd\u5bf9\u96f6\u5ea6",
     ename: "Sheer Cold",
     id: 329,
@@ -3671,7 +3671,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6d4a\u6d41",
     ename: "Muddy Water",
     id: 330,
@@ -3682,7 +3682,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u79cd\u5b50\u673a\u5173\u67aa",
     ename: "Bullet Seed",
     id: 331,
@@ -3693,7 +3693,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u56de\u8f6c\u653b",
     ename: "Aerial Ace",
     id: 332,
@@ -3705,7 +3705,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b0\u9488",
     ename: "Icicle Spear",
     id: 333,
@@ -3716,7 +3716,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u94c1\u58c1",
     ename: "Iron Defense",
     id: 334,
@@ -3727,7 +3727,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6321\u8def",
     ename: "Block",
     id: 335,
@@ -3738,7 +3738,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u957f\u568e",
     ename: "Howl",
     id: 336,
@@ -3749,7 +3749,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9f99\u722a",
     ename: "Dragon Claw",
     id: 337,
@@ -3761,7 +3761,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u75af\u72c2\u673a\u5668",
     ename: "Frenzy Plant",
     id: 338,
@@ -3772,7 +3772,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5065\u7f8e",
     ename: "Bulk Up",
     id: 339,
@@ -3784,7 +3784,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u8df3",
     ename: "Bounce",
     id: 340,
@@ -3795,7 +3795,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce5\u5df4\u5c04\u51fb",
     ename: "Mud Shot",
     id: 341,
@@ -3806,7 +3806,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6bd2\u5c3e",
     ename: "Poison Tail",
     id: 342,
@@ -3817,7 +3817,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6e34\u671b",
     ename: "Covet",
     id: 343,
@@ -3828,7 +3828,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4f0f\u7279\u653b\u51fb",
     ename: "Volt Tackle",
     id: 344,
@@ -3839,7 +3839,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9b54\u6cd5\u53f6",
     ename: "Magical Leaf",
     id: 345,
@@ -3850,7 +3850,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6c34\u4e4b\u6e38",
     ename: "Water Sport",
     id: 346,
@@ -3861,7 +3861,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u51a5\u60f3",
     ename: "Calm Mind",
     id: 347,
@@ -3873,7 +3873,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5200\u53f6",
     ename: "Leaf Blade",
     id: 348,
@@ -3884,7 +3884,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9f99\u4e4b\u821e",
     ename: "Dragon Dance",
     id: 349,
@@ -3895,7 +3895,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5ca9\u77f3\u7206\u7834",
     ename: "Rock Blast",
     id: 350,
@@ -3906,7 +3906,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7535\u51fb\u6ce2",
     ename: "Shock Wave",
     id: 351,
@@ -3917,7 +3917,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c34\u6ce2\u52a8",
     ename: "Water Pulse",
     id: 352,
@@ -3928,7 +3928,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7834\u706d\u613f\u671b",
     ename: "Doom Desire",
     id: 353,
@@ -3939,7 +3939,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7cbe\u795e\u63d0\u5347",
     ename: "Psycho Boost",
     id: 354,
@@ -3950,7 +3950,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6b47\u606f",
     ename: "Roost",
     id: 355,
@@ -3962,7 +3962,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u91cd\u529b",
     ename: "Gravity",
     id: 356,
@@ -3973,7 +3973,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5947\u8ff9\u773c",
     ename: "Miracle Eye",
     id: 357,
@@ -3984,7 +3984,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u82cf\u9192\u5df4\u638c",
     ename: "Wake-Up Slap",
     id: 358,
@@ -3995,7 +3995,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u81c2\u529b\u62f3",
     ename: "Hammer Arm",
     id: 359,
@@ -4006,7 +4006,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u56de\u8f6c\u7403",
     ename: "Gyro Ball",
     id: 360,
@@ -4018,7 +4018,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6cbb\u6108\u613f\u671b",
     ename: "Healing Wish",
     id: 361,
@@ -4029,7 +4029,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u76d0\u6c34",
     ename: "Brine",
     id: 362,
@@ -4040,7 +4040,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u81ea\u7136\u4e4b\u6069",
     ename: "Natural Gift",
     id: 363,
@@ -4051,7 +4051,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4f6f\u653b",
     ename: "Feint",
     id: 364,
@@ -4062,7 +4062,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5544\u98df",
     ename: "Pluck",
     id: 365,
@@ -4073,7 +4073,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u987a\u98ce",
     ename: "Tailwind",
     id: 366,
@@ -4084,7 +4084,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u70b9\u7a74",
     ename: "Acupressure",
     id: 367,
@@ -4095,7 +4095,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5408\u91d1\u7206\u88c2",
     ename: "Metal Burst",
     id: 368,
@@ -4106,7 +4106,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6025\u901f\u8f6c\u53d8",
     ename: "U-turn",
     id: 369,
@@ -4118,7 +4118,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8fd1\u8eab\u6253",
     ename: "Close Combat",
     id: 370,
@@ -4129,7 +4129,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u62a5\u590d",
     ename: "Payback",
     id: 371,
@@ -4141,7 +4141,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u518d\u4e09\u5631\u5490\u200e",
     ename: "Assurance",
     id: 372,
@@ -4152,7 +4152,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5f81\u6536",
     ename: "Embargo",
     id: 373,
@@ -4164,7 +4164,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6295\u63b7",
     ename: "Fling",
     id: 374,
@@ -4176,7 +4176,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5e7b\u8c61\u8f6c\u79fb",
     ename: "Psycho Shift",
     id: 375,
@@ -4187,7 +4187,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u738b\u724c",
     ename: "Trump Card",
     id: 376,
@@ -4198,7 +4198,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u56de\u590d\u963b\u6321",
     ename: "Heal Block",
     id: 377,
@@ -4209,7 +4209,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u62e7\u5e72",
     ename: "Wring Out",
     id: 378,
@@ -4220,7 +4220,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u80fd\u91cf\u9a97\u672f",
     ename: "Power Trick",
     id: 379,
@@ -4231,7 +4231,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u80c3\u6db2",
     ename: "Gastro Acid",
     id: 380,
@@ -4242,7 +4242,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5e78\u8fd0\u5492\u8bed",
     ename: "Lucky Chant",
     id: 381,
@@ -4253,7 +4253,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5148\u62a2\u5148\u8d62",
     ename: "Me First",
     id: 382,
@@ -4264,7 +4264,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4eff\u9020",
     ename: "Copycat",
     id: 383,
@@ -4275,7 +4275,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u529b\u91cf\u4ea4\u6362",
     ename: "Power Swap",
     id: 384,
@@ -4286,7 +4286,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9632\u5fa1\u4ea4\u6362",
     ename: "Guard Swap",
     id: 385,
@@ -4297,7 +4297,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u60e9\u7f5a",
     ename: "Punishment",
     id: 386,
@@ -4308,7 +4308,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u73cd\u85cf",
     ename: "Last Resort",
     id: 387,
@@ -4319,7 +4319,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u70e6\u607c\u79cd\u5b50",
     ename: "Worry Seed",
     id: 388,
@@ -4330,7 +4330,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7a81\u88ad",
     ename: "Sucker Punch",
     id: 389,
@@ -4341,7 +4341,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6bd2\u5c16\u9489",
     ename: "Toxic Spikes",
     id: 390,
@@ -4352,7 +4352,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4ea4\u6362\u610f\u5fd7",
     ename: "Heart Swap",
     id: 391,
@@ -4363,7 +4363,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6c34\u67f1\u5708",
     ename: "Aqua Ring",
     id: 392,
@@ -4374,7 +4374,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7535\u78c1\u6d6e\u6e38",
     ename: "Magnet Rise",
     id: 393,
@@ -4385,7 +4385,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7206\u708e\u7535\u51fb",
     ename: "Flare Blitz",
     id: 394,
@@ -4396,7 +4396,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53d1\u52b2",
     ename: "Force Palm",
     id: 395,
@@ -4407,7 +4407,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce2\u5bfc\u5f39",
     ename: "Aura Sphere",
     id: 396,
@@ -4418,7 +4418,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u78e8\u5149\u5ca9\u77f3",
     ename: "Rock Polish",
     id: 397,
@@ -4430,7 +4430,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6bd2\u523a",
     ename: "Poison Jab",
     id: 398,
@@ -4442,7 +4442,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6076\u6ce2\u52a8",
     ename: "Dark Pulse",
     id: 399,
@@ -4454,7 +4454,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8857\u5934\u8bd5\u5200",
     ename: "Night Slash",
     id: 400,
@@ -4465,7 +4465,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6c34\u67f1\u5c3e",
     ename: "Aqua Tail",
     id: 401,
@@ -4476,7 +4476,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u79cd\u5b50\u7206\u5f39",
     ename: "Seed Bomb",
     id: 402,
@@ -4487,7 +4487,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7a7a\u6c14\u780d",
     ename: "Air Slash",
     id: 403,
@@ -4498,7 +4498,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u526a\u5200\u5341\u5b57\u62f3",
     ename: "X-Scissor",
     id: 404,
@@ -4510,7 +4510,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u866b\u9e23",
     ename: "Bug Buzz",
     id: 405,
@@ -4521,7 +4521,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9f99\u6ce2\u52a8",
     ename: "Dragon Pulse",
     id: 406,
@@ -4532,7 +4532,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9f99\u795e\u4fef\u51b2",
     ename: "Dragon Rush",
     id: 407,
@@ -4543,7 +4543,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u529b\u91cf\u5b9d\u77f3",
     ename: "Power Gem",
     id: 408,
@@ -4554,7 +4554,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5438\u6536\u62f3",
     ename: "Drain Punch",
     id: 409,
@@ -4565,7 +4565,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u771f\u7a7a\u6ce2",
     ename: "Vacuum Wave",
     id: 410,
@@ -4576,7 +4576,7 @@ export const allMoves = [
   },
   {
     accuracy: 70,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u96c6\u6c14\u5f39",
     ename: "Focus Blast",
     id: 411,
@@ -4588,7 +4588,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u80fd\u6e90\u7403",
     ename: "Energy Ball",
     id: 412,
@@ -4600,7 +4600,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u795e\u9e1f\u7279\u653b",
     ename: "Brave Bird",
     id: 413,
@@ -4611,7 +4611,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5927\u5730\u4e4b\u529b",
     ename: "Earth Power",
     id: 414,
@@ -4622,7 +4622,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6389\u5305",
     ename: "Switcheroo",
     id: 415,
@@ -4633,7 +4633,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8d85\u6781\u51b2\u51fb",
     ename: "Giga Impact",
     id: 416,
@@ -4645,7 +4645,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8be1\u8ba1",
     ename: "Nasty Plot",
     id: 417,
@@ -4656,7 +4656,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u5f39\u62f3",
     ename: "Bullet Punch",
     id: 418,
@@ -4667,7 +4667,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u96ea\u5d29",
     ename: "Avalanche",
     id: 419,
@@ -4678,7 +4678,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b0\u7c92",
     ename: "Ice Shard",
     id: 420,
@@ -4689,7 +4689,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5f71\u5b50\u94a9\u722a",
     ename: "Shadow Claw",
     id: 421,
@@ -4701,7 +4701,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u96f7\u7259",
     ename: "Thunder Fang",
     id: 422,
@@ -4712,7 +4712,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51b0\u7259",
     ename: "Ice Fang",
     id: 423,
@@ -4723,7 +4723,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u708e\u7259",
     ename: "Fire Fang",
     id: 424,
@@ -4734,7 +4734,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5f71\u5b50\u5077\u88ad",
     ename: "Shadow Sneak",
     id: 425,
@@ -4745,7 +4745,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce5\u5df4\u7206\u5f39",
     ename: "Mud Bomb",
     id: 426,
@@ -4756,7 +4756,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5e7b\u8c61\u65a9",
     ename: "Psycho Cut",
     id: 427,
@@ -4767,7 +4767,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u610f\u5ff5\u5934\u9524",
     ename: "Zen Headbutt",
     id: 428,
@@ -4778,7 +4778,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u955c\u5149\u5c04\u51fb",
     ename: "Mirror Shot",
     id: 429,
@@ -4789,7 +4789,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5149\u6cfd\u7535\u70ae",
     ename: "Flash Cannon",
     id: 430,
@@ -4801,7 +4801,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6500\u767b\u5ca9\u77f3",
     ename: "Rock Climb",
     id: 431,
@@ -4812,7 +4812,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6e05\u9664\u6d53\u96fe",
     ename: "Defog",
     id: 432,
@@ -4823,7 +4823,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9a97\u672f\u7a7a\u95f4",
     ename: "Trick Room",
     id: 433,
@@ -4835,7 +4835,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5929\u9f99\u6d41\u661f",
     ename: "Draco Meteor",
     id: 434,
@@ -4846,7 +4846,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u653e\u7535",
     ename: "Discharge",
     id: 435,
@@ -4857,7 +4857,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u55b7\u70df",
     ename: "Lava Plume",
     id: 436,
@@ -4868,7 +4868,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u53f6\u66b4\u98ce",
     ename: "Leaf Storm",
     id: 437,
@@ -4879,7 +4879,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u80fd\u91cf\u97ad\u6253",
     ename: "Power Whip",
     id: 438,
@@ -4890,7 +4890,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5ca9\u77f3\u70ae",
     ename: "Rock Wrecker",
     id: 439,
@@ -4901,7 +4901,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5341\u5b57\u6bd2\u836f",
     ename: "Cross Poison",
     id: 440,
@@ -4912,7 +4912,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7070\u5c18\u5c04\u51fb",
     ename: "Gunk Shot",
     id: 441,
@@ -4923,7 +4923,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u94c1\u5934",
     ename: "Iron Head",
     id: 442,
@@ -4934,7 +4934,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u78c1\u94c1\u7206\u5f39",
     ename: "Magnet Bomb",
     id: 443,
@@ -4945,7 +4945,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5c16\u77f3\u653b\u51fb",
     ename: "Stone Edge",
     id: 444,
@@ -4957,7 +4957,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8bf1\u60d1",
     ename: "Captivate",
     id: 445,
@@ -4968,7 +4968,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9690\u5f62\u5ca9",
     ename: "Stealth Rock",
     id: 446,
@@ -4979,7 +4979,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6253\u8349\u7ed3",
     ename: "Grass Knot",
     id: 447,
@@ -4991,7 +4991,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u558b\u558b\u4e0d\u4f11",
     ename: "Chatter",
     id: 448,
@@ -5002,7 +5002,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5236\u88c1\u77f3\u783e",
     ename: "Judgment",
     id: 449,
@@ -5013,7 +5013,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u866b\u54ac",
     ename: "Bug Bite",
     id: 450,
@@ -5024,7 +5024,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5145\u7535\u5149\u675f",
     ename: "Charge Beam",
     id: 451,
@@ -5036,7 +5036,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6728\u69cc",
     ename: "Wood Hammer",
     id: 452,
@@ -5047,7 +5047,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u55b7\u5c04\u6c34\u67f1",
     ename: "Aqua Jet",
     id: 453,
@@ -5058,7 +5058,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u653b\u51fb\u6307\u4ee4",
     ename: "Attack Order",
     id: 454,
@@ -5069,7 +5069,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9632\u5fa1\u6307\u4ee4",
     ename: "Defend Order",
     id: 455,
@@ -5080,7 +5080,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u56de\u590d\u6307\u4ee4",
     ename: "Heal Order",
     id: 456,
@@ -5091,7 +5091,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53cc\u5203\u5934\u9524",
     ename: "Head Smash",
     id: 457,
@@ -5102,7 +5102,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53cc\u91cd\u653b\u51fb",
     ename: "Double Hit",
     id: 458,
@@ -5113,7 +5113,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u65f6\u95f4\u5486\u54ee",
     ename: "Roar of Time",
     id: 459,
@@ -5124,7 +5124,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9694\u7a7a\u5207\u65ad",
     ename: "Spacial Rend",
     id: 460,
@@ -5135,7 +5135,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u65b0\u6708\u821e",
     ename: "Lunar Dance",
     id: 461,
@@ -5146,7 +5146,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u634f\u788e",
     ename: "Crush Grip",
     id: 462,
@@ -5157,7 +5157,7 @@ export const allMoves = [
   },
   {
     accuracy: 75,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5ca9\u6d46\u66b4\u98ce",
     ename: "Magma Storm",
     id: 463,
@@ -5168,7 +5168,7 @@ export const allMoves = [
   },
   {
     accuracy: 80,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9ed1\u6d1e",
     ename: "Dark Void",
     id: 464,
@@ -5179,7 +5179,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u79cd\u5b50\u95ea\u5149",
     ename: "Seed Flare",
     id: 465,
@@ -5190,7 +5190,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5947\u5f02\u4e4b\u98ce",
     ename: "Ominous Wind",
     id: 466,
@@ -5201,7 +5201,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5f71\u5b50\u6f5c\u6c34",
     ename: "Shadow Force",
     id: 467,
@@ -5212,7 +5212,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u78e8\u722a\u5b50",
     ename: "Hone Claws",
     id: 468,
@@ -5224,7 +5224,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5168\u4f53\u9632\u5fa1",
     ename: "Wide Guard",
     id: 469,
@@ -5235,7 +5235,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9632\u5fa1\u5e73\u5206",
     ename: "Guard Split",
     id: 470,
@@ -5246,7 +5246,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u529b\u91cf\u5e73\u5206",
     ename: "Power Split",
     id: 471,
@@ -5257,7 +5257,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5947\u5999\u7a7a\u95f4",
     ename: "Wonder Room",
     id: 472,
@@ -5268,7 +5268,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5e7b\u8c61\u653b\u51fb",
     ename: "Psyshock",
     id: 473,
@@ -5280,7 +5280,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6bd2\u6db2\u653b\u51fb",
     ename: "Venoshock",
     id: 474,
@@ -5292,7 +5292,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4f53\u91cd\u51cf\u8f7b",
     ename: "Autotomize",
     id: 475,
@@ -5303,7 +5303,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6124\u6012\u4e4b\u7c89",
     ename: "Rage Powder",
     id: 476,
@@ -5314,7 +5314,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5fc3\u7075\u4f20\u52a8\u672f",
     ename: "Telekinesis",
     id: 477,
@@ -5325,7 +5325,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9b54\u6cd5\u7a7a\u95f4",
     ename: "Magic Room",
     id: 478,
@@ -5336,7 +5336,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51fb\u843d",
     ename: "Smack Down",
     id: 479,
@@ -5348,7 +5348,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5c71\u5c9a",
     ename: "Storm Throw",
     id: 480,
@@ -5359,7 +5359,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7206\u70b8\u706b\u7130",
     ename: "Flame Burst",
     id: 481,
@@ -5370,7 +5370,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6ce5\u6d46\u6ce2",
     ename: "Sludge Wave",
     id: 482,
@@ -5382,7 +5382,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8776\u4e4b\u821e",
     ename: "Quiver Dance",
     id: 483,
@@ -5393,7 +5393,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6c89\u91cd\u8f70\u70b8",
     ename: "Heavy Slam",
     id: 484,
@@ -5404,7 +5404,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u540c\u6b65\u5e72\u6270",
     ename: "Synchronoise",
     id: 485,
@@ -5415,7 +5415,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7535\u7403",
     ename: "Electro Ball",
     id: 486,
@@ -5426,7 +5426,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6d78\u6c34",
     ename: "Soak",
     id: 487,
@@ -5437,7 +5437,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u706b\u7130\u88ad\u51fb",
     ename: "Flame Charge",
     id: 488,
@@ -5449,7 +5449,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u76d8\u5377",
     ename: "Coil",
     id: 489,
@@ -5460,7 +5460,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4f4e\u7a7a\u8e22",
     ename: "Low Sweep",
     id: 490,
@@ -5472,7 +5472,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9178\u6db2\u70b8\u5f39",
     ename: "Acid Spray",
     id: 491,
@@ -5483,7 +5483,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8bc8\u6b3a",
     ename: "Foul Play",
     id: 492,
@@ -5494,7 +5494,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5355\u7eaf\u5149\u7ebf",
     ename: "Simple Beam",
     id: 493,
@@ -5505,7 +5505,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u53d8\u4e3a\u540c\u4f34",
     ename: "Entrainment",
     id: 494,
@@ -5516,7 +5516,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4f60\u5148\u8bf7",
     ename: "After You",
     id: 495,
@@ -5527,7 +5527,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8f6e\u5531",
     ename: "Round",
     id: 496,
@@ -5539,7 +5539,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u56de\u97f3",
     ename: "Echoed Voice",
     id: 497,
@@ -5551,7 +5551,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5faa\u5e8f\u6e10\u8fdb",
     ename: "Chip Away",
     id: 498,
@@ -5562,7 +5562,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6e05\u9664\u8ff7\u96fe",
     ename: "Clear Smog",
     id: 499,
@@ -5573,7 +5573,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u534f\u52a9\u529b\u91cf",
     ename: "Stored Power",
     id: 500,
@@ -5584,7 +5584,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5148\u5236\u9632\u5fa1",
     ename: "Quick Guard",
     id: 501,
@@ -5595,7 +5595,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4f4d\u7f6e\u4ea4\u6362",
     ename: "Ally Switch",
     id: 502,
@@ -5606,7 +5606,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u70ed\u6c34",
     ename: "Scald",
     id: 503,
@@ -5618,7 +5618,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7834\u58f3",
     ename: "Shell Smash",
     id: 504,
@@ -5629,7 +5629,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6cbb\u6108\u6ce2\u52a8",
     ename: "Heal Pulse",
     id: 505,
@@ -5640,7 +5640,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5384\u8fd0\u4e34\u5934",
     ename: "Hex",
     id: 506,
@@ -5651,7 +5651,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u81ea\u7531\u843d\u4f53",
     ename: "Sky Drop",
     id: 507,
@@ -5663,7 +5663,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4ea4\u6362\u9f7f\u8f6e",
     ename: "Shift Gear",
     id: 508,
@@ -5674,7 +5674,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5df4\u6295",
     ename: "Circle Throw",
     id: 509,
@@ -5685,7 +5685,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u70e7\u5c3d",
     ename: "Incinerate",
     id: 510,
@@ -5697,7 +5697,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5ef6\u540e",
     ename: "Quash",
     id: 511,
@@ -5709,7 +5709,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7279\u6280\u6f14\u5458",
     ename: "Acrobatics",
     id: 512,
@@ -5721,7 +5721,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u955c\u5b50\u7cfb",
     ename: "Reflect Type",
     id: 513,
@@ -5732,7 +5732,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8ba8\u654c",
     ename: "Retaliate",
     id: 514,
@@ -5744,7 +5744,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8d4c\u547d",
     ename: "Final Gambit",
     id: 515,
@@ -5755,7 +5755,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u793c\u7269\u4f20\u9012",
     ename: "Bestow",
     id: 516,
@@ -5766,7 +5766,7 @@ export const allMoves = [
   },
   {
     accuracy: 50,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u70bc\u72f1",
     ename: "Inferno",
     id: 517,
@@ -5777,7 +5777,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6c34\u7684\u8a93\u7ea6",
     ename: "Water Pledge",
     id: 518,
@@ -5788,7 +5788,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u708e\u7684\u8a93\u7ea6",
     ename: "Fire Pledge",
     id: 519,
@@ -5799,7 +5799,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u8349\u7684\u8a93\u7ea6",
     ename: "Grass Pledge",
     id: 520,
@@ -5810,7 +5810,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u4ea4\u6362\u4f0f\u7279",
     ename: "Volt Switch",
     id: 521,
@@ -5822,7 +5822,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u866b\u7684\u62b5\u6297",
     ename: "Struggle Bug",
     id: 522,
@@ -5834,7 +5834,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6574\u5730",
     ename: "Bulldoze",
     id: 523,
@@ -5846,7 +5846,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u51b0\u5438",
     ename: "Frost Breath",
     id: 524,
@@ -5858,7 +5858,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9f99\u5c3e",
     ename: "Dragon Tail",
     id: 525,
@@ -5870,7 +5870,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u81ea\u6211\u6fc0\u52b1",
     ename: "Work Up",
     id: 526,
@@ -5881,7 +5881,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7535\u7f51",
     ename: "Electroweb",
     id: 527,
@@ -5892,7 +5892,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u75af\u72c2\u4f0f\u7279",
     ename: "Wild Charge",
     id: 528,
@@ -5904,7 +5904,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u4f4e\u7a7a\u94bb",
     ename: "Drill Run",
     id: 529,
@@ -5915,7 +5915,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u53cc\u91cd\u5288",
     ename: "Dual Chop",
     id: 530,
@@ -5926,7 +5926,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7231\u5fc3\u6363\u51fb",
     ename: "Heart Stamp",
     id: 531,
@@ -5937,7 +5937,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6728\u89d2",
     ename: "Horn Leech",
     id: 532,
@@ -5948,7 +5948,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5723\u5251",
     ename: "Sacred Sword",
     id: 533,
@@ -5959,7 +5959,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8d1d\u58f3\u5200",
     ename: "Razor Shell",
     id: 534,
@@ -5970,7 +5970,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9ad8\u6e29\u6363\u51fb",
     ename: "Heat Crash",
     id: 535,
@@ -5981,7 +5981,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9752\u8349\u6405\u62cc\u5668",
     ename: "Leaf Tornado",
     id: 536,
@@ -5992,7 +5992,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u75af\u72c2\u6eda\u52a8",
     ename: "Steamroller",
     id: 537,
@@ -6003,7 +6003,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u68c9\u82b1\u9632\u5fa1",
     ename: "Cotton Guard",
     id: 538,
@@ -6014,7 +6014,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9ed1\u591c\u7206\u88c2",
     ename: "Night Daze",
     id: 539,
@@ -6025,7 +6025,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7cbe\u795e\u7834\u574f",
     ename: "Psystrike",
     id: 540,
@@ -6036,7 +6036,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u626b\u5df4\u638c",
     ename: "Tail Slap",
     id: 541,
@@ -6047,7 +6047,7 @@ export const allMoves = [
   },
   {
     accuracy: 70,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u66b4\u98ce",
     ename: "Hurricane",
     id: 542,
@@ -6058,7 +6058,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7206\u7206\u5934\u7a81\u51fb",
     ename: "Head Charge",
     id: 543,
@@ -6069,7 +6069,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u9f7f\u8f6e\u98de\u76d8",
     ename: "Gear Grind",
     id: 544,
@@ -6080,7 +6080,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u706b\u708e\u5f39",
     ename: "Searing Shot",
     id: 545,
@@ -6091,7 +6091,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7834\u574f\u6280\u672f",
     ename: "Techno Blast",
     id: 546,
@@ -6102,7 +6102,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u53e4\u8001\u4e4b\u6b4c",
     ename: "Relic Song",
     id: 547,
@@ -6113,7 +6113,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u795e\u79d8\u4e4b\u5251",
     ename: "Secret Sword",
     id: 548,
@@ -6124,7 +6124,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u51b0\u51bb\u4e16\u754c",
     ename: "Glaciate",
     id: 549,
@@ -6135,7 +6135,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u96f7\u51fb",
     ename: "Bolt Strike",
     id: 550,
@@ -6146,7 +6146,7 @@ export const allMoves = [
   },
   {
     accuracy: 85,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9752\u708e",
     ename: "Blue Flare",
     id: 551,
@@ -6157,7 +6157,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u708e\u4e4b\u821e",
     ename: "Fiery Dance",
     id: 552,
@@ -6168,7 +6168,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51bb\u7ed3\u4f0f\u7279",
     ename: "Freeze Shock",
     id: 553,
@@ -6179,7 +6179,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5bd2\u51b7\u95ea\u5149",
     ename: "Ice Burn",
     id: 554,
@@ -6190,7 +6190,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5927\u58f0\u5486\u54ee",
     ename: "Snarl",
     id: 555,
@@ -6202,7 +6202,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6389\u843d\u51b0\u67f1",
     ename: "Icicle Crash",
     id: 556,
@@ -6213,7 +6213,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u80dc\u5229V\u70ed\u708e",
     ename: "V-create",
     id: 557,
@@ -6224,7 +6224,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5341\u5b57\u4ea4\u53c9\u706b\u7130",
     ename: "Fusion Flare",
     id: 558,
@@ -6235,7 +6235,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5341\u5b57\u4ea4\u53c9\u95ea\u7535",
     ename: "Fusion Bolt",
     id: 559,
@@ -6246,7 +6246,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u98de\u884c\u91cd\u538b",
     ename: "Flying Press",
     id: 560,
@@ -6257,7 +6257,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u57ab\u8fd4",
     ename: "Mat Block",
     id: 561,
@@ -6268,7 +6268,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6253\u55dd",
     ename: "Belch",
     id: 562,
@@ -6279,7 +6279,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8015\u5730",
     ename: "Rototiller",
     id: 563,
@@ -6290,7 +6290,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u7c98\u7f51",
     ename: "Sticky Web",
     id: 564,
@@ -6301,7 +6301,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u51fb\u5012\u9488\u523a",
     ename: "Fell Stinger",
     id: 565,
@@ -6312,7 +6312,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5e7d\u7075\u4fef\u51b2",
     ename: "Phantom Force",
     id: 566,
@@ -6323,7 +6323,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u4e07\u5723\u591c\u72c2\u6b22",
     ename: "Trick-or-Treat",
     id: 567,
@@ -6334,7 +6334,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u6218\u543c",
     ename: "Noble Roar",
     id: 568,
@@ -6345,7 +6345,7 @@ export const allMoves = [
   },
   {
     accuracy: 25,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7535\u6d46\u9635\u96e8",
     ename: "Ion Deluge",
     id: 569,
@@ -6356,7 +6356,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u629b\u7269\u7ebf\u5145\u7535",
     ename: "Parabolic Charge",
     id: 570,
@@ -6367,7 +6367,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u68ee\u6797\u8bc5\u5492",
     ename: "Forest's Curse",
     id: 571,
@@ -6378,7 +6378,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u82b1\u74e3\u66b4\u98ce\u96ea",
     ename: "Petal Blizzard",
     id: 572,
@@ -6389,7 +6389,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u51b0\u51bb\u5e72\u71e5",
     ename: "Freeze-Dry",
     id: 573,
@@ -6400,7 +6400,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9b45\u60d1\u4e4b\u97f3",
     ename: "Disarming Voice",
     id: 574,
@@ -6411,7 +6411,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u653e\u72e0\u8bdd",
     ename: "Parting Shot",
     id: 575,
@@ -6422,7 +6422,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7ffb\u5012",
     ename: "Topsy-Turvy",
     id: 576,
@@ -6433,7 +6433,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5438\u6536\u4e4b\u543b",
     ename: "Draining Kiss",
     id: 577,
@@ -6444,7 +6444,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u72e1\u733e\u9632\u5fa1",
     ename: "Crafty Shield",
     id: 578,
@@ -6455,7 +6455,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9c9c\u82b1\u9632\u5fa1",
     ename: "Flower Shield",
     id: 579,
@@ -6466,7 +6466,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8349\u539f\u573a\u5730",
     ename: "Grassy Terrain",
     id: 580,
@@ -6477,7 +6477,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u8584\u96fe\u573a\u5730",
     ename: "Misty Terrain",
     id: 581,
@@ -6488,7 +6488,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u9001\u7535",
     ename: "Electrify",
     id: 582,
@@ -6499,7 +6499,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5b09\u620f",
     ename: "Play Rough",
     id: 583,
@@ -6510,7 +6510,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u5996\u7cbe\u4e4b\u98ce",
     ename: "Fairy Wind",
     id: 584,
@@ -6521,7 +6521,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6708\u4e4b\u529b\u91cf",
     ename: "Moonblast",
     id: 585,
@@ -6532,7 +6532,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7206\u97f3\u6ce2",
     ename: "Boomburst",
     id: 586,
@@ -6543,7 +6543,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5996\u7cbe\u4e4b\u9501",
     ename: "Fairy Lock",
     id: 587,
@@ -6554,7 +6554,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u738b\u8005\u4e4b\u76fe",
     ename: "King's Shield",
     id: 588,
@@ -6565,7 +6565,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u505a\u670b\u53cb",
     ename: "Play Nice",
     id: 589,
@@ -6576,7 +6576,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u79c1\u8bdd",
     ename: "Confide",
     id: 590,
@@ -6588,7 +6588,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6c34\u4e4b\u624b\u91cc\u5251",
     ename: "Water Shuriken",
     id: 594,
@@ -6599,7 +6599,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9b54\u6cd5\u706b\u7130",
     ename: "Mystical Fire",
     id: 595,
@@ -6610,7 +6610,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u523a\u9488\u9632\u5fa1",
     ename: "Spiky Shield",
     id: 596,
@@ -6621,7 +6621,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u82b3\u9999\u8584\u96fe",
     ename: "Aromatic Mist",
     id: 597,
@@ -6632,7 +6632,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u602a\u7535\u6ce2",
     ename: "Eerie Impulse",
     id: 598,
@@ -6643,7 +6643,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u6bd2\u6db2\u9677\u9631",
     ename: "Venom Drench",
     id: 599,
@@ -6654,7 +6654,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7c89\u5c18",
     ename: "Powder",
     id: 600,
@@ -6665,7 +6665,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5927\u5730\u63a7\u5236",
     ename: "Geomancy",
     id: 601,
@@ -6676,7 +6676,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u78c1\u573a\u64cd\u4f5c",
     ename: "Magnetic Flux",
     id: 602,
@@ -6687,7 +6687,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5feb\u4e50\u65f6\u95f4",
     ename: "Happy Hour",
     id: 603,
@@ -6698,7 +6698,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u7535\u6c14\u573a\u5730",
     ename: "Electric Terrain",
     id: 604,
@@ -6709,7 +6709,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u9b54\u6cd5\u7167\u8000",
     ename: "Dazzling Gleam",
     id: 605,
@@ -6721,7 +6721,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5e86\u795d",
     ename: "Celebration",
     id: 606,
@@ -6732,7 +6732,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "\u5706\u6ed1\u76ee\u5149",
     ename: "Baby-Doll Eyes",
     id: 608,
@@ -6743,7 +6743,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u8e6d\u8e6d\u8138",
     ename: "Nuzzle",
     id: 609,
@@ -6754,7 +6754,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u7f20\u8eab",
     ename: "Infestation",
     id: 611,
@@ -6766,7 +6766,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5347\u529b\u62f3",
     ename: "Power-Up Punch",
     id: 612,
@@ -6778,7 +6778,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "\u6b7b\u4ea1\u4e4b\u7ffc",
     ename: "Oblivion Wing",
     id: 613,
@@ -6789,7 +6789,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "\u5927\u5730\u539f\u529b",
     ename: "Land's Wrath",
     id: 616,
@@ -6800,7 +6800,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Diamond Storm",
     id: 617,
@@ -6812,7 +6812,7 @@ export const allMoves = [
   },
   {
     accuracy: null,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "",
     ename: "Hyperspace Hole",
     id: 618,
@@ -6824,7 +6824,7 @@ export const allMoves = [
   },
   {
     accuracy: 95,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "",
     ename: "Steam Eruption",
     id: 619,
@@ -6836,7 +6836,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "",
     ename: "Dynamax Cannon",
     id: 620,
@@ -6848,7 +6848,7 @@ export const allMoves = [
   },
   {
     accuracy: 90,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "",
     ename: "Eternabeam",
     id: 621,
@@ -6860,7 +6860,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7279\u6b8a",
+    category: "special",
     cname: "",
     ename: "Snipe Shot",
     id: 622,
@@ -6872,7 +6872,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Jaw Lock",
     id: 623,
@@ -6883,7 +6883,7 @@ export const allMoves = [
   },
   {
     accuracy: 101,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "Stuff Cheeks",
     id: 624,
@@ -6894,7 +6894,7 @@ export const allMoves = [
   },
   {
     accuracy: 101,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "No Retreat",
     id: 625,
@@ -6905,7 +6905,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "Tar Shot",
     id: 626,
@@ -6916,7 +6916,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "Magic Powder",
     id: 627,
@@ -6927,7 +6927,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Dragon Darts",
     id: 628,
@@ -6938,7 +6938,7 @@ export const allMoves = [
   },
   {
     accuracy: 101,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "Teatime",
     id: 629,
@@ -6949,7 +6949,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u53d8\u5316",
+    category: "status",
     cname: "",
     ename: "Octolock",
     id: 630,
@@ -6960,7 +6960,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Bolt Beak",
     id: 631,
@@ -6971,7 +6971,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Fishious Rend",
     id: 632,
@@ -6982,7 +6982,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Behemoth Blade",
     id: 633,
@@ -6993,7 +6993,7 @@ export const allMoves = [
   },
   {
     accuracy: 100,
-    category: "\u7269\u7406",
+    category: "physical",
     cname: "",
     ename: "Behemoth Bash",
     id: 634,

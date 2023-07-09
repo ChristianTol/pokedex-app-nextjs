@@ -174,13 +174,7 @@ const Moves = ({ moves, baseColor }) => {
             className={`py-2 rounded-md flex w-1/12 justify-center items-center overflow-hidden`}
           >
             <img
-              src={`icons/${
-                move.category === "\u7269\u7406"
-                  ? "physical2"
-                  : move.category === "\u7279\u6b8a"
-                  ? "special2"
-                  : "status2"
-              }.png`}
+              src={`icons/${move.category}.png`}
               height={45}
               width={45}
               alt="type-icon"
