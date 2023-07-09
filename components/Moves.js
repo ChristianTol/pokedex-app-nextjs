@@ -6,11 +6,13 @@ import "@reach/dialog/styles.css";
 import Loader from "./Loader";
 
 const Moves = ({ moves, baseColor }) => {
-  const [selectedGame, setGame] = useState("ultra-sun-ultra-moon");
+  const [selectedGame, setGame] = useState("scarlet-violet");
   const [learnMethod, setMethod] = useState("level-up");
   const [moveData, setMoveData] = useState(null);
   const [modal, setModal] = useState(false);
   const [moveList, setMoveList] = useState([]);
+
+  console.log(moves);
 
   useEffect(() => {
     const filteredMoves = moves.filter((move) => {
@@ -49,7 +51,8 @@ const Moves = ({ moves, baseColor }) => {
     "omega-ruby-alpha-sapphire",
     "sun-moon",
     "ultra-sun-ultra-moon",
-    // "sword-shield",
+    "sword-shield",
+    "scarlet-violet",
   ];
 
   const bringMovesData = (e, moveURL) => {
@@ -238,30 +241,77 @@ const Moves = ({ moves, baseColor }) => {
     <div className="move-list rounded-md pb-2 hidden sm:block">
       <Modal />
 
-      <div className="flex justify-center mb-3 text-white w-full mt-8">
-        <div
-          className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
-            learnMethod === "level-up" ? "selected" : null
-          }`}
-          onClick={() => setMethod("level-up")}
-        >
-          Level Up
+      <div className="flex items-center mb-3 text-white w-full mt-8">
+        <div className="flex justify-end grow-[8]">
+          <div
+            className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
+              learnMethod === "level-up" ? "selected" : null
+            }`}
+            onClick={() => setMethod("level-up")}
+          >
+            Level Up
+          </div>
+          <div
+            className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
+              learnMethod === "tutor" ? "selected" : null
+            }`}
+            onClick={() => setMethod("tutor")}
+          >
+            Tutor
+          </div>
+          <div
+            className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-gray-100 hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
+              learnMethod === "machine" ? "selected" : null
+            }`}
+            onClick={() => setMethod("machine")}
+          >
+            Machine
+          </div>
         </div>
-        <div
-          className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
-            learnMethod === "tutor" ? "selected" : null
-          }`}
-          onClick={() => setMethod("tutor")}
-        >
-          Tutor
-        </div>
-        <div
-          className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-gray-100 hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
-            learnMethod === "machine" ? "selected" : null
-          }`}
-          onClick={() => setMethod("machine")}
-        >
-          Machine
+        <div className="flex justify-center grow-[2]">
+          <select
+            name="game-selection"
+            className="game-dropdown"
+            value={selectedGame}
+            onChange={(e) => setGame(e.target.value)}
+          >
+            {gameList.map((x) => {
+              let formattedOption = x;
+              if (x.includes("-")) {
+                const words = x.split("-");
+                if (words.length === 2) {
+                  formattedOption =
+                    words[0].charAt(0).toUpperCase() +
+                    words[0].slice(1) +
+                    " & " +
+                    words[1].charAt(0).toUpperCase() +
+                    words[1].slice(1);
+                } else {
+                  formattedOption = words
+                    .map((word, index) => {
+                      if (index === 1) {
+                        return (
+                          word.charAt(0).toUpperCase() + word.slice(1) + " &"
+                        );
+                      }
+                      return word.charAt(0).toUpperCase() + word.slice(1);
+                    })
+                    .join(" ");
+                }
+              } else {
+                formattedOption = x.charAt(0).toUpperCase() + x.slice(1);
+              }
+              return (
+                <option
+                  key={x}
+                  value={x}
+                  className="capitalize bg-slate-900 text-xs"
+                >
+                  {formattedOption}
+                </option>
+              );
+            })}
+          </select>
         </div>
       </div>
       <div className="divTable lg:px-16 my-10">
@@ -282,25 +332,6 @@ const Moves = ({ moves, baseColor }) => {
             {finalMoves}
           </div>
         </div>
-      </div>
-
-      <div className="flex justify-center">
-        <select
-          name="game-selection"
-          className="game-dropdown"
-          value={selectedGame}
-          onChange={(e) => setGame(e.target.value)}
-        >
-          {gameList.map((x) => (
-            <option
-              key={x}
-              value={x}
-              className="capitalize bg-slate-900 text-xs"
-            >
-              {x.replace("-", " ")}
-            </option>
-          ))}
-        </select>
       </div>
     </div>
   );
