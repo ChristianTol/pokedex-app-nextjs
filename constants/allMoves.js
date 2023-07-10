@@ -5125,7 +5125,7 @@ export const allMoves = [
   {
     accuracy: 95,
     category: "special",
-    cname: "\u9694\u7a7a\u5207\u65ad",
+    cname: "\u65f6\u95f4\u5486\u54ee",
     ename: "Spacial Rend",
     id: 460,
     jname: "\u3042\u304f\u3046\u305b\u3064\u3060\u3093",

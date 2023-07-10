@@ -74,8 +74,8 @@ const Moves = ({ moves, baseColor }) => {
     .map((singleMoveFromAPI) => {
       const moveStatsFromBigFat = allMoves.filter(
         (bigFatMove) =>
-          bigFatMove.ename.toLowerCase().replace(" ", "") ===
-          singleMoveFromAPI.move.name.replace("-", "")
+          bigFatMove.ename.toLowerCase().replaceAll("-", " ") ===
+          singleMoveFromAPI.move.name.replaceAll("-", " ")
       );
 
       const moveURL = singleMoveFromAPI.move.url;
