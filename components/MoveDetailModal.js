@@ -26,7 +26,7 @@ const MoveDetailModal = ({
     >
       <div className={`move-modal-container flex justify-center items-center`}>
         {moveData ? (
-          <div className="max-w-[500px] text-center">
+          <div className="w-[500px] text-center">
             <h1
               className={`text-4xl  font-bold mb-5 text-white ${baseColor}-color`}
             >
