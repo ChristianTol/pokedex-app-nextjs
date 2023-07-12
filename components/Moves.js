@@ -1,15 +1,16 @@
 import { allMoves } from "../constants/allMoves";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import Loader from "./Loader";
+import MoveDetailModal from "./MoveDetailModal";
 
-const Moves = ({ moves, baseColor }) => {
+const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [selectedGame, setGame] = useState("scarlet-violet");
   const [learnMethod, setMethod] = useState("level-up");
   const [moveData, setMoveData] = useState(null);
-  const [modal, setModal] = useState(false);
+  const [showMoveDetailModal, setShowMoveDetailModal] = useState(false);
   const [moveList, setMoveList] = useState([]);
 
   console.log(moves);
@@ -56,7 +57,7 @@ const Moves = ({ moves, baseColor }) => {
   ];
 
   const bringMovesData = (e, moveURL) => {
-    setModal(true);
+    setShowMoveDetailModal(true);
     axios
       .get(moveURL)
       .then((res) => {
@@ -68,6 +69,21 @@ const Moves = ({ moves, baseColor }) => {
         setMoveData({ data: res.data, fte: englishFTE });
       })
       .catch((e) => console.log(e));
+  };
+
+  const toggleModal = (pokemonDetails) => {
+    // if (pokemonDetails) {
+    //   setDetailPokemon(pokemonDetails);
+    // } else {
+    //   setDetailPokemon({});
+    // }
+    setShowMoveDetailModal((value) => !value);
+
+    if (!showMoveDetailModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
 
   const finalMoves = moves
@@ -191,70 +207,77 @@ const Moves = ({ moves, baseColor }) => {
       );
     });
 
-  const Modal = () => {
-    const close = () => {
-      setModal(false);
-      setMoveData(null);
-    };
+  // const Modal = () => {
+  //   const close = () => {
+  //     setModal(false);
+  //     setMoveData(null);
+  //   };
 
-    return (
-      <Dialog
-        isOpen={modal}
-        onDismiss={close}
-        aria-label="Pokemon Move Information"
-      >
-        <div className="w-full leading-relaxed text-center md:py-8 md:px-12 rounded">
-          {moveData ? (
-            <div className="w-full h-full text-center capitalize flex-1">
-              <h1 className={`text-4xl text-white ${baseColor}-color`}>
-                {moveData.data.name}
-              </h1>
-              <h2 className="text-white mt-1">
-                {moveData.data.type.name} type move
-              </h2>
-              <div className="flex justify-between w-full mt-12 text-white">
-                <div className="text-center">
-                  <h3>Accuracy</h3>
-                  <h4>
-                    {moveData.data.accuracy ? moveData.data.accuracy : "-"}
-                  </h4>
-                </div>
-                <div className="text-center">
-                  <h3>Power</h3>
-                  <h4>{moveData.data.power ? moveData.data.power : "-"}</h4>
-                </div>
-                <div className="text-center">
-                  <h3>PP</h3>
-                  <h4>{moveData.data.pp ? moveData.data.pp : "-"}</h4>
-                </div>
-                <div className="text-center">
-                  <h3>Priority</h3>
-                  <h4>
-                    {moveData.data.priority ? moveData.data.priority : "-"}
-                  </h4>
-                </div>
-              </div>
-              <div className="my-6">
-                <p className="text-white">{moveData.fte[0].flavor_text}</p>
-              </div>
-              <span
-                className="bg-red-500 rounded px-3 py-2 text-white hover:bg-red-600 cursor-pointer"
-                onClick={close}
-              >
-                Close
-              </span>
-            </div>
-          ) : (
-            <Loader />
-          )}
-        </div>
-      </Dialog>
-    );
-  };
+  //   return (
+  //     <Dialog
+  //       isOpen={modal}
+  //       onDismiss={close}
+  //       aria-label="Pokemon Move Information"
+  //     >
+  //       <div className="w-full leading-relaxed text-center md:py-8 md:px-12 rounded">
+  //         {moveData ? (
+  //           <div className="w-full h-full text-center capitalize flex-1">
+  //             <h1 className={`text-4xl text-white ${baseColor}-color`}>
+  //               {moveData.data.name}
+  //             </h1>
+  //             <h2 className="text-white mt-1">
+  //               {moveData.data.type.name} type move
+  //             </h2>
+  //             <div className="flex justify-between w-full mt-12 text-white">
+  //               <div className="text-center">
+  //                 <h3>Accuracy</h3>
+  //                 <h4>
+  //                   {moveData.data.accuracy ? moveData.data.accuracy : "-"}
+  //                 </h4>
+  //               </div>
+  //               <div className="text-center">
+  //                 <h3>Power</h3>
+  //                 <h4>{moveData.data.power ? moveData.data.power : "-"}</h4>
+  //               </div>
+  //               <div className="text-center">
+  //                 <h3>PP</h3>
+  //                 <h4>{moveData.data.pp ? moveData.data.pp : "-"}</h4>
+  //               </div>
+  //               <div className="text-center">
+  //                 <h3>Priority</h3>
+  //                 <h4>
+  //                   {moveData.data.priority ? moveData.data.priority : "-"}
+  //                 </h4>
+  //               </div>
+  //             </div>
+  //             <div className="my-6">
+  //               <p className="text-white">{moveData.fte[0].flavor_text}</p>
+  //             </div>
+  //             <span
+  //               className="bg-red-500 rounded px-3 py-2 text-white hover:bg-red-600 cursor-pointer"
+  //               onClick={close}
+  //             >
+  //               Close
+  //             </span>
+  //           </div>
+  //         ) : (
+  //           <Loader />
+  //         )}
+  //       </div>
+  //     </Dialog>
+  //   );
+  // };
 
   return (
     <div className="move-list rounded-md pb-2 hidden sm:block">
-      <Modal />
+      {showMoveDetailModal && (
+        <MoveDetailModal
+          moveData={moveData}
+          pokemonDetails={pokemonDetails}
+          baseColor={baseColor}
+          toggleModal={toggleModal}
+        />
+      )}
 
       <div className="flex items-center mb-3 text-white w-full mt-8">
         <div className="flex justify-end grow-[8]">

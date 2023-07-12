@@ -134,7 +134,10 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             {/* <h2>Any content 2</h2> */}
           </TabPanel>
           <TabPanel className="flex">
-            <Moves moves={pokemonDetails.moves} />
+            <Moves
+              moves={pokemonDetails.moves}
+              pokemonDetails={pokemonDetails}
+            />
           </TabPanel>
         </Tabs>
       </div>
