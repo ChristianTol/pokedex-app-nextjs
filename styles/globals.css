@@ -191,6 +191,16 @@ html, body {
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes dropDown {
   0% {
     opacity: 0;
@@ -259,6 +269,7 @@ html, body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
+  animation: fadeIn 0.5s ease-in-out;
   top: 0;
   left: 0;
   z-index: 10;
@@ -295,7 +306,7 @@ html, body {
   padding: 20px;
   position: relative;
   /* display: flex; */
-  animation: fadeIn 0.4s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
   overflow-y: scroll;
   /* max-width: 960px; */
   max-width: 1200px;
@@ -308,6 +319,7 @@ html, body {
   right: 22px;
   border: none;
   background-color: transparent;
+  animation: fadeIn 0.5s ease-in-out;
   cursor: pointer;
   font-size: 3rem;
   display: none;
