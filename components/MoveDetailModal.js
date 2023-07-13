@@ -27,11 +27,22 @@ const MoveDetailModal = ({
       <div className={`move-modal-container flex justify-center items-center`}>
         {moveData ? (
           <div className="w-[500px] text-center">
-            <h1
-              className={`text-4xl  font-bold mb-5 text-white ${baseColor}-color`}
-            >
-              {cleanWords(moveData.data.name)}
-            </h1>
+            <div className="flex justify-center items-center mb-5">
+              <div>
+                <img
+                  className="mr-1 mt-1"
+                  src={`/icons/TM/${moveData.data.type.name.toLowerCase()}-tm.png`}
+                  height={45}
+                  width={45}
+                  alt="tm-icon"
+                />
+              </div>
+              <h1
+                className={`text-4xl  font-bold text-white ${baseColor}-color`}
+              >
+                {cleanWords(moveData.data.name)}
+              </h1>
+            </div>
             <div
               className={`py-2 max-w-[120px] m-auto rounded-md flex justify-center items-center overflow-hidden ${moveData.data.type.name.toLowerCase()}`}
             >

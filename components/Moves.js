@@ -164,14 +164,23 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
     .map((move) => {
       return (
         <div
-          className="flex w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-4 transition-colors duration-400 items-center"
+          className="flex w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-3 transition-colors duration-400 items-center"
           key={move.name}
           onClick={(e) => bringMovesData(e, move.url)}
         >
           {learnMethod === "level-up" ? (
             <div className="w-1/12 text-[1.1rem]">{move.level}</div>
           ) : null}
-          <div className="w-2/12 text-[1.1rem]">{move.name}</div>
+          <div className="w-2/12 text-[1.1rem] flex row items-center">
+            <img
+              className="mr-0 mt-1"
+              src={`/icons/TM/${move.type.toLowerCase()}-tm.png`}
+              height={30}
+              width={30}
+              alt="type-icon"
+            />
+            {move.name}
+          </div>
           <div
             className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden ${move.type.toLowerCase()}`}
           >
@@ -280,7 +289,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
       )}
 
       <div className="flex items-center mb-3 text-white w-full mt-8">
-        <div className="flex justify-end grow-[8]">
+        <div className="flex justify-end grow-[6]">
           <div
             className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
               learnMethod === "level-up" ? "selected" : null
@@ -303,7 +312,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             }`}
             onClick={() => setMethod("machine")}
           >
-            Machine
+            TM's
           </div>
         </div>
         <div className="flex justify-center grow-[2]">
