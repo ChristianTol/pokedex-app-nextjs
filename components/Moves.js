@@ -64,7 +64,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         const englishFTE = res.data.flavor_text_entries.filter(
           (ft) =>
             ft.language.name === "en" &&
-            ft.version_group.name === "ultra-sun-ultra-moon"
+            ft.version_group.name === "sword-shield"
         );
         setMoveData({ data: res.data, fte: englishFTE });
       })
