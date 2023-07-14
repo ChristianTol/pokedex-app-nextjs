@@ -312,7 +312,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             }`}
             onClick={() => setMethod("machine")}
           >
-            TM's
+            TM&apos;s
           </div>
         </div>
         <div className="flex justify-center grow-[2]">
