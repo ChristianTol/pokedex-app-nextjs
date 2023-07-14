@@ -70,7 +70,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
           background: `linear-gradient(${typeColorGradient[0]} 35%, ${typeColorGradient[1]}) 100%`,
         }}
       >
-        <Tabs className="flex flex-col items-center mx-auto">
+        <Tabs className="flex flex-col items-center m-auto">
           <TabList className="flex flex-row mb-5">
             <Tab
               id="tab1"
