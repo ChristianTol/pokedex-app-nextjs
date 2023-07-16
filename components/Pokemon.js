@@ -6,7 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 
-const Pokemon = ({ pokemon, toggleModal }) => {
+const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
   // const [changeImage, setChangeImage] = useState(false);
@@ -51,6 +51,12 @@ const Pokemon = ({ pokemon, toggleModal }) => {
           <span
             key={type.type.name}
             className={`px-2 py-1 gap-1 rounded flex bg-white ${type.type.name}`}
+            onClick={(e) => {
+              const newType = type.type.name;
+              const currentType = filters.type;
+              const updatedType = newType === currentType ? "all" : newType;
+              updateFilters({ type: updatedType });
+            }}
           >
             <Image
               src={`/icons/${type.type.name}.svg`}

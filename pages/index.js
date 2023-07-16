@@ -176,6 +176,8 @@ export default function Home({ initialPokemon }) {
                 key={pokemon.id}
                 pokemon={pokemon}
                 toggleModal={toggleModal}
+                updateFilters={updateFilters}
+                filters={filters}
               />
             ))}
           </div>
