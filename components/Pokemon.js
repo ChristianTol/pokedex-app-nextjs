@@ -9,6 +9,7 @@ import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
+  const [currentRegion, setCurrentRegion] = useState("all");
   // const [changeImage, setChangeImage] = useState(false);
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
@@ -31,7 +32,41 @@ const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
           height={35}
         />
       </button>
-      <span className="absolute text-2xl top-1 left-3 font-bold">
+      <span
+        onClick={(e) => {
+          const storedScrollPosition = localStorage.getItem("scrollPosition");
+          const scrollPosition = storedScrollPosition
+            ? parseInt(storedScrollPosition)
+            : 0;
+          const newRegion =
+            pokeIndex >= 1 && pokeIndex <= 151
+              ? "kanto"
+              : pokeIndex >= 152 && pokeIndex <= 251
+              ? "johto"
+              : pokeIndex >= 252 && pokeIndex <= 368
+              ? "hoenn"
+              : pokeIndex >= 369 && pokeIndex <= 493
+              ? "sinnoh"
+              : pokeIndex >= 494 && pokeIndex <= 649
+              ? "unova"
+              : pokeIndex >= 650 && pokeIndex <= 721
+              ? "kalos"
+              : pokeIndex >= 722 && pokeIndex <= 809
+              ? "alola"
+              : pokeIndex >= 810 && pokeIndex <= 898
+              ? "galar"
+              : pokeIndex >= 899 && pokeIndex <= 905
+              ? "hisui"
+              : pokeIndex >= 900 && pokeIndex <= 1010
+              ? "paldea"
+              : "all";
+          const currentRegion = filters.region;
+          const updatedRegion = newRegion === currentRegion ? "all" : newRegion;
+          updateFilters({ region: updatedRegion });
+          window.scrollTo(0, scrollPosition);
+        }}
+        className="absolute text-2xl top-1 left-3 font-bold"
+      >
         No. {pokeIndex}
       </span>
       <div className="mt-3" onClick={() => toggleModal(pokemon)}>

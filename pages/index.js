@@ -80,6 +80,7 @@ export default function Home({ initialPokemon }) {
       window.innerHeight + document.documentElement.scrollTop + 1 >=
       document.documentElement.offsetHeight
     ) {
+      localStorage.setItem("scrollPosition", window.scrollY.toString());
       setTimeout(() => {
         setInfiniteLoading(true);
         loadMorePokemon();
