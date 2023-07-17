@@ -408,11 +408,6 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
                 onClick={() => handleSort("level")}
               >
                 Lvl.
-                {isMove ? (
-                  <span>&#9650;</span> // Upward arrow icon
-                ) : (
-                  <span>&#9660;</span> // Downward arrow icon
-                )}
               </div>
             ) : null}
 
@@ -421,7 +416,6 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
               onClick={() => handleSort("move")}
             >
               Move
-              {isMove ? <span>&#9650;</span> : <span>&#9660;</span>}
             </div>
             <div className="w-2/12 lg:pl-4">Type</div>
             <div className="w-1/12">Power</div>
