@@ -12,7 +12,10 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [moveData, setMoveData] = useState(null);
   const [showMoveDetailModal, setShowMoveDetailModal] = useState(false);
   const [moveList, setMoveList] = useState([]);
-  const [isAscending, setIsAscending] = useState(true);
+  const [isLevel, setIsLevel] = useState(true);
+  const [isMove, setIsMove] = useState(false);
+  const [sortBy, setSortBy] = useState("");
+  const [isMoveAscending, setIsMoveAscending] = useState();
 
   console.log(moves);
 
@@ -87,8 +90,24 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
     }
   };
 
-  const handleSort = () => {
-    setIsAscending((prev) => !prev);
+  const handleSort = (value) => {
+    if (value === "level") {
+      if (sortBy === "level") {
+        setIsLevel((prev) => !prev);
+      } else {
+        setSortBy("level");
+        setIsLevel(true);
+        setIsMove(false);
+      }
+    } else if (value === "move") {
+      if (sortBy === "move") {
+        setIsMove((prev) => !prev);
+      } else {
+        setSortBy("move");
+        setIsMove(true);
+        setIsLevel(false);
+      }
+    }
   };
 
   const finalMoves = moves
@@ -166,12 +185,16 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
     })
     .filter((move) => move !== null);
 
-  const sortedMoves = null;
+  let sortedMoves = [...finalMoves];
 
-  if (isAscending) {
-    sortedMoves = [...finalMoves].sort((a, b) => a.level - b.level);
-  } else {
-    sortedMoves = [...finalMoves].sort((a, b) => b.level - a.level);
+  if (sortBy === "level") {
+    sortedMoves = isLevel
+      ? sortedMoves.sort((a, b) => a.level - b.level)
+      : sortedMoves.sort((a, b) => b.level - a.level);
+  } else if (sortBy === "move") {
+    sortedMoves = isMove
+      ? sortedMoves.sort((a, b) => a.name.localeCompare(b.name))
+      : sortedMoves.sort((a, b) => b.name.localeCompare(a.name));
   }
 
   const movesToRender = sortedMoves.map((move) => {
@@ -380,9 +403,12 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             className={`row flex justify-between w-full border-b-2 shadow-2xl pr-4 font-bold ${baseColor}-color text-sm lg:text-lg`}
           >
             {learnMethod === "level-up" ? (
-              <div className="w-1/12 cursor-pointer" onClick={handleSort}>
+              <div
+                className="w-1/12 cursor-pointer"
+                onClick={() => handleSort("level")}
+              >
                 Lvl.
-                {isAscending ? (
+                {isMove ? (
                   <span>&#9650;</span> // Upward arrow icon
                 ) : (
                   <span>&#9660;</span> // Downward arrow icon
@@ -390,7 +416,13 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
               </div>
             ) : null}
 
-            <div className="w-2/12 lg:pl-4">Move</div>
+            <div
+              className="w-2/12 lg:pl-4 cursor-pointer"
+              onClick={() => handleSort("move")}
+            >
+              Move
+              {isMove ? <span>&#9650;</span> : <span>&#9660;</span>}
+            </div>
             <div className="w-2/12 lg:pl-4">Type</div>
             <div className="w-1/12">Power</div>
             {/* <div className="w-1/12">PP</div> */}
