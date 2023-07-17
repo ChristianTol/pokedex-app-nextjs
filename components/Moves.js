@@ -14,8 +14,8 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [moveList, setMoveList] = useState([]);
   const [isLevel, setIsLevel] = useState(true);
   const [isMove, setIsMove] = useState(false);
-  const [sortBy, setSortBy] = useState("");
-  const [isMoveAscending, setIsMoveAscending] = useState();
+  const [isType, setIsType] = useState(false);
+  const [sortBy, setSortBy] = useState("level");
 
   console.log(moves);
 
@@ -98,6 +98,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         setSortBy("level");
         setIsLevel(true);
         setIsMove(false);
+        setIsType(false);
       }
     } else if (value === "move") {
       if (sortBy === "move") {
@@ -105,6 +106,16 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
       } else {
         setSortBy("move");
         setIsMove(true);
+        setIsLevel(false);
+        setIsType(false);
+      }
+    } else if (value === "type") {
+      if (sortBy === "type") {
+        setIsType((prev) => !prev);
+      } else {
+        setSortBy("type");
+        setIsType(true);
+        setIsMove(false);
         setIsLevel(false);
       }
     }
@@ -195,6 +206,10 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
     sortedMoves = isMove
       ? sortedMoves.sort((a, b) => a.name.localeCompare(b.name))
       : sortedMoves.sort((a, b) => b.name.localeCompare(a.name));
+  } else if (sortBy === "type") {
+    sortedMoves = isType
+      ? sortedMoves.sort((a, b) => a.type.localeCompare(b.type))
+      : sortedMoves.sort((a, b) => b.type.localeCompare(a.type));
   }
 
   const movesToRender = sortedMoves.map((move) => {
@@ -417,7 +432,12 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             >
               Move
             </div>
-            <div className="w-2/12 lg:pl-4">Type</div>
+            <div
+              className="w-2/12 lg:pl-4 cursor-pointer"
+              onClick={() => handleSort("type")}
+            >
+              Type
+            </div>
             <div className="w-1/12">Power</div>
             {/* <div className="w-1/12">PP</div> */}
             <div className="w-1/12">Accuracy</div>
