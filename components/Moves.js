@@ -12,6 +12,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [moveData, setMoveData] = useState(null);
   const [showMoveDetailModal, setShowMoveDetailModal] = useState(false);
   const [moveList, setMoveList] = useState([]);
+  const [isAscending, setIsAscending] = useState(true);
 
   console.log(moves);
 
@@ -84,6 +85,10 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
     } else {
       document.body.style.overflow = "auto";
     }
+  };
+
+  const handleSort = () => {
+    setIsAscending((prev) => !prev);
   };
 
   const finalMoves = moves
@@ -159,62 +164,70 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         return null;
       }
     })
-    .filter((move) => move !== null)
-    .sort((a, b) => a.level - b.level)
-    .map((move) => {
-      return (
+    .filter((move) => move !== null);
+
+  const sortedMoves = null;
+
+  if (isAscending) {
+    sortedMoves = [...finalMoves].sort((a, b) => a.level - b.level);
+  } else {
+    sortedMoves = [...finalMoves].sort((a, b) => b.level - a.level);
+  }
+
+  const movesToRender = sortedMoves.map((move) => {
+    return (
+      <div
+        className="flex w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-3 transition-colors duration-400 items-center"
+        key={move.name}
+        onClick={(e) => bringMovesData(e, move.url)}
+      >
+        {learnMethod === "level-up" ? (
+          <div className="w-1/12 text-[1.1rem]">{move.level}</div>
+        ) : null}
+        <div className="w-2/12 text-[1.1rem] flex row items-center">
+          <img
+            className="mr-0 mt-1"
+            src={`/icons/TM/${move.type.toLowerCase()}-tm.png`}
+            height={30}
+            width={30}
+            alt="type-icon"
+          />
+          {move.name}
+        </div>
         <div
-          className="flex w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-3 transition-colors duration-400 items-center"
-          key={move.name}
-          onClick={(e) => bringMovesData(e, move.url)}
+          className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden ${move.type.toLowerCase()}`}
         >
-          {learnMethod === "level-up" ? (
-            <div className="w-1/12 text-[1.1rem]">{move.level}</div>
-          ) : null}
-          <div className="w-2/12 text-[1.1rem] flex row items-center">
-            <img
-              className="mr-0 mt-1"
-              src={`/icons/TM/${move.type.toLowerCase()}-tm.png`}
-              height={30}
-              width={30}
-              alt="type-icon"
-            />
-            {move.name}
-          </div>
-          <div
-            className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden ${move.type.toLowerCase()}`}
-          >
-            <img
-              src={`/icons/${move.type.toLowerCase()}.svg`}
-              height={20}
-              width={20}
-              alt="type-icon"
-            />
-            <p className="text-[1.1rem] pl-1">{move.type}</p>
-          </div>
-          <div className="w-1/12 text-[1.1rem]">{move.power}</div>
-          {/* <div className="w-1/12 text-[1.1rem]">{move.pp}</div> */}
-          <div className="w-1/12 text-[1.1rem]">{move.accuracy}</div>
-          <div
-            className={`py-2 rounded-md flex w-1/12 justify-center items-center overflow-hidden`}
-          >
-            <img
-              src={`icons/${move.category}.png`}
-              height={45}
-              width={45}
-              alt="type-icon"
-            />
-          </div>
-          {/* <div className="w-1/12">
+          <img
+            src={`/icons/${move.type.toLowerCase()}.svg`}
+            height={20}
+            width={20}
+            alt="type-icon"
+          />
+          <p className="text-[1.1rem] pl-1">{move.type}</p>
+        </div>
+        <div className="w-1/12 text-[1.1rem]">{move.power}</div>
+        {/* <div className="w-1/12 text-[1.1rem]">{move.pp}</div> */}
+        <div className="w-1/12 text-[1.1rem]">{move.accuracy}</div>
+        <div
+          className={`py-2 rounded-md flex w-1/12 justify-center items-center overflow-hidden`}
+        >
+          <img
+            src={`icons/${move.category}.png`}
+            height={45}
+            width={45}
+            alt="type-icon"
+          />
+        </div>
+        {/* <div className="w-1/12">
           <div
             className={`icon ${move.type.toLowerCase()} w-[50px] p-2 rounded-md flex`}
           >
             <img src={`/icons/${move.type.toLowerCase()}.svg`} alt="type-icon" />
           </div>
         </div> */}
-        </div>
-      );
-    });
+      </div>
+    );
+  });
 
   // const Modal = () => {
   //   const close = () => {
@@ -367,8 +380,16 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             className={`row flex justify-between w-full border-b-2 shadow-2xl pr-4 font-bold ${baseColor}-color text-sm lg:text-lg`}
           >
             {learnMethod === "level-up" ? (
-              <div className="w-1/12">Lvl.</div>
+              <div className="w-1/12 cursor-pointer" onClick={handleSort}>
+                Lvl.
+                {isAscending ? (
+                  <span>&#9650;</span> // Upward arrow icon
+                ) : (
+                  <span>&#9660;</span> // Downward arrow icon
+                )}
+              </div>
             ) : null}
+
             <div className="w-2/12 lg:pl-4">Move</div>
             <div className="w-2/12 lg:pl-4">Type</div>
             <div className="w-1/12">Power</div>
@@ -377,7 +398,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             <div className="w-1/12">Category</div>
           </div>
           <div className="overflow-y-scroll overflow-x-hidden py-3 bg-transparent border-b border-gray-300">
-            {finalMoves}
+            {movesToRender}
           </div>
         </div>
       </div>
