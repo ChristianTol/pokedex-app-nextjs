@@ -128,7 +128,7 @@ const Pokemon = ({
         {pokemon.types?.map((type, index) => (
           <span
             key={type.type.name}
-            className={`px-2 py-2 md:py-3 rounded flex items-center justify-center sm:py-1 gap-1
+            className={`px-2 py-2 md:py-3 rounded flex items-center justify-center sm:py-1 sm:gap-1
             ${isMobile && type.type.name}`}
             onClick={(e) => {
               const newType = type.type.name;
