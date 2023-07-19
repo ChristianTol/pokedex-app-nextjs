@@ -13,6 +13,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [showMoveDetailModal, setShowMoveDetailModal] = useState(false);
   const [moveList, setMoveList] = useState([]);
   const [isLevel, setIsLevel] = useState(true);
+  const [isPower, setIsPower] = useState(false);
   const [isMove, setIsMove] = useState(false);
   const [isType, setIsType] = useState(false);
   const [sortBy, setSortBy] = useState("level");
@@ -91,33 +92,53 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   };
 
   const handleSort = (value) => {
-    if (value === "level") {
-      if (sortBy === "level") {
-        setIsLevel((prev) => !prev);
-      } else {
-        setSortBy("level");
-        setIsLevel(true);
-        setIsMove(false);
-        setIsType(false);
-      }
-    } else if (value === "move") {
-      if (sortBy === "move") {
-        setIsMove((prev) => !prev);
-      } else {
-        setSortBy("move");
-        setIsMove(true);
-        setIsLevel(false);
-        setIsType(false);
-      }
-    } else if (value === "type") {
-      if (sortBy === "type") {
-        setIsType((prev) => !prev);
-      } else {
-        setSortBy("type");
-        setIsType(true);
-        setIsMove(false);
-        setIsLevel(false);
-      }
+    switch (value) {
+      case "level":
+        if (sortBy === "level") {
+          setIsLevel((prev) => !prev);
+        } else {
+          setSortBy("level");
+          setIsLevel(true);
+          setIsMove(false);
+          setIsType(false);
+          setIsPower(false);
+        }
+        break;
+      case "power":
+        if (sortBy === "power") {
+          setIsPower((prev) => !prev);
+        } else {
+          setSortBy("power");
+          setIsPower(true);
+          setIsLevel(false);
+          setIsMove(false);
+          setIsType(false);
+        }
+        break;
+      case "move":
+        if (sortBy === "move") {
+          setIsMove((prev) => !prev);
+        } else {
+          setSortBy("move");
+          setIsMove(true);
+          setIsLevel(false);
+          setIsType(false);
+          setIsPower(false);
+        }
+        break;
+      case "type":
+        if (sortBy === "type") {
+          setIsType((prev) => !prev);
+        } else {
+          setSortBy("type");
+          setIsType(true);
+          setIsMove(false);
+          setIsLevel(false);
+          setIsPower(false);
+        }
+        break;
+      default:
+        break;
     }
   };
 
@@ -198,18 +219,49 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
 
   let sortedMoves = [...finalMoves];
 
-  if (sortBy === "level") {
-    sortedMoves = isLevel
-      ? sortedMoves.sort((a, b) => a.level - b.level)
-      : sortedMoves.sort((a, b) => b.level - a.level);
-  } else if (sortBy === "move") {
-    sortedMoves = isMove
-      ? sortedMoves.sort((a, b) => a.name.localeCompare(b.name))
-      : sortedMoves.sort((a, b) => b.name.localeCompare(a.name));
-  } else if (sortBy === "type") {
-    sortedMoves = isType
-      ? sortedMoves.sort((a, b) => a.type.localeCompare(b.type))
-      : sortedMoves.sort((a, b) => b.type.localeCompare(a.type));
+  switch (sortBy) {
+    case "level":
+      sortedMoves = isLevel
+        ? sortedMoves.sort((a, b) => a.level - b.level)
+        : sortedMoves.sort((a, b) => b.level - a.level);
+      break;
+    case "power":
+      sortedMoves = isPower
+        ? sortedMoves.sort((a, b) => {
+            if (a.power === "-" && b.power === "-") {
+              return 0;
+            } else if (a.power === "-") {
+              return 1;
+            } else if (b.power === "-") {
+              return -1;
+            } else {
+              return a.power - b.power;
+            }
+          })
+        : sortedMoves.sort((a, b) => {
+            if (a.power === "-" && b.power === "-") {
+              return 0;
+            } else if (a.power === "-") {
+              return 1;
+            } else if (b.power === "-") {
+              return -1;
+            } else {
+              return b.power - a.power;
+            }
+          });
+      break;
+    case "move":
+      sortedMoves = isMove
+        ? sortedMoves.sort((a, b) => a.name.localeCompare(b.name))
+        : sortedMoves.sort((a, b) => b.name.localeCompare(a.name));
+      break;
+    case "type":
+      sortedMoves = isType
+        ? sortedMoves.sort((a, b) => a.type.localeCompare(b.type))
+        : sortedMoves.sort((a, b) => b.type.localeCompare(a.type));
+      break;
+    default:
+      break;
   }
 
   const movesToRender = sortedMoves.map((move) => {
@@ -438,7 +490,12 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             >
               Type
             </div>
-            <div className="w-1/12">Power</div>
+            <div
+              className="w-2/12 lg:pl-4 cursor-pointer"
+              onClick={() => handleSort("power")}
+            >
+              Power
+            </div>
             {/* <div className="w-1/12">PP</div> */}
             <div className="w-1/12">Accuracy</div>
             <div className="w-1/12">Category</div>
