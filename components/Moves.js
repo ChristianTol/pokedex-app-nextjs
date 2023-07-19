@@ -298,7 +298,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             <div className="h-[36px] w-[40px] flex items-center justify-center pr-[6px]">
               <Image
                 className=""
-                src={`/icons/${move.type}.svg`}
+                src={`/icons/${move.type.toLowerCase()}.svg`}
                 alt={`${move.type}`}
                 width={20}
                 height={20}
