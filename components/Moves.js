@@ -5,6 +5,8 @@ import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import Loader from "./Loader";
 import MoveDetailModal from "./MoveDetailModal";
+import Image from "next/image";
+import { capitalizeFirstLetter } from "../helper/helper";
 
 const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [selectedGame, setGame] = useState("scarlet-violet");
@@ -285,15 +287,35 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
           {move.name}
         </div>
         <div
-          className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden ${move.type.toLowerCase()}`}
+          className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden}`}
         >
-          <img
-            src={`/icons/${move.type.toLowerCase()}.svg`}
-            height={20}
-            width={20}
-            alt="type-icon"
-          />
-          <p className="text-[1.1rem] pl-1">{move.type}</p>
+          <div
+            className={`${move.type.toLowerCase()} rounded-l m-[-5px]`}
+            style={{
+              clipPath: "polygon(0 0, 100% 0, 75% 100%, 0 100%)",
+            }}
+          >
+            <div className="h-[36px] w-[40px] flex items-center justify-center pr-[6px]">
+              <Image
+                className=""
+                src={`/icons/${move.type}.svg`}
+                alt={`${move.type}`}
+                width={20}
+                height={20}
+              />
+            </div>
+          </div>
+          <div
+            className="h-[36px] w-[100px] flex items-center justify-center m-[-5px] rounded-r bg-slate-800 font-bold"
+            style={{
+              clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", // Apply the diagonal shape with overlap
+              // fontWeight: 700,
+            }}
+          >
+            <p className="hidden md:inline uppercase px-[8px]">
+              {capitalizeFirstLetter(move.type)}
+            </p>
+          </div>
         </div>
         <div className="w-1/12 text-[1.1rem]">{move.power}</div>
         {/* <div className="w-1/12 text-[1.1rem]">{move.pp}</div> */}
@@ -471,7 +493,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
           >
             {learnMethod === "level-up" ? (
               <div
-                className="w-1/12 cursor-pointer"
+                className="w-2/12 cursor-pointer"
                 onClick={() => handleSort("level")}
               >
                 Lvl.
@@ -479,25 +501,25 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             ) : null}
 
             <div
-              className="w-2/12 lg:pl-4 cursor-pointer"
+              className="w-2/12 lg:pl-6 cursor-pointer"
               onClick={() => handleSort("move")}
             >
               Move
             </div>
             <div
-              className="w-2/12 lg:pl-4 cursor-pointer"
+              className="w-2/12 lg:pl-20 cursor-pointer"
               onClick={() => handleSort("type")}
             >
               Type
             </div>
             <div
-              className="w-2/12 lg:pl-4 cursor-pointer"
+              className="w-2/12 lg:pl-12 cursor-pointer"
               onClick={() => handleSort("power")}
             >
               Power
             </div>
             {/* <div className="w-1/12">PP</div> */}
-            <div className="w-1/12">Accuracy</div>
+            <div className="w-2/12">Accuracy</div>
             <div className="w-1/12">Category</div>
           </div>
           <div className="overflow-y-scroll overflow-x-hidden py-3 bg-transparent border-b border-gray-300">

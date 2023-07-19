@@ -6,7 +6,14 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 
-const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
+const Pokemon = ({
+  pokemon,
+  toggleModal,
+  updateFilters,
+  filters,
+  setInfiniteLoading,
+  loadMorePokemon,
+}) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("all");
@@ -34,10 +41,9 @@ const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
       </button>
       <span
         onClick={(e) => {
-          const storedScrollPosition = localStorage.getItem("scrollPosition");
-          const scrollPosition = storedScrollPosition
-            ? parseInt(storedScrollPosition)
-            : 0;
+          const targetScrollElement = e.currentTarget;
+          const scrollContainer = document.documentElement || document.body;
+          const scrollPosition = scrollContainer.scrollTop;
           const newRegion =
             pokeIndex >= 1 && pokeIndex <= 151
               ? "kanto"
@@ -61,14 +67,50 @@ const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
               ? "paldea"
               : "all";
           const currentRegion = filters.region;
+
+          if (currentRegion !== newRegion) {
+            const scrollPositions =
+              JSON.parse(localStorage.getItem("scrollPositions")) || {};
+            scrollPositions[currentRegion] = scrollPosition;
+            localStorage.setItem(
+              "scrollPositions",
+              JSON.stringify(scrollPositions)
+            );
+          }
+
           const updatedRegion = newRegion === currentRegion ? "all" : newRegion;
           updateFilters({ region: updatedRegion });
-          window.scrollTo(0, scrollPosition);
+
+          if (updatedRegion !== "all") {
+            const scrollPositions =
+              JSON.parse(localStorage.getItem("scrollPositions")) || {};
+            const restoredScrollPosition = scrollPositions[updatedRegion] || 0;
+
+            // Wait for the browser to render the updated content before scrolling
+            setTimeout(() => {
+              scrollContainer.scrollTop =
+                restoredScrollPosition +
+                targetScrollElement.getBoundingClientRect().top;
+            }, 0);
+          } else {
+            const storedScrollPositions =
+              JSON.parse(localStorage.getItem("scrollPositions")) || {};
+            const restoredScrollPosition =
+              storedScrollPositions[updatedRegion] || 0;
+
+            // Restore infinite scroll and load from the previous position
+            setTimeout(() => {
+              setInfiniteLoading(true);
+              loadMorePokemon(restoredScrollPosition);
+            }, 500);
+            setInfiniteLoading(false);
+          }
         }}
         className="absolute text-2xl top-1 left-3 font-bold"
       >
         No. {pokeIndex}
       </span>
+
       <div className="mt-3" onClick={() => toggleModal(pokemon)}>
         <LazyLoadImage
           className="w-[180px] h-[180px] md:w-[250px] sm:h-[250px]"
@@ -81,11 +123,11 @@ const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
           effect="blur"
         />
       </div>
-      <div className="flex gap-2 my-2">
-        {pokemon.types?.map((type) => (
+      <div className="gap-2 flex my-2">
+        {pokemon.types?.map((type, index) => (
           <span
             key={type.type.name}
-            className={`px-2 py-1 gap-1 rounded flex bg-white ${type.type.name}`}
+            className="px-2 py-1 rounded flex items-center justify-center"
             onClick={(e) => {
               const newType = type.type.name;
               const currentType = filters.type;
@@ -93,15 +135,33 @@ const Pokemon = ({ pokemon, toggleModal, updateFilters, filters }) => {
               updateFilters({ type: updatedType });
             }}
           >
-            <Image
-              src={`/icons/${type.type.name}.svg`}
-              alt={`${type.type.name}`}
-              width={15}
-              height={15}
-            />
-            <p className="hidden md:inline">
-              {capitalizeFirstLetter(type.type.name)}
-            </p>
+            <div
+              className={`${type.type.name} rounded-l m-[-8px]`}
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)", // Apply the diagonal shape with overlap
+              }}
+            >
+              <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
+                <Image
+                  className=""
+                  src={`/icons/${type.type.name}.svg`}
+                  alt={`${type.type.name}`}
+                  width={20}
+                  height={20}
+                />
+              </div>
+            </div>
+            <div
+              className="h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r bg-slate-800 font-bold"
+              style={{
+                clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", // Apply the diagonal shape with overlap
+                // fontWeight: 700,
+              }}
+            >
+              <p className="hidden md:inline uppercase px-[8px]">
+                {capitalizeFirstLetter(type.type.name)}
+              </p>
+            </div>
           </span>
         ))}
       </div>
