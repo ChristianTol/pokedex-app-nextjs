@@ -17,6 +17,7 @@ const Pokemon = ({
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [shiny, setShiny] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("all");
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   // const [changeImage, setChangeImage] = useState(false);
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
@@ -123,11 +124,12 @@ const Pokemon = ({
           effect="blur"
         />
       </div>
-      <div className="gap-2 flex my-2">
+      <div className="gap-2 my-2 flex md:block xl:flex">
         {pokemon.types?.map((type, index) => (
           <span
             key={type.type.name}
-            className="px-2 py-2 rounded flex items-center justify-center"
+            className={`px-2 py-2 md:py-3 rounded flex items-center justify-center sm:py-1 gap-1
+            ${isMobile && type.type.name}`}
             onClick={(e) => {
               const newType = type.type.name;
               const currentType = filters.type;
@@ -135,6 +137,14 @@ const Pokemon = ({
               updateFilters({ type: updatedType });
             }}
           >
+            <div className="md:hidden">
+              <Image
+                src={`/icons/${type.type.name}.svg`}
+                alt={`${type.type.name}`}
+                width={15}
+                height={15}
+              />
+            </div>
             <div className="hidden md:flex">
               <div
                 className={`${type.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
