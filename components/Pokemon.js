@@ -127,7 +127,7 @@ const Pokemon = ({
         {pokemon.types?.map((type, index) => (
           <span
             key={type.type.name}
-            className="px-2 py-1 rounded flex items-center justify-center"
+            className="px-2 py-2 rounded flex items-center justify-center"
             onClick={(e) => {
               const newType = type.type.name;
               const currentType = filters.type;
@@ -135,32 +135,25 @@ const Pokemon = ({
               updateFilters({ type: updatedType });
             }}
           >
-            <div
-              className={`${type.type.name} rounded-l m-[-8px]`}
-              style={{
-                clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)", // Apply the diagonal shape with overlap
-              }}
-            >
-              <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
-                <Image
-                  className=""
-                  src={`/icons/${type.type.name}.svg`}
-                  alt={`${type.type.name}`}
-                  width={20}
-                  height={20}
-                />
+            <div className="hidden md:flex">
+              <div
+                className={`${type.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
+              >
+                <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
+                  <Image
+                    className=""
+                    src={`/icons/${type.type.name}.svg`}
+                    alt={`${type.type.name}`}
+                    width={20}
+                    height={20}
+                  />
+                </div>
               </div>
-            </div>
-            <div
-              className="h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r bg-slate-800 font-bold"
-              style={{
-                clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", // Apply the diagonal shape with overlap
-                // fontWeight: 700,
-              }}
-            >
-              <p className="hidden md:inline uppercase px-[8px]">
-                {capitalizeFirstLetter(type.type.name)}
-              </p>
+              <div className="h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r bg-slate-800 font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]">
+                <p className="hidden md:inline uppercase px-[8px]">
+                  {capitalizeFirstLetter(type.type.name)}
+                </p>
+              </div>
             </div>
           </span>
         ))}
