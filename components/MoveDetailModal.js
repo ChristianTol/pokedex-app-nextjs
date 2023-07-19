@@ -3,6 +3,7 @@ import { Loader } from "./Loader";
 import { getTypeColorGradient } from "./Pokemon";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 import { capitalizeFirstLetter, cleanWords } from "../helper/helper";
+import Image from "next/image";
 
 const MoveDetailModal = ({
   toggleModal,
@@ -43,18 +44,25 @@ const MoveDetailModal = ({
                 {cleanWords(moveData.data.name)}
               </h1>
             </div>
-            <div
-              className={`py-2 max-w-[120px] m-auto rounded-md flex justify-center items-center overflow-hidden ${moveData.data.type.name.toLowerCase()}`}
-            >
-              <img
-                src={`/icons/${moveData.data.type.name.toLowerCase()}.svg`}
-                height={20}
-                width={20}
-                alt="type-icon"
-              />
-              <p className="text-[1.2rem] pl-1">
-                {capitalizeFirstLetter(moveData.data.type.name)}
-              </p>
+            <div className="hidden md:flex justify-center">
+              <div
+                className={`${moveData.data.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
+              >
+                <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
+                  <Image
+                    className=""
+                    src={`/icons/${moveData.data.type.name}.svg`}
+                    alt={`${moveData.data.type.name}`}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+              </div>
+              <div className="h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r bg-slate-800 font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]">
+                <p className="hidden md:inline uppercase px-[8px]">
+                  {capitalizeFirstLetter(moveData.data.type.name)}
+                </p>
+              </div>
             </div>
             <div className="flex justify-between w-full mt-12 text-white">
               <div className="text-center">
