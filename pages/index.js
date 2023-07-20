@@ -171,7 +171,7 @@ export default function Home({ initialPokemon }) {
         {loading ? (
           <Loader />
         ) : (
-          <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
+          <div className="grid grid-cols-2 gap-5 mx-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-5 xl:grid-cols-5 xl:gap-10">
             {displayedPokemon.slice(0, numPokemon).map((pokemon) => (
               <Pokemon
                 key={pokemon.id}
@@ -179,6 +179,8 @@ export default function Home({ initialPokemon }) {
                 toggleModal={toggleModal}
                 updateFilters={updateFilters}
                 filters={filters}
+                setInfiniteLoading={setInfiniteLoading}
+                loadMorePokemon={loadMorePokemon}
               />
             ))}
           </div>
