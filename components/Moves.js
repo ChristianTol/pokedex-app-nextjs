@@ -306,7 +306,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             </div>
           </div>
           <div
-            className="h-[36px] w-[100px] flex items-center justify-center m-[-5px] rounded-r bg-slate-800 font-bold"
+            className={`h-[36px] w-[100px] flex items-center justify-center m-[-5px] rounded-r ${move.type.toLowerCase()}-text font-bold`}
             style={{
               clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", // Apply the diagonal shape with overlap
               // fontWeight: 700,

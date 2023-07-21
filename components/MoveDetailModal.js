@@ -58,7 +58,9 @@ const MoveDetailModal = ({
                   />
                 </div>
               </div>
-              <div className="h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r bg-slate-800 font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]">
+              <div
+                className={`h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r ${moveData.data.type.name.toLowerCase()}-text font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]`}
+              >
                 <p className="hidden md:inline uppercase px-[8px]">
                   {capitalizeFirstLetter(moveData.data.type.name)}
                 </p>
