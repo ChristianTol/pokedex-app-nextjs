@@ -10,6 +10,7 @@ const SpriteInfo = ({
   loading,
   speciesInfo,
 }) => {
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   return (
     <div className="info-box-sprite info-text">
       <h4 className="font-bold">
@@ -49,17 +50,45 @@ const SpriteInfo = ({
         {pokemonDetails.types?.map((type) => (
           <span
             key={type.type.name}
-            className={`px-2 py-1 gap-1 rounded flex font-normal bg-white ${type.type.name}`}
+            className={`px-2 py-0 md:py-3 rounded flex items-center justify-center 
+            ${isMobile && type.type.name}`}
+            onClick={(e) => {
+              const newType = type.type.name;
+              const currentType = filters.type;
+              const updatedType = newType === currentType ? "all" : newType;
+              updateFilters({ type: updatedType });
+            }}
           >
-            <Image
-              src={`/icons/${type.type.name}.svg`}
-              alt={`${type.type.name}`}
-              width={15}
-              height={15}
-            />
-            <p className="hidden md:inline">
-              {formatPokemonName(type.type.name)}
-            </p>
+            <div className="md:hidden">
+              <Image
+                src={`/icons/${type.type.name}.svg`}
+                alt={`${type.type.name}`}
+                width={15}
+                height={15}
+              />
+            </div>
+            <div className="hidden md:flex">
+              <div
+                className={`${type.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
+              >
+                <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
+                  <Image
+                    className=""
+                    src={`/icons/${type.type.name}.svg`}
+                    alt={`${type.type.name}`}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+              </div>
+              <div
+                className={`h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r ${type.type.name}-text font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]`}
+              >
+                <p className="hidden md:inline uppercase px-[8px]">
+                  {formatPokemonName(type.type.name)}
+                </p>
+              </div>
+            </div>
           </span>
         ))}
       </div>
