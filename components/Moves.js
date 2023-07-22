@@ -269,7 +269,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const movesToRender = sortedMoves.map((move) => {
     return (
       <div
-        className="flex w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-3 transition-colors duration-400 items-center"
+        className="flex w-[100%] lg:w-[900px] justify-between text-xs lg:text-sm text-white py-2 cursor-pointer hover:bg-slate-900 rounded-md p-3 transition-colors duration-400 items-center"
         key={move.name}
         onClick={(e) => bringMovesData(e, move.url)}
       >
@@ -290,12 +290,12 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
           className={`py-2 rounded-md flex w-2/12 justify-center items-center overflow-hidden}`}
         >
           <div
-            className={`${move.type.toLowerCase()} rounded-l m-[-5px]`}
+            className={`hidden lg:inline ${move.type.toLowerCase()} rounded-l m-[-5px]`}
             style={{
               clipPath: "polygon(0 0, 100% 0, 75% 100%, 0 100%)",
             }}
           >
-            <div className="h-[36px] w-[40px] flex items-center justify-center pr-[6px]">
+            <div className="hidden lg:flex h-[36px] w-[40px] items-center justify-center pr-[6px]">
               <Image
                 className=""
                 src={`/icons/${move.type.toLowerCase()}.svg`}
@@ -306,7 +306,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             </div>
           </div>
           <div
-            className={`h-[36px] w-[100px] flex items-center justify-center m-[-5px] rounded-r ${move.type.toLowerCase()}-text font-bold`}
+            className={`hidden lg:flex h-[36px] w-[100px] items-center justify-center m-[-5px] rounded-r ${move.type.toLowerCase()}-text font-bold`}
             style={{
               clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", // Apply the diagonal shape with overlap
               // fontWeight: 700,
@@ -317,11 +317,15 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             </p>
           </div>
         </div>
-        <div className="w-1/12 text-[1.1rem]">{move.power}</div>
+        <div className="hidden lg:inline w-1/12 text-[1.1rem]">
+          {move.power}
+        </div>
         {/* <div className="w-1/12 text-[1.1rem]">{move.pp}</div> */}
-        <div className="w-1/12 text-[1.1rem]">{move.accuracy}</div>
+        <div className="hidden lg:inline w-1/12 text-[1.1rem]">
+          {move.accuracy}
+        </div>
         <div
-          className={`py-2 rounded-md flex w-1/12 justify-center items-center overflow-hidden`}
+          className={`py-2 rounded-md hidden lg:flex w-1/12 justify-center items-center overflow-hidden`}
         >
           <img
             src={`icons/${move.category}.png`}
@@ -403,7 +407,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   // };
 
   return (
-    <div className="move-list rounded-md pb-2 hidden sm:block">
+    <div className="move-list rounded-md pb-2 sm:block">
       {showMoveDetailModal && (
         <MoveDetailModal
           moveData={moveData}
@@ -413,7 +417,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         />
       )}
 
-      <div className="flex items-center mb-3 text-white w-full mt-8">
+      <div className="flex flex-col lg:flex-row items-center mb-3 text-white w-full mt-8">
         <div className="flex justify-end grow-[6]">
           <div
             className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
@@ -489,7 +493,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
       <div className="divTable lg:px-16 my-10">
         <div className="body flex flex-col">
           <div
-            className={`row flex justify-between w-full border-b-2 shadow-2xl pr-4 font-bold ${baseColor}-color text-sm lg:text-lg`}
+            className={`row flex justify-between lg:w-full border-b-2 shadow-2xl pr-4 font-bold ${baseColor}-color text-sm lg:text-lg`}
           >
             {learnMethod === "level-up" ? (
               <div
@@ -501,26 +505,26 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
             ) : null}
 
             <div
-              className="w-2/12 lg:pl-6 cursor-pointer"
+              className="w-2/12 lg:pl-2 cursor-pointer"
               onClick={() => handleSort("move")}
             >
               Move
             </div>
             <div
-              className="w-2/12 lg:pl-20 cursor-pointer"
+              className="hidden lg:inline pl-20 w-2/12 cursor-pointer"
               onClick={() => handleSort("type")}
             >
               Type
             </div>
             <div
-              className="w-2/12 lg:pl-12 cursor-pointer"
+              className="hidden lg:inline pl-12 w-2/12  cursor-pointer"
               onClick={() => handleSort("power")}
             >
               Power
             </div>
             {/* <div className="w-1/12">PP</div> */}
-            <div className="w-2/12">Accuracy</div>
-            <div className="w-1/12">Category</div>
+            <div className="hidden lg:inline w-2/12">Accuracy</div>
+            <div className="hidden lg:inline w-1/12">Category</div>
           </div>
           <div className="overflow-y-scroll overflow-x-hidden py-3 bg-transparent border-b border-gray-300">
             {movesToRender}

@@ -25,7 +25,9 @@ const MoveDetailModal = ({
       className="modal-background"
       onClick={handleBackgroundClick}
     >
-      <div className={`move-modal-container flex justify-center items-center`}>
+      <div
+        className={`move-modal-container w-[100%] lg:w-[35%] flex justify-center items-center`}
+      >
         {moveData ? (
           <div className="w-[500px] text-center">
             <div className="flex justify-center items-center mb-5">
