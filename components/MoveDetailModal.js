@@ -46,7 +46,7 @@ const MoveDetailModal = ({
                 {cleanWords(moveData.data.name)}
               </h1>
             </div>
-            <div className="hidden md:flex justify-center">
+            <div className="flex justify-center">
               <div
                 className={`${moveData.data.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
               >
@@ -63,7 +63,7 @@ const MoveDetailModal = ({
               <div
                 className={`h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r ${moveData.data.type.name.toLowerCase()}-text font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]`}
               >
-                <p className="hidden md:inline uppercase px-[8px]">
+                <p className="uppercase px-[8px]">
                   {capitalizeFirstLetter(moveData.data.type.name)}
                 </p>
               </div>
