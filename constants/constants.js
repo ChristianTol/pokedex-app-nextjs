@@ -17,7 +17,7 @@ export const REGIONS = [
 export const REGION_INFO = {
   all: {
     start: 0,
-    limit: 1010,
+    limit: 1025,
   },
   kanto: {
     start: 0,
@@ -57,7 +57,7 @@ export const REGION_INFO = {
   },
   paldea: {
     start: 905,
-    limit: 105,
+    limit: 120,
   },
 };
 
