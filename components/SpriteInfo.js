@@ -41,7 +41,7 @@ const SpriteInfo = ({
         : speciesInfo?.genera?.[
             pokemonDetails.id >= 899 && pokemonDetails.id <= 905
               ? 5
-              : pokemonDetails.id >= 906 && pokemonDetails.id <= 1010
+              : pokemonDetails.id >= 906 && pokemonDetails.id <= 1025
               ? 3
               : 7
           ]?.genus}

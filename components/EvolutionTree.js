@@ -13,7 +13,7 @@ const EvolutionTree = ({
   setActive,
 }) => {
   const changeCurrentPokemon = (pokemonId) => {
-    setPokemonDetails(allPokemonDetails[pokemonId - 1]);
+    setPokemonDetails(allPokemonDetails[pokemonId - 16]);
     setActive(true);
   };
 
@@ -45,11 +45,11 @@ const EvolutionTree = ({
                           <LazyLoadImage
                             className="evolution-sprite"
                             src={
-                              allPokemonDetails[item.id - 1].sprites.other[
+                              allPokemonDetails[item.id - 16].sprites.other[
                                 "official-artwork"
                               ].front_default
                             }
-                            alt={allPokemonDetails[item.id - 1].name}
+                            alt={allPokemonDetails[item.id - 16].name}
                             effect="blur"
                           />
                         </div>

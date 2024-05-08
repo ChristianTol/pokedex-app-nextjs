@@ -64,7 +64,7 @@ const Pokemon = ({
               ? "galar"
               : pokeIndex >= 899 && pokeIndex <= 905
               ? "hisui"
-              : pokeIndex >= 900 && pokeIndex <= 1010
+              : pokeIndex >= 900 && pokeIndex <= 1025
               ? "paldea"
               : "all";
           const currentRegion = filters.region;
