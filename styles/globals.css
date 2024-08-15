@@ -88,6 +88,34 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  text-shadow: 1px 1px 1px black;
+}
+
+h1 {
+  text-shadow: 1px 1px 1px black;
+}
+
+h2 {
+  text-shadow: 1px 1px 1px black;
+}
+
+h3 {
+  text-shadow: 1px 1px 1px black;
+}
+
+h4 {
+  text-shadow: 1px 1px 1px black;
+}
+
+h5 {
+  text-shadow: 1px 1px 1px black;
+}
+
+h6 {
+  text-shadow: 1px 1px 1px black;
+}
+
 .top {
   --offset: 200px;
 
