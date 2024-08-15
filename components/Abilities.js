@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { formatPokemonName } from "./Api";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const Abilities = ({ loading, pokemonDetails, speciesInfo }) => {
   const [abilities, setAbilities] = useState([]);
@@ -65,7 +67,7 @@ const Abilities = ({ loading, pokemonDetails, speciesInfo }) => {
       <div className="pokemon-description right-section">
         <h5 className="text-[1rem] md:text[1.1rem] font-bold">Description</h5>
         {loading ? (
-          <p>Loading...</p>
+          <Skeleton className="custom-skeleton custom-skeleton-description" count={1} />
         ) : (
           <p className="mb-5">
             {
@@ -92,7 +94,7 @@ const Abilities = ({ loading, pokemonDetails, speciesInfo }) => {
                       : formatPokemonName(ability.name)}
                   </h6>
                   {loading ? (
-                    <p>Loading...</p>
+                    <Skeleton className="custom-skeleton custom-skeleton-ability" count={2} />
                   ) : (
                     <p>{getShortDescription(ability.effect)}</p>
                   )}

@@ -551,6 +551,21 @@ html, body {
   margin-left: 30px;
 }
 
+.right-section .custom-skeleton {
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background-color: black;
+  opacity: 0.1;
+}
+
+.right-section .custom-skeleton-description {
+  margin-bottom: 1rem;
+}
+
+.right-section .custom-skeleton-ability {
+  margin-bottom: 0.5rem;
+}
+
 .right-section {
   background-color: rgba(0, 0, 0, 0.2);
   /* min-height: 100px; */
