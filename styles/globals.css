@@ -88,9 +88,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
+/* p {
   text-shadow: 1px 1px 1px black;
-}
+} */
 
 h1 {
   text-shadow: 1px 1px 1px black;
