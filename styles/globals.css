@@ -538,6 +538,11 @@ html, body {
   margin-top: 7px;
 }
 
+.gender-percentages span {
+  text-shadow: 1px 1px 1px black;
+}
+
+
 .info-box-right {
   /* background-color: rgba(0, 0, 0, 0.2); */
   /* background-color: pink; */
