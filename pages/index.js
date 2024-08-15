@@ -106,7 +106,7 @@ export default function Home({ initialPokemon }) {
       .filter((pokemon) => {
         return (
           filters.type === "all" ||
-          pokemon.types.map((type) => type.type.name).includes(filters.type)
+          pokemon?.types?.map((type) => type?.type?.name).includes(filters.type)
         );
       })
       .filter((pokemon) => {
