@@ -438,7 +438,7 @@ html, body {
 
 .info-box-sprite {
   background-color: rgba(0, 0, 0, 0.2);
-  min-width: 250px;
+  width: 300px;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -542,7 +542,7 @@ html, body {
   /* background-color: rgba(0, 0, 0, 0.2); */
   /* background-color: pink; */
   /* height: 100%; */
-  width: 100%;
+  width: 800px;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -717,6 +717,11 @@ html, body {
 
   .info-box-right {
     margin: auto;
+    width: 350px;
+  }
+
+  .move-list {
+    width: 350px !important;
   }
 }
 
@@ -746,4 +751,5 @@ html, body {
   background: rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
   margin-top: 0;
+  width: 1000px;
 }
