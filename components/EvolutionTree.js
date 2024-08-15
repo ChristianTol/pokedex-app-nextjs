@@ -54,9 +54,9 @@ const EvolutionTree = ({
                           />
                         </div>
                       </div>
-                      <p className="text-[0.8rem] md:text-[0.9rem] font-semibold">
+                      <h6 className="text-[0.8rem] md:text-[0.9rem] font-semibold">
                         {formatPokemonName(item.species_name)}
-                      </p>
+                      </h6>
                       {item.min_level === 1 && evolutionInfo.length > 1 && (
                         <p>Level 1</p>
                       )}
