@@ -162,9 +162,9 @@ const Pokemon = ({
               <div
                 className={`h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r ${type.type.name}-text font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]`}
               >
-                <p className="hidden md:inline uppercase px-[8px]">
+                <h6 className="hidden md:inline uppercase px-[8px]">
                   {capitalizeFirstLetter(type.type.name)}
-                </p>
+                </h6>
               </div>
             </div>
           </span>
