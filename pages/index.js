@@ -110,7 +110,7 @@ export default function Home({ initialPokemon }) {
         );
       })
       .filter((pokemon) => {
-        return pokemon.species.name
+        return pokemon?.species?.name
           .toLowerCase()
           .includes(filters.searchTerm.toLowerCase());
       });
@@ -126,13 +126,13 @@ export default function Home({ initialPokemon }) {
 
     if (filters.sortBy === "A-Z") {
       filteredPokemon.sort((p1, p2) =>
-        p1.species.name.localeCompare(p2.species.name)
+        p1.species?.name.localeCompare(p2.species?.name)
       );
     }
 
     if (filters.sortBy === "Z-A") {
       filteredPokemon.sort((p1, p2) =>
-        p2.species.name.localeCompare(p1.species.name)
+        p2.species?.name.localeCompare(p1.species?.name)
       );
     }
 

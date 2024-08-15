@@ -34,7 +34,7 @@ const SpriteInfo = ({
         />
       </div>
       <h3 className="tracking-wider">
-        {formatPokemonName(pokemonDetails.species.name)}
+        {formatPokemonName(pokemonDetails?.species?.name)}
       </h3>
       {loading
         ? "Loading..."
