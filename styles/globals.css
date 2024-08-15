@@ -554,7 +554,7 @@ html, body {
 .right-section .custom-skeleton {
   border-radius: 4px;
   margin-bottom: 0.5rem;
-  background-color: black;
+  background-color: gray;
   opacity: 0.1;
 }
 
