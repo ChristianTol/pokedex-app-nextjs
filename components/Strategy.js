@@ -66,7 +66,6 @@ const Strategy = ({ pokemonDetails }) => {
         
         return (
         <div className="mb-6">
-            <h2 style={{fontSize: '18px'}}>{multiplier}x </h2>
             <ul className="flex flex-wrap gap-2">
             {Array.from(types).map(type => (
                 <span
@@ -118,12 +117,18 @@ const Strategy = ({ pokemonDetails }) => {
     const renderSection = (title, items) => {
         const nonEmptySections = items.filter(item => item.types.size > 0);
         if (nonEmptySections.length === 0) return null;
-
+    
         return (
-        <div className="mb-6 text-white rounded-lg p-4 shadow-md" style={{ background: 'rgba(0, 0, 0, 0.3)'}}>
-            <h3 className="text-xl font-semibold mb-3" style={{fontSize: '20px'}}>{title}</h3>
-            {items.map(item => renderTypeList(item.types, item.multiplier))}
-        </div>
+            <div className="mb-6 text-white rounded-lg p-4 shadow-md" style={{ background: 'rgba(0, 0, 0, 0.3)'}}>
+                {items.map(item => (
+                    <div key={item.multiplier}>
+                        <h3 className="text-xl font-semibold mb-3" style={{fontSize: '20px'}}>
+                            {title} ({item.multiplier}x)
+                        </h3>
+                        {renderTypeList(item.types, item.multiplier)}
+                    </div>
+                ))}
+            </div>
         );
     };
 
@@ -133,25 +138,25 @@ const Strategy = ({ pokemonDetails }) => {
             
             <div className="flex flex-col md:flex-row justify-between">
             <div className="w-full md:w-1/2 pr-0 md:pr-2" style={{maxWidth: '500px'}}>
-                {renderSection("Super Effective Against", [
+                {renderSection("Super Effective", [
                 { types: typeRelations.double_damage_to, multiplier: 2 }
                 ])}
-                {renderSection("Not Very Effective Against", [
+                {renderSection("Not Very Effective", [
                 { types: typeRelations.half_damage_to, multiplier: 0.5 },
                 ])}
-                {renderSection("No Effect Against", [
+                {renderSection("No Effect", [
                 { types: typeRelations.no_damage_to, multiplier: 0 }
                 ])}
             </div>
 
             <div className="w-full md:w-1/2 pl-0 md:pl-2 mt-4 md:mt-0" style={{maxWidth: '500px'}}>
-                {renderSection("Very weak against", [
+                {renderSection("Very weak", [
                 { types: typeRelations.double_damage_from, multiplier: 2 }
                 ])}
-                {renderSection("A bit weak against", [
+                {renderSection("Resistance", [
                 { types: typeRelations.half_damage_from, multiplier: 0.5 },
                 ])}
-                {renderSection("Immune against", [
+                {renderSection("Immunity", [
                 { types: typeRelations.no_damage_from, multiplier: 0 }
                 ])}
             </div>
