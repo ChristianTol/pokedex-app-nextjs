@@ -10,6 +10,7 @@ import Abilities from "./Abilities";
 import BaseStats from "./BaseStats";
 import EvolutionTree from "./EvolutionTree";
 import Moves from "./Moves";
+import Strategy from "./Strategy";
 
 const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const modalBackground = useRef();
@@ -138,6 +139,9 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
               moves={pokemonDetails.moves}
               pokemonDetails={pokemonDetails}
             />
+          </TabPanel>
+          <TabPanel>
+            <Strategy pokemonDetails={pokemonDetails} />
           </TabPanel>
         </Tabs>
       </div>
