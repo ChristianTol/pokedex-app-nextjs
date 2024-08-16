@@ -38,6 +38,7 @@ const Strategy = ({ pokemonDetails }) => {
           data.double_damage_to.forEach(type => {
             relations.double_damage_to.add(type.name);
             relations.half_damage_to.delete(type.name);  // Remove from half if present
+            relations.no_damage_to.delete(type.name);    // Remove from no damage if present
           });
         
           data.half_damage_to.forEach(type => {
@@ -47,8 +48,10 @@ const Strategy = ({ pokemonDetails }) => {
           });
         
           data.no_damage_to.forEach(type => {
-            relations.no_damage_to.add(type.name);
-            relations.half_damage_to.delete(type.name);  // Remove from half if present
+            if (!relations.double_damage_to.has(type.name)) {
+              relations.no_damage_to.add(type.name);
+              relations.half_damage_to.delete(type.name);  // Remove from half if present
+            }
           });
         
           // Process damage_from
