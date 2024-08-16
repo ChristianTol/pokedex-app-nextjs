@@ -26,7 +26,8 @@ const Strategy = ({ pokemonDetails }) => {
           no_damage_to: new Set(),
         };
 
-        const data = typeResponses[0].data.damage_relations;
+        typeResponses.forEach(response => {
+          const data = response.data.damage_relations;
           data.double_damage_from.forEach(type => {
             relations.double_damage_from.add(type.name)
           });
@@ -50,6 +51,7 @@ const Strategy = ({ pokemonDetails }) => {
           data.no_damage_to.forEach(type => {
             relations.no_damage_to.add(type.name)
           });
+        });
 
         setTypeRelations(relations);
       } catch (error) {
