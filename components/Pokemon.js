@@ -171,7 +171,7 @@ const Pokemon = ({
           </span>
         ))}
       </div>
-      <span className="font-semibold tracking-wider text-yellow">
+      <span className="font-semibold tracking-wider text-yellow" style={{textShadow: '1px 1px 1px black'}}>
         {capitalizeFirstLetter(pokemon.name)}
       </span>
     </div>
