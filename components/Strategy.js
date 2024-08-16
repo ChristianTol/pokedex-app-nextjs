@@ -26,30 +26,49 @@ const Strategy = ({ pokemonDetails }) => {
           no_damage_to: new Set(),
         };
 
+        const damageCounter = {
+          damage_from: {},
+          damage_to: {},
+        };
+
         typeResponses.forEach(response => {
           const data = response.data.damage_relations;
-          data.double_damage_from.forEach(type => {
-            relations.double_damage_from.add(type.name)
-          });
-
-          data.half_damage_from.forEach(type => {
-            relations.half_damage_from.add(type.name)
-          });
-
-          data.no_damage_from.forEach(type => {
-            relations.no_damage_from.add(type.name)
-          });
-
+        
+          // Process damage_to
           data.double_damage_to.forEach(type => {
-            relations.double_damage_to.add(type.name)
+            relations.double_damage_to.add(type.name);
+            relations.half_damage_to.delete(type.name);  // Remove from half if present
           });
-
+        
           data.half_damage_to.forEach(type => {
-            relations.half_damage_to.add(type.name)
+            if (!relations.double_damage_to.has(type.name) && !relations.no_damage_to.has(type.name)) {
+              relations.half_damage_to.add(type.name);
+            }
           });
-
+        
           data.no_damage_to.forEach(type => {
-            relations.no_damage_to.add(type.name)
+            relations.no_damage_to.add(type.name);
+            relations.half_damage_to.delete(type.name);  // Remove from half if present
+          });
+        
+          // Process damage_from
+          data.double_damage_from.forEach(type => {
+            if (!relations.half_damage_from.has(type.name) && !relations.no_damage_from.has(type.name)) {
+              relations.double_damage_from.add(type.name);
+            }
+          });
+        
+          data.half_damage_from.forEach(type => {
+            if (!relations.no_damage_from.has(type.name)) {
+              relations.half_damage_from.add(type.name);
+              relations.double_damage_from.delete(type.name);  // Remove from double if present
+            }
+          });
+        
+          data.no_damage_from.forEach(type => {
+            relations.no_damage_from.add(type.name);
+            relations.half_damage_from.delete(type.name);  // Remove from half if present
+            relations.double_damage_from.delete(type.name);  // Remove from double if present
           });
         });
 
