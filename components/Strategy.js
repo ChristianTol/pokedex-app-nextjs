@@ -26,7 +26,7 @@ const Strategy = ({ pokemonDetails }) => {
           no_damage_to: new Set(),
         };
 
-        const data = typeResponses[1] ? typeResponses[1].data.damage_relations : typeResponses[0].data.damage_relations;
+        const data = typeResponses[0].data.damage_relations;
           data.double_damage_from.forEach(type => {
             relations.double_damage_from.add(type.name)
           });
