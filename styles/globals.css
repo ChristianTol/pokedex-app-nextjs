@@ -568,7 +568,7 @@ h6 {
 
 .gender-percentages span {
   text-shadow: 1px 1px 1px black;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 
@@ -766,11 +766,11 @@ h6 {
 
   .info-box-right {
     margin: auto;
-    width: 350px;
+    width: 300px;
   }
 
   .move-list {
-    width: 350px !important;
+    width: 300px !important;
   }
 }
 
