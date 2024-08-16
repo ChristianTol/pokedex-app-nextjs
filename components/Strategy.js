@@ -14,69 +14,42 @@ const Strategy = ({ pokemonDetails }) => {
           axios.get(`https://pokeapi.co/api/v2/type/${type.type.name}`)
         );
         const typeResponses = await Promise.all(typePromises);
+
+        console.log("typeResponses", typeResponses);
         
         const relations = {
-          quadruple_damage_from: new Set(),
           double_damage_from: new Set(),
           half_damage_from: new Set(),
-          quarter_damage_from: new Set(),
           no_damage_from: new Set(),
           double_damage_to: new Set(),
           half_damage_to: new Set(),
           no_damage_to: new Set(),
         };
 
-        const damageCounter = {
-          damage_from: {},
-          damage_to: {},
-        };
-
-        typeResponses.forEach(response => {
-          const data = response.data.damage_relations;
-          Object.keys(relations).forEach(key => {
-            if (key !== 'quadruple_damage_from' && key !== 'quarter_damage_from') {
-              data[key].forEach(type => {
-                const category = key.includes('_from') ? 'damage_from' : 'damage_to';
-                const typeName = type.name;
-                damageCounter[category][typeName] = (damageCounter[category][typeName] || 0) + 1;
-              });
-            }
+        const data = typeResponses[1] ? typeResponses[1].data.damage_relations : typeResponses[0].data.damage_relations;
+          data.double_damage_from.forEach(type => {
+            relations.double_damage_from.add(type.name)
           });
-        });
 
-        // Process damage counters
-        Object.entries(damageCounter.damage_from).forEach(([type, count]) => {
-          if (count === 2) relations.quadruple_damage_from.add(type);
-          else if (count === 1) relations.double_damage_from.add(type);
-        });
-
-        Object.entries(damageCounter.damage_to).forEach(([type, count]) => {
-          if (count === 2) relations.double_damage_to.add(type);
-          else if (count === 1) relations.double_damage_to.add(type);
-        });
-
-        // Process resistances and immunities
-        typeResponses.forEach(response => {
-          const data = response.data.damage_relations;
           data.half_damage_from.forEach(type => {
-            if (relations.double_damage_from.has(type.name)) {
-              relations.double_damage_from.delete(type.name);
-            } else if (relations.half_damage_from.has(type.name)) {
-              relations.half_damage_from.delete(type.name);
-              relations.quarter_damage_from.add(type.name);
-            } else {
-              relations.half_damage_from.add(type.name);
-            }
+            relations.half_damage_from.add(type.name)
           });
 
           data.no_damage_from.forEach(type => {
-            relations.quadruple_damage_from.delete(type.name);
-            relations.double_damage_from.delete(type.name);
-            relations.half_damage_from.delete(type.name);
-            relations.quarter_damage_from.delete(type.name);
-            relations.no_damage_from.add(type.name);
+            relations.no_damage_from.add(type.name)
           });
-        });
+
+          data.double_damage_to.forEach(type => {
+            relations.double_damage_to.add(type.name)
+          });
+
+          data.half_damage_to.forEach(type => {
+            relations.half_damage_to.add(type.name)
+          });
+
+          data.no_damage_to.forEach(type => {
+            relations.no_damage_to.add(type.name)
+          });
 
         setTypeRelations(relations);
       } catch (error) {
@@ -161,12 +134,10 @@ const Strategy = ({ pokemonDetails }) => {
             <div className="flex flex-col md:flex-row justify-between">
             <div className="w-full md:w-1/2 pr-0 md:pr-2" style={{maxWidth: '500px'}}>
                 {renderSection("Super Effective Against", [
-                { types: typeRelations.quadruple_damage_from, multiplier: 4 },
                 { types: typeRelations.double_damage_to, multiplier: 2 }
                 ])}
                 {renderSection("Not Very Effective Against", [
                 { types: typeRelations.half_damage_to, multiplier: 0.5 },
-                { types: typeRelations.quarter_damage_from, multiplier: 0.25 }
                 ])}
                 {renderSection("No Effect Against", [
                 { types: typeRelations.no_damage_to, multiplier: 0 }
@@ -174,15 +145,13 @@ const Strategy = ({ pokemonDetails }) => {
             </div>
 
             <div className="w-full md:w-1/2 pl-0 md:pl-2 mt-4 md:mt-0" style={{maxWidth: '500px'}}>
-                {renderSection("Weaknesses", [
-                { types: typeRelations.quadruple_damage_from, multiplier: 4 },
+                {renderSection("Very weak against", [
                 { types: typeRelations.double_damage_from, multiplier: 2 }
                 ])}
-                {renderSection("Resistances", [
+                {renderSection("A bit weak against", [
                 { types: typeRelations.half_damage_from, multiplier: 0.5 },
-                { types: typeRelations.quarter_damage_from, multiplier: 0.25 }
                 ])}
-                {renderSection("Immunities", [
+                {renderSection("Immune against", [
                 { types: typeRelations.no_damage_from, multiplier: 0 }
                 ])}
             </div>
