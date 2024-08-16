@@ -98,7 +98,7 @@ const Strategy = ({ pokemonDetails }) => {
             {Array.from(types).map(type => (
                 <span
                 key={type}
-                className={`px-2 py-0 md:py-3 rounded flex items-center justify-center sm:py-1 sm:gap-1
+                className={`px-2 py-0 md:py-3 rounded flex items-center justify-center sm:px-3 sm:py-1 sm:gap-1
                 ${isMobile && type}`}
               >
                 <div className="md:hidden">
