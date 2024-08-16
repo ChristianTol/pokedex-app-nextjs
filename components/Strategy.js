@@ -93,7 +93,7 @@ const Strategy = ({ pokemonDetails }) => {
         
         return (
         <div className="mb-6">
-            <h2>{multiplier}x </h2>
+            <h2 style={{fontSize: '18px'}}>{multiplier}x </h2>
             <ul className="flex flex-wrap gap-2">
             {Array.from(types).map(type => (
                 <span
@@ -147,8 +147,8 @@ const Strategy = ({ pokemonDetails }) => {
         if (nonEmptySections.length === 0) return null;
 
         return (
-        <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <div className="mb-6 text-white rounded-lg p-4 shadow-md" style={{ background: 'rgba(0, 0, 0, 0.3)'}}>
+            <h3 className="text-xl font-semibold mb-3" style={{fontSize: '20px'}}>{title}</h3>
             {items.map(item => renderTypeList(item.types, item.multiplier))}
         </div>
         );
