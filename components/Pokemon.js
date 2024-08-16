@@ -108,6 +108,7 @@ const Pokemon = ({
           }
         }}
         className="absolute text-2xl top-1 left-3 font-bold"
+        style={{textShadow: '1px 1px 1px black'}}
       >
         No. {pokeIndex}
       </span>
