@@ -87,7 +87,7 @@ const Strategy = ({ pokemonDetails }) => {
   }, [pokemonDetails]);
 
   const PokemonDisplay = ({ pokemonDetails }) => (
-    <div className="mb-6 text-white rounded-lg p-4 text-center shadow-md w-[300px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+    <div className="mb-6 text-white p-4 text-center shadow-md w-[300px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.2)', borderRadius: '1rem' }}>
       <h2 className="text-2xl font-bold mb-2">{capitalizeFirstLetter(pokemonDetails.name)}</h2>
       <img 
         src={pokemonDetails.sprites.other['official-artwork'].front_default} 
@@ -170,13 +170,13 @@ const Strategy = ({ pokemonDetails }) => {
       <PokemonDisplay pokemonDetails={pokemonDetails} />
       
       <div className="type-effectiveness grid grid-cols-1 md:grid-cols-2 gap-4 ">
-      <div className="mb-2 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+      <div className="mb-2 text-white p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.2)', borderRadius: '1rem' }}>
           <h3 className="text-xl font-bold mb-4">Offensive</h3>
           {renderTypeList(typeRelations.double_damage_to, "Super effective")}
           {renderTypeList(typeRelations.half_damage_to, "Not very effective")}
           {renderTypeList(typeRelations.no_damage_to, "No effect")}
         </div>
-        <div className="mb-2 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+        <div className="mb-2 text-white p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.2)', borderRadius: '1rem' }}>
           <h3 className="text-xl font-bold mb-4">Defensive</h3>
           {renderTypeList(typeRelations.double_damage_from, "Vulnerable")}
           {renderTypeList(typeRelations.half_damage_from, "Resistant")}
