@@ -132,11 +132,13 @@ const Strategy = ({ pokemonDetails }) => {
   const renderTypeList = (types, label) => {
     if (types.size === 0) return null;
     
+    const sortedTypes = Array.from(types).sort();
+  
     return (
       <div className="mb-4">
         <h4 className="font-semibold mb-2 text-lg">{label}</h4>
         <div className="flex flex-wrap gap-3">
-          {Array.from(types).map(type => (
+          {sortedTypes.map(type => (
             <span 
               key={type} 
               className={`type-icon ${type} rounded-full p-2 flex items-center justify-center`}
@@ -160,6 +162,7 @@ const Strategy = ({ pokemonDetails }) => {
       </div>
     );
   };
+  
 
   if (!typeRelations) {
     return <div>Loading type relations...</div>;
