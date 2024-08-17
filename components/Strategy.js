@@ -3,6 +3,7 @@ import axios from 'axios';
 import { capitalizeFirstLetter } from '../helper/helper';
 import Image from 'next/image';
 import { formatPokemonName } from './Api';
+import { TYPE_COLORS } from '../constants/constants';
 
 const Strategy = ({ pokemonDetails }) => {
   const [typeRelations, setTypeRelations] = useState(null);
@@ -157,7 +158,8 @@ const Strategy = ({ pokemonDetails }) => {
               style={{ 
                 width: '48px', 
                 height: '48px', 
-                backgroundColor: `${type}`
+                backgroundColor: `${type}`,
+                boxShadow: `0 0 20px ${TYPE_COLORS[type]}`,
               }}
             >
               <Image
