@@ -159,7 +159,7 @@ const Strategy = ({ pokemonDetails }) => {
                 width: '48px', 
                 height: '48px', 
                 backgroundColor: `${type}`,
-                boxShadow: `0 0 20px ${TYPE_COLORS[type]}`,
+                boxShadow: `0 0 10px ${TYPE_COLORS[type]}`,
               }}
             >
               <Image
