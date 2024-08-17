@@ -86,7 +86,7 @@ const Strategy = ({ pokemonDetails }) => {
   }, [pokemonDetails]);
 
   const PokemonDisplay = ({ pokemonDetails }) => (
-    <div className="mb-6 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+    <div className="mb-6 text-white rounded-lg p-4 text-center shadow-md w-[300px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
       <h2 className="text-2xl font-bold mb-2">{capitalizeFirstLetter(pokemonDetails.name)}</h2>
       <img 
         src={pokemonDetails.sprites.other['official-artwork'].front_default} 
