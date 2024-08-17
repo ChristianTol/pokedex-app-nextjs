@@ -141,7 +141,7 @@ const Strategy = ({ pokemonDetails }) => {
     return (
       <div className="mb-4 ">
         <h4 className="font-semibold mb-2 text-lg">{label}</h4>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {Array.from(types).map(type => (
             <span 
               key={type} 
