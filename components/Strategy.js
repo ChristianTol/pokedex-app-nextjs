@@ -178,7 +178,7 @@ const Strategy = ({ pokemonDetails }) => {
       <div className="type-effectiveness grid grid-cols-1 md:grid-cols-2 gap-4 ">
       <div className="mb-2 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
           <h3 className="text-xl font-bold mb-2">Offensive</h3>
-          {renderTypeList(typeRelations.double_damage_to, "Super Effective")}
+          {renderTypeList(typeRelations.double_damage_to, "Super effective")}
           {renderTypeList(typeRelations.half_damage_to, "Not very effective")}
           {renderTypeList(typeRelations.no_damage_to, "No effect")}
         </div>
