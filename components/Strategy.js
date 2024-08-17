@@ -139,7 +139,7 @@ const Strategy = ({ pokemonDetails }) => {
     if (types.size === 0) return null;
     
     return (
-      <div className="mb-4 ">
+      <div className="mb-4">
         <h4 className="font-semibold mb-2 text-lg">{label}</h4>
         <div className="flex flex-wrap gap-3">
           {Array.from(types).map(type => (
@@ -177,13 +177,13 @@ const Strategy = ({ pokemonDetails }) => {
       
       <div className="type-effectiveness grid grid-cols-1 md:grid-cols-2 gap-4 ">
       <div className="mb-2 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
-          <h3 className="text-xl font-bold mb-2">Offensive</h3>
+          <h3 className="text-xl font-bold mb-4">Offensive</h3>
           {renderTypeList(typeRelations.double_damage_to, "Super effective")}
           {renderTypeList(typeRelations.half_damage_to, "Not very effective")}
           {renderTypeList(typeRelations.no_damage_to, "No effect")}
         </div>
         <div className="mb-2 text-white rounded-lg p-4 shadow-md w-[300px] md:w-[500px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
-          <h3 className="text-xl font-bold mb-2">Defensive</h3>
+          <h3 className="text-xl font-bold mb-4">Defensive</h3>
           {renderTypeList(typeRelations.double_damage_from, "Vulnerable")}
           {renderTypeList(typeRelations.half_damage_from, "Resistant")}
           {renderTypeList(typeRelations.no_damage_from, "Immune")}
