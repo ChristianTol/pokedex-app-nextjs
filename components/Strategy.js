@@ -99,12 +99,6 @@ const Strategy = ({ pokemonDetails }) => {
           <span
             key={type.type.name}
             className={`px-2 py-3 rounded flex items-center justify-center`}
-            onClick={() => {
-              const newType = type.type.name;
-              const currentType = filters.type;
-              const updatedType = newType === currentType ? "all" : newType;
-              updateFilters({ type: updatedType });
-            }}
           >
             <div className="flex">
               <div
