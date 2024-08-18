@@ -770,17 +770,17 @@ h6 {
   }
 
   .info-box-sprite {
-    width: 325px;
+    width: 350px;
     margin-bottom: 20px;
   }
 
   .info-box-right {
     margin: auto;
-    width: 325px;
+    width: 350px;
   }
 
   .move-list {
-    width: 325px !important;
+    width: 350px !important;
   }
 }
 
