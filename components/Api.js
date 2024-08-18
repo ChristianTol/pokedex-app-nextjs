@@ -1,4 +1,5 @@
 import axios from "axios";
+import { capitalizeFirstLetter } from "../helper/helper";
 
 const getPokemonList = async (url) => {
   const response = await axios.get(url);
@@ -108,7 +109,30 @@ const getPokemonEvolutions = async (url) => {
 };
 
 const formatPokemonName = (name) => {
-  // Capitalize each word and change gender letters to the apprpriate symbol
+  const hyphenExceptions = ['ho-oh', 'porygon-z', 'wo-chien', 'chien-pao', 'ting-lu'];
+  const capitalizeFirstLetterExceptions = ['jangmo-o', 'kommo-o', 'hakamo-o'];
+  const dotExceptions = ['mr-mime', 'mime-jr', 'mr-rime'];
+  
+  if (hyphenExceptions.includes(name.toLowerCase())) {
+    return name.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join('-');
+  }
+
+  if (dotExceptions.includes(name.toLowerCase())) {
+    return name.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join('. ');
+  }
+
+  if (name === 'type-null') {
+    return name.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(': ');
+  }
+
+  if (name === 'giratina-altered' || name === 'shaymin-land') {
+    return name.split('-')[0].charAt(0).toUpperCase() + name.split('-')[0].slice(1);
+  }
+
+  if (capitalizeFirstLetterExceptions.includes(name.toLowerCase())) {
+    return capitalizeFirstLetter(name);
+  }
+
   return name
     .toLowerCase()
     .split("-")
