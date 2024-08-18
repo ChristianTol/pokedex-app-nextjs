@@ -98,9 +98,6 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
             src={pokeballIcon}
             alt="pokeball icon"
           /> */}
-      <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500'}}>
-        {formatPokemonName(pokemonDetails?.species?.name)}
-      </h3>
       <div className="" onClick={() => setShiny(!shiny)}>
         <LazyLoadImage
           className="mx-auto"
@@ -113,6 +110,9 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
           effect="blur"
           style={{width: '170px', height: '170px'}}
         />
+        <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500', marginBottom: '15px'}}>
+        {formatPokemonName(pokemonDetails?.species?.name)}
+      </h3>
       </div>
       {/* {loading
         ? "Loading..."
