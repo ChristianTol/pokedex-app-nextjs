@@ -121,7 +121,13 @@ h6 {
 }
 
 .arrow-btn {
-  margin: 0 10px;
+  padding: 5px; /* Increase padding to enlarge the clickable area */
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .top {
