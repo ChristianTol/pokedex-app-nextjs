@@ -46,28 +46,13 @@ const SpriteInfo = ({
               : 7
           ]?.genus}</p>}
 
-      <div className="flex gap-2 my-2">
+      <div className="flex gap-4 my-2 justify-center">
         {pokemonDetails.types?.map((type) => (
           <span
             key={type.type.name}
-            className={`px-2 py-0 md:py-3 rounded flex items-center justify-center 
-            ${isMobile && type.type.name}`}
-            onClick={(e) => {
-              const newType = type.type.name;
-              const currentType = filters.type;
-              const updatedType = newType === currentType ? "all" : newType;
-              updateFilters({ type: updatedType });
-            }}
+            className={`px-2 py-3 rounded flex items-center justify-center`}
           >
-            <div className="md:hidden">
-              <Image
-                src={`/icons/${type.type.name}.svg`}
-                alt={`${type.type.name}`}
-                width={15}
-                height={15}
-              />
-            </div>
-            <div className="hidden md:flex">
+            <div className="flex">
               <div
                 className={`${type.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
               >
@@ -84,7 +69,7 @@ const SpriteInfo = ({
               <div
                 className={`h-[32px] w-[90px] flex items-center justify-center m-[-8px] rounded-r ${type.type.name}-text font-bold [clip-path:polygon(10%_0%,100%_0%,100%_100%,0%_100%)]`}
               >
-                <h6 className="hidden md:inline uppercase px-[8px]">
+                <h6 className="inline uppercase px-[8px]">
                   {formatPokemonName(type.type.name)}
                 </h6>
               </div>
