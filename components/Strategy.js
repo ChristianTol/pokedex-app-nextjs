@@ -98,7 +98,7 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
             src={pokeballIcon}
             alt="pokeball icon"
           /> */}
-          <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500'}}>
+      <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500'}}>
         {formatPokemonName(pokemonDetails?.species?.name)}
       </h3>
       <div className="" onClick={() => setShiny(!shiny)}>

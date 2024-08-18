@@ -94,45 +94,53 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, setShiny, 
       >
         <Tabs className="flex flex-col items-center mx-auto">
           <TabList className="flex flex-row mb-5 w-full justify-between items-center">
-            {pokemonDetails.id > 1 && (
-              <button onClick={() => handlePrevPokemon()} className="arrow-btn left-arrow">
-                <FontAwesomeIcon icon={faArrowLeft} className="icon-size" />
-              </button>
-            )}
-            <div className="flex">
-              <Tab
-                id="tab1"
-                onClick={() => setActiveTab("tab1")}
-                className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0 mx-0 ${
-                  activeTab === "tab1" ? "active-tab border-l-0" : "tab"
-                }`}
-              >
-                General
-              </Tab>
-              <Tab
-                id="tab2"
-                onClick={() => setActiveTab("tab2")}
-                className={`py-2 px-4 rounded-t-md border-2 border-b-0  mx-0 ${
-                  activeTab === "tab2" ? "active-tab" : "tab"
-                }`}
-              >
-                Moves
-              </Tab>
-              <Tab
-                id="tab3"
-                onClick={() => setActiveTab("tab3")}
-                className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-l-0 mx-0 ${
-                  activeTab === "tab3" ? "active-tab border-r-0" : "tab"
-                }`}
-              >
-                Strategy
-              </Tab>
+          <div className="grid grid-cols-3 mb-5 w-full items-center">
+              <div className="justify-self-start">
+                {pokemonDetails.id > 1 && (
+                  <button onClick={handlePrevPokemon} className="arrow-btn left-arrow icon-button">
+                    <FontAwesomeIcon icon={faArrowLeft} className="icon-size" />
+                  </button>
+                )}
+              </div>
+              
+              <div className="flex justify-center">
+                <Tab
+                  id="tab1"
+                  onClick={() => setActiveTab("tab1")}
+                  className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0 mx-0 ${
+                    activeTab === "tab1" ? "active-tab border-l-0" : "tab"
+                  }`}
+                >
+                  General
+                </Tab>
+                <Tab
+                  id="tab2"
+                  onClick={() => setActiveTab("tab2")}
+                  className={`py-2 px-4 rounded-t-md border-2 border-b-0 mx-0 ${
+                    activeTab === "tab2" ? "active-tab" : "tab"
+                  }`}
+                >
+                  Moves
+                </Tab>
+                <Tab
+                  id="tab3"
+                  onClick={() => setActiveTab("tab3")}
+                  className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-l-0 mx-0 ${
+                    activeTab === "tab3" ? "active-tab border-r-0" : "tab"
+                  }`}
+                >
+                  Strategy
+                </Tab>
+              </div>
+              
+              <div className="justify-self-end">
+                {pokemonDetails.id < 1025 && (
+                  <button onClick={handleNextPokemon} className="arrow-btn right-arrow icon-button">
+                    <FontAwesomeIcon icon={faArrowRight} className="icon-size" />
+                  </button>
+                )}
+              </div>
             </div>
-            {pokemonDetails.id < 1025 && (
-              <button onClick={() => handleNextPokemon()} className="arrow-btn right-arrow">
-                <FontAwesomeIcon icon={faArrowRight} className="icon-size" />
-              </button>
-            )}
           </TabList>
 
           <TabPanel className={mobile ? "" : "flex"}>
