@@ -11,10 +11,11 @@ const SpriteInfo = ({
   speciesInfo,
 }) => {
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const pokeIndex = ("000" + pokemonDetails.id).slice(pokemonDetails.id > 999 ? -4 : -3);
   return (
     <div className="info-box-sprite info-text">
       <h4 className="font-bold">
-        {"No. " + ("00" + pokemonDetails.id).slice(-3)}
+        {"No. " + pokeIndex}
       </h4>
       {/* <img
             className="pokeball-icon"
