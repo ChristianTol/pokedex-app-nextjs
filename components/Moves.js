@@ -417,7 +417,7 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         />
       )}
 
-      <div className="flex flex-col lg:flex-row items-center mb-3 text-white w-full mt-8">
+      <div className="flex flex-col lg:flex-row items-center mb-3 text-white w-full">
         <div className="flex justify-end grow-[6]">
           <div
             className={`mx-4 rounded-full px-2 py-1 cursor-pointer text-white hover:shadow-2xl transition-shadow duration-500 text-md tracking-wide ${baseColor} ${
