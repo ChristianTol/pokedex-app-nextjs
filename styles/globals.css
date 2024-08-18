@@ -116,6 +116,14 @@ h6 {
   text-shadow: 1px 1px 1px black;
 }
 
+.icon-size {
+  font-size: 1.5rem;
+}
+
+.arrow-btn {
+  margin: 0 10px;
+}
+
 .top {
   --offset: 200px;
 
@@ -775,7 +783,14 @@ h6 {
   }
 }
 
-@media screen and (max-width: 386px) {
+@media screen and (max-width: 430px) {
+  .modal-container {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
   .modal-container {
     width: 100%;
   }

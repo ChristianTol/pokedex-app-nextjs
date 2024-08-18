@@ -11,6 +11,8 @@ import BaseStats from "./BaseStats";
 import EvolutionTree from "./EvolutionTree";
 import Moves from "./Moves";
 import Strategy from "./Strategy";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const modalBackground = useRef();
@@ -22,6 +24,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
   const [shiny, setShiny] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
+  const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
 
   console.log("pokemonDetails", pokemonDetails);
 
@@ -57,6 +60,25 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
     }
   };
 
+  useEffect(() => {
+    const index = allPokemonDetails.findIndex(p => p.id === detailPokemon.id);
+    setCurrentPokemonIndex(index);
+  }, [detailPokemon, allPokemonDetails]);
+
+  const handlePrevPokemon = () => {
+    if (currentPokemonIndex > 0) {
+      setPokemonDetails(allPokemonDetails[currentPokemonIndex - 1]);
+      setCurrentPokemonIndex(currentPokemonIndex - 1);
+    }
+  };
+
+  const handleNextPokemon = () => {
+    if (currentPokemonIndex < allPokemonDetails.length - 1) {
+      setPokemonDetails(allPokemonDetails[currentPokemonIndex + 1]);
+      setCurrentPokemonIndex(currentPokemonIndex + 1);
+    }
+  };
+
   const typeColorGradient = getTypeColorGradient(pokemonDetails.types);
 
   return (
@@ -72,34 +94,46 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
         }}
       >
         <Tabs className="flex flex-col items-center mx-auto">
-          <TabList className="flex flex-row mb-5">
-            <Tab
-              id="tab1"
-              onClick={() => setActiveTab("tab1")}
-              className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0 mx-0 ${
-                activeTab === "tab1" ? "active-tab border-l-0" : "tab"
-              }`}
-            >
-              General
-            </Tab>
-            <Tab
-              id="tab2"
-              onClick={() => setActiveTab("tab2")}
-              className={`py-2 px-4 rounded-t-md border-2 border-b-0  mx-0 ${
-                activeTab === "tab2" ? "active-tab" : "tab"
-              }`}
-            >
-              Moves
-            </Tab>
-            <Tab
-              id="tab3"
-              onClick={() => setActiveTab("tab3")}
-              className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-l-0 mx-0 ${
-                activeTab === "tab3" ? "active-tab border-r-0" : "tab"
-              }`}
-            >
-              Strategy
-            </Tab>
+          <TabList className="flex flex-row mb-5 w-full justify-between items-center">
+            {pokemonDetails.id > 1 && (
+              <button onClick={() => handlePrevPokemon()} className="arrow-btn left-arrow">
+                <FontAwesomeIcon icon={faArrowLeft} className="icon-size" />
+              </button>
+            )}
+            <div className="flex">
+              <Tab
+                id="tab1"
+                onClick={() => setActiveTab("tab1")}
+                className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-r-0 mx-0 ${
+                  activeTab === "tab1" ? "active-tab border-l-0" : "tab"
+                }`}
+              >
+                General
+              </Tab>
+              <Tab
+                id="tab2"
+                onClick={() => setActiveTab("tab2")}
+                className={`py-2 px-4 rounded-t-md border-2 border-b-0  mx-0 ${
+                  activeTab === "tab2" ? "active-tab" : "tab"
+                }`}
+              >
+                Moves
+              </Tab>
+              <Tab
+                id="tab3"
+                onClick={() => setActiveTab("tab3")}
+                className={`py-2 px-4 rounded-t-md border-2 border-b-0 border-l-0 mx-0 ${
+                  activeTab === "tab3" ? "active-tab border-r-0" : "tab"
+                }`}
+              >
+                Strategy
+              </Tab>
+            </div>
+            {pokemonDetails.id < 1025 && (
+              <button onClick={() => handleNextPokemon()} className="arrow-btn right-arrow">
+                <FontAwesomeIcon icon={faArrowRight} className="icon-size" />
+              </button>
+            )}
           </TabList>
 
           <TabPanel className={mobile ? "" : "flex"}>
