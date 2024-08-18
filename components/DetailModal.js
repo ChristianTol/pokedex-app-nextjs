@@ -14,14 +14,13 @@ import Strategy from "./Strategy";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
+const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, setShiny, shiny }) => {
   const modalBackground = useRef();
   const [pokemonDetails, setPokemonDetails] = useState(detailPokemon);
   const [speciesInfo, setSpeciesInfo] = useState();
   const [evolutionInfo, setEvolutionInfo] = useState([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
-  const [shiny, setShiny] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
@@ -175,7 +174,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal }) => {
             />
           </TabPanel>
           <TabPanel>
-            <Strategy pokemonDetails={pokemonDetails} />
+            <Strategy pokemonDetails={pokemonDetails} setShiny={setShiny} shiny={shiny} speciesInfo={speciesInfo} loading={loading} />
           </TabPanel>
         </Tabs>
       </div>

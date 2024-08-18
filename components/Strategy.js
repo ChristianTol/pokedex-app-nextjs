@@ -4,10 +4,12 @@ import { capitalizeFirstLetter } from '../helper/helper';
 import Image from 'next/image';
 import { formatPokemonName } from './Api';
 import { TYPE_COLORS } from '../constants/constants';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const Strategy = ({ pokemonDetails }) => {
+const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) => {
   const [typeRelations, setTypeRelations] = useState(null);
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const pokeIndex = ("000" + pokemonDetails.id).slice(pokemonDetails.id > 999 ? -4 : -3);
 
   useEffect(() => {
     const fetchTypeRelations = async () => {
@@ -87,13 +89,40 @@ const Strategy = ({ pokemonDetails }) => {
   }, [pokemonDetails]);
 
   const PokemonDisplay = ({ pokemonDetails }) => (
-    <div className="mb-6 text-white p-4 text-center shadow-md w-[350px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.2)', borderRadius: '1rem' }}>
-      <h2 className="text-2xl font-bold mb-2">{capitalizeFirstLetter(pokemonDetails.name)}</h2>
-      <img 
-        src={pokemonDetails.sprites.other['official-artwork'].front_default} 
-        alt={pokemonDetails.name}
-        className="mx-auto w-40 h-40"
-      />
+    <div className="mb-6 text-white text-center shadow-md w-[350px] md:w-[400px] mx-auto" style={{ background: 'rgba(0, 0, 0, 0.2)', borderRadius: '1rem', padding: '15px' }}>
+      {/* <h4 className="font-bold" style={{fontSize: '1.7rem'}}>
+        {"No. " + pokeIndex}
+      </h4> */}
+      {/* <img
+            className="pokeball-icon"
+            src={pokeballIcon}
+            alt="pokeball icon"
+          /> */}
+      <div className="" onClick={() => setShiny(!shiny)}>
+        <LazyLoadImage
+          className="mx-auto"
+          src={
+            shiny
+              ? pokemonDetails.sprites.other["official-artwork"].front_shiny
+              : pokemonDetails.sprites.other["official-artwork"].front_default
+          }
+          alt={pokemonDetails.name}
+          effect="blur"
+          style={{width: '170px', height: '170px'}}
+        />
+      </div>
+      <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500'}}>
+        {formatPokemonName(pokemonDetails?.species?.name)}
+      </h3>
+      {/* {loading
+        ? "Loading..."
+        : <p style={{fontWeight: '500'}}>{speciesInfo?.genera?.[
+            pokemonDetails.id >= 899 && pokemonDetails.id <= 905
+              ? 5
+              : pokemonDetails.id >= 906 && pokemonDetails.id <= 1025
+              ? 3
+              : 7
+          ]?.genus}</p>} */}
       <div className="flex gap-4 my-2 justify-center">
         {pokemonDetails.types?.map((type) => (
           <span

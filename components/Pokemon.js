@@ -5,25 +5,45 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
+import DetailModal from "./DetailModal";
 
 const Pokemon = ({
   pokemon,
-  toggleModal,
   updateFilters,
   filters,
   setInfiniteLoading,
   loadMorePokemon,
+  setDetailPokemon, 
+  detailPokemon,
+  allPokemonDetails
 }) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
-  const [shiny, setShiny] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("all");
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const [shiny, setShiny] = useState(false);
+  const [showDetailModal, setShowDetailModal] = useState(false);
   // const [changeImage, setChangeImage] = useState(false);
 
   const typeColorGradient = getTypeColorGradient(pokemon.types);
 
+  const toggleModal = (pokemonDetails) => {
+    if (pokemonDetails) {
+      setDetailPokemon(pokemonDetails);
+    } else {
+      setDetailPokemon({});
+    }
+    setShowDetailModal((value) => !value);
+
+    if (!showDetailModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
+
   return (
-    <div
+    <>
+     <div
       className="rounded-md p-5 hover:scale-110 ease-in-out duration-200 flex flex-col justify-center items-center relative cursor-pointer shadow"
       style={{
         background: `radial-gradient(circle at top, ${typeColorGradient[0]} 35%, ${typeColorGradient[1]}) 100%`,
@@ -175,6 +195,17 @@ const Pokemon = ({
         {capitalizeFirstLetter(pokemon.name)}
       </span>
     </div>
+
+      {showDetailModal && (
+        <DetailModal
+          detailPokemon={detailPokemon}
+          allPokemonDetails={allPokemonDetails}
+          toggleModal={toggleModal}
+          setShiny={setShiny}
+          shiny={shiny}
+        />
+      )}
+    </>
   );
 };
 

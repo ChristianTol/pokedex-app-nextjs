@@ -24,15 +24,6 @@ export default function Home({ initialPokemon }) {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [detailPokemon, setDetailPokemon] = useState({});
 
-  // const fetchPokemon = async (url, next) => {
-  //   const response = await fetch(url);
-  //   const nextPokemon = await response.json();
-
-  //   setOffset(next ? offset + 20 : offset - 20);
-  //   setPokemon(nextPokemon);
-  //   getAllPokemonDetails(nextPokemon);
-  // };
-
   // Load all Pokemon
   useEffect(() => {
     const getAllPokemonDetails = async () => {
@@ -51,29 +42,6 @@ export default function Home({ initialPokemon }) {
 
     getAllPokemonDetails();
   }, []);
-
-  // const getAllPokemonDetails = useCallback(async () => {
-  //   try {
-  //     const promises = initialPokemon.results.map(async (pokemon) => {
-  //       const response = await fetch(pokemon.url);
-  //       const data = await response.json();
-
-  //       return data;
-  //     });
-
-  //     await Promise.all(promises).then((detailResults) => {
-  //       setAllPokemonDetails(detailResults);
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }, [initialPokemon.results, loading]);
-
-  // useEffect(() => {
-  //   getAllPokemonDetails();
-  // }, [getAllPokemonDetails]);
 
   const handleScroll = () => {
     if (
@@ -149,21 +117,6 @@ export default function Home({ initialPokemon }) {
     setNumPokemon(numPokemon + POKEMON_PER_LOAD);
   };
 
-  const toggleModal = (pokemonDetails) => {
-    if (pokemonDetails) {
-      setDetailPokemon(pokemonDetails);
-    } else {
-      setDetailPokemon({});
-    }
-    setShowDetailModal((value) => !value);
-
-    if (!showDetailModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  };
-
   return (
     <>
       <Layout title="Pokedex">
@@ -176,22 +129,16 @@ export default function Home({ initialPokemon }) {
               <Pokemon
                 key={pokemon.id}
                 pokemon={pokemon}
-                toggleModal={toggleModal}
                 updateFilters={updateFilters}
                 filters={filters}
                 setInfiniteLoading={setInfiniteLoading}
                 loadMorePokemon={loadMorePokemon}
+                detailPokemon={detailPokemon}
+                setDetailPokemon={setDetailPokemon}
+                allPokemonDetails={allPokemonDetails}
               />
             ))}
           </div>
-        )}
-
-        {showDetailModal && (
-          <DetailModal
-            detailPokemon={detailPokemon}
-            allPokemonDetails={allPokemonDetails}
-            toggleModal={toggleModal}
-          />
         )}
 
         {infiniteLoading ||
@@ -200,34 +147,6 @@ export default function Home({ initialPokemon }) {
               <Loader />
             </div>
           ))}
-
-        {/* {numPokemon < displayedPokemon.length && (
-        <div className="flex justify-center my-10">
-          <button
-            className="load-more bg-slate-800 border-slate-900 border-2 text-amber-400"
-            onClick={loadMorePokemon}
-          >
-            Load more Pokémon
-          </button>
-        </div>
-      )} */}
-
-        {/* <div className="flex justify-center my-10 gap-5">
-        <button
-          disabled={!pokemon.previous}
-          className="disabled:bg-gray-500 px-3 py-1 bg-slate-900"
-          onClick={() => fetchPokemon(pokemon.previous, false)}
-        >
-          Previous
-        </button>
-        <button
-          disabled={!pokemon.next}
-          className="disabled:bg-gray-500 px-3 py-1 bg-slate-900"
-          onClick={() => fetchPokemon(pokemon.next, true)}
-        >
-          Next
-        </button>
-      </div> */}
       </Layout>
 
       {!loading && (
