@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { capitalizeFirstLetter } from "../helper/helper";
 import { TYPE_COLORS, TYPE_SECONDARY_COLORS } from "../constants/constants";
 import DetailModal from "./DetailModal";
+import { formatPokemonName } from "./Api";
 
 const Pokemon = ({
   pokemon,
@@ -193,7 +194,7 @@ const Pokemon = ({
         ))}
       </div>
       <span className="font-semibold tracking-wider text-yellow" style={{textShadow: '1px 1px 1px black'}}>
-        {capitalizeFirstLetter(pokemon.name)}
+        {formatPokemonName(pokemon.name)}
       </span>
     </div>
 
