@@ -22,7 +22,6 @@ const Pokemon = ({
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [currentRegion, setCurrentRegion] = useState("all");
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
-  const [shiny, setShiny] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
   // const [changeImage, setChangeImage] = useState(false);
 
