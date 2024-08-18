@@ -95,11 +95,11 @@ const SpriteInfo = ({
       <div className="pokemon-dimensions">
         <div className="pokemon-height">
           <h5>Height</h5>
-          <span>{pokemonDetails.height / 10}m</span>
+          <span>{(pokemonDetails.height / 10).toFixed(1)} m</span>
         </div>
         <div className="pokemon-weight">
           <h5>Weight</h5>
-          <span>{pokemonDetails.weight / 10}kg</span>
+          <span>{pokemonDetails.weight / 10} kg</span>
         </div>
       </div>
       <div className="pokemon-gender">
