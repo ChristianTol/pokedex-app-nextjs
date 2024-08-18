@@ -14,7 +14,7 @@ import Strategy from "./Strategy";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, setShiny, shiny }) => {
+const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyStates, toggleShiny }) => {
   const modalBackground = useRef();
   const [pokemonDetails, setPokemonDetails] = useState(detailPokemon);
   const [speciesInfo, setSpeciesInfo] = useState();
@@ -146,8 +146,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, setShiny, 
           <TabPanel className={mobile ? "" : "flex"}>
             <SpriteInfo
               pokemonDetails={pokemonDetails}
-              shiny={shiny}
-              setShiny={setShiny}
+              shiny={shinyStates[pokemonDetails.id]}
+              setShiny={() => toggleShiny(pokemonDetails.id)}
               loading={loading}
               speciesInfo={speciesInfo}
             />
@@ -182,7 +182,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, setShiny, 
             />
           </TabPanel>
           <TabPanel>
-            <Strategy pokemonDetails={pokemonDetails} setShiny={setShiny} shiny={shiny} speciesInfo={speciesInfo} loading={loading} />
+            <Strategy pokemonDetails={pokemonDetails} shiny={shinyStates[pokemonDetails.id]} setShiny={() => toggleShiny(pokemonDetails.id)} loading={loading} />
           </TabPanel>
         </Tabs>
       </div>

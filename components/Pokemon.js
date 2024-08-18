@@ -15,7 +15,9 @@ const Pokemon = ({
   loadMorePokemon,
   setDetailPokemon, 
   detailPokemon,
-  allPokemonDetails
+  allPokemonDetails,
+  shinyStates, 
+  toggleShiny
 }) => {
   const pokeIndex = ("000" + pokemon.id).slice(pokemon.id > 999 ? -4 : -3);
   const [currentRegion, setCurrentRegion] = useState("all");
@@ -50,11 +52,11 @@ const Pokemon = ({
       }}
     >
       <button
-        onClick={() => setShiny(!shiny)}
+        onClick={() => toggleShiny(pokemon.id)}
         className="absolute top-1 right-1 rounded-md flex"
       >
         <Image
-          src={shiny ? "/sparkles-shiny.png" : "/sparkles-white.png"}
+          src={shinyStates[pokemon.id] ? "/sparkles-shiny.png" : "/sparkles-white.png"}
           alt="shiny"
           width={35}
           height={35}
@@ -137,7 +139,7 @@ const Pokemon = ({
         <LazyLoadImage
           className="w-[180px] h-[180px] md:w-[250px] sm:h-[250px]"
           src={
-            shiny
+            shinyStates[pokemon.id]
               ? pokemon.sprites.other["official-artwork"].front_shiny
               : pokemon.sprites.other["official-artwork"].front_default
           }
@@ -201,8 +203,8 @@ const Pokemon = ({
           detailPokemon={detailPokemon}
           allPokemonDetails={allPokemonDetails}
           toggleModal={toggleModal}
-          setShiny={setShiny}
-          shiny={shiny}
+          shinyStates={shinyStates}
+          toggleShiny={toggleShiny}
         />
       )}
     </>

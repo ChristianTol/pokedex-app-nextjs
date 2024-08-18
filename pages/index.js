@@ -24,6 +24,15 @@ export default function Home({ initialPokemon }) {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [detailPokemon, setDetailPokemon] = useState({});
 
+  const [shinyStates, setShinyStates] = useState({});
+
+  const toggleShiny = (pokemonId) => {
+    setShinyStates(prevState => ({
+      ...prevState,
+      [pokemonId]: !prevState[pokemonId]
+    }));
+  };
+
   // Load all Pokemon
   useEffect(() => {
     const getAllPokemonDetails = async () => {
@@ -136,6 +145,8 @@ export default function Home({ initialPokemon }) {
                 detailPokemon={detailPokemon}
                 setDetailPokemon={setDetailPokemon}
                 allPokemonDetails={allPokemonDetails}
+                shinyStates={shinyStates}
+                toggleShiny={toggleShiny}
               />
             ))}
           </div>
