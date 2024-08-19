@@ -99,7 +99,7 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
             alt="pokeball icon"
           /> */}
       <div className="" onClick={() => setShiny(!shiny)}>
-        <LazyLoadImage
+        <img
           className="mx-auto"
           src={
             shiny
@@ -107,7 +107,6 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
               : pokemonDetails.sprites.other["official-artwork"].front_default
           }
           alt={pokemonDetails.name}
-          effect="blur"
           style={{width: '170px', height: '170px'}}
         />
         <h3 className="tracking-wider" style={{fontSize: '1.9rem', fontWeight: '500', marginBottom: '15px'}}>
