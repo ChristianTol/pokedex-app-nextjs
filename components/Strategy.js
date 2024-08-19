@@ -133,7 +133,7 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
                 className={`${type.type.name} rounded-l m-[-8px] [clip-path:polygon(0%_0%,100%_0%,80%_100%,0%_100%)]`}
               >
                 <div className="h-[32px] w-[45px] flex items-center justify-center pr-[10px]">
-                  <Image
+                  <img
                     className=""
                     src={`/icons/${type.type.name}.svg`}
                     alt={`${type.type.name}`}
