@@ -55,7 +55,7 @@ const Pokemon = ({
         onClick={() => toggleShiny(pokemon.id)}
         className="absolute top-1 right-1 rounded-md flex"
       >
-        <Image
+        <img
           src={shinyStates[pokemon.id] ? "/sparkles-shiny.png" : "/sparkles-white.png"}
           alt="shiny"
           width={35}
