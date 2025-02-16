@@ -8,8 +8,47 @@ import MoveDetailModal from "./MoveDetailModal";
 import Image from "next/image";
 import { capitalizeFirstLetter } from "../helper/helper";
 
+const getLatestGameWithMoves = (moves, gameList) => {
+  for (let i = gameList.length - 1; i >= 0; i--) {
+    const game = gameList[i];
+    const hasMovesInGame = moves.some(move =>
+        move.version_group_details.some(version =>
+            version.version_group.name === game
+        )
+    );
+    if (hasMovesInGame) {
+      return game;
+    }
+  }
+  return gameList[gameList.length - 1];
+};
+
+let gameList = [
+  "red-blue",
+  "yellow",
+  "gold-silver",
+  "crystal",
+  "ruby-sapphire",
+  "emerald",
+  "firered-leafgreen",
+  "diamond-pearl",
+  "platinum",
+  "heartgold-soulsilver",
+  "black-white",
+  "black-2-white-2",
+  "x-y",
+  "omega-ruby-alpha-sapphire",
+  "sun-moon",
+  "ultra-sun-ultra-moon",
+  "sword-shield",
+  "scarlet-violet",
+];
+
+
 const Moves = ({ moves, baseColor, pokemonDetails }) => {
-  const [selectedGame, setGame] = useState("scarlet-violet");
+  const [selectedGame, setGame] = useState(() =>
+      getLatestGameWithMoves(moves, gameList)
+  );
   const [learnMethod, setMethod] = useState("level-up");
   const [moveData, setMoveData] = useState(null);
   const [showMoveDetailModal, setShowMoveDetailModal] = useState(false);
@@ -19,8 +58,6 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
   const [isMove, setIsMove] = useState(false);
   const [isType, setIsType] = useState(false);
   const [sortBy, setSortBy] = useState("level");
-
-  console.log(moves);
 
   useEffect(() => {
     const filteredMoves = moves.filter((move) => {
@@ -41,27 +78,6 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
       setMoveList([]);
     };
   }, [moves, selectedGame, learnMethod]);
-
-  let gameList = [
-    "red-blue",
-    "yellow",
-    "gold-silver",
-    "crystal",
-    "ruby-sapphire",
-    "emerald",
-    "firered-leafgreen",
-    "diamond-pearl",
-    "platinum",
-    "heartgold-soulsilver",
-    "black-white",
-    "black-2-white-2",
-    "x-y",
-    "omega-ruby-alpha-sapphire",
-    "sun-moon",
-    "ultra-sun-ultra-moon",
-    "sword-shield",
-    "scarlet-violet",
-  ];
 
   const bringMovesData = (e, moveURL) => {
     setShowMoveDetailModal(true);
@@ -446,47 +462,58 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         </div>
         <div className="flex justify-center grow-[2]">
           <select
-            name="game-selection"
-            className="game-dropdown"
-            value={selectedGame}
-            onChange={(e) => setGame(e.target.value)}
+              name="game-selection"
+              className="game-dropdown"
+              value={selectedGame}
+              onChange={(e) => setGame(e.target.value)}
           >
-            {gameList.map((x) => {
-              let formattedOption = x;
-              if (x.includes("-")) {
-                const words = x.split("-");
-                if (words.length === 2) {
-                  formattedOption =
-                    words[0].charAt(0).toUpperCase() +
-                    words[0].slice(1) +
-                    " & " +
-                    words[1].charAt(0).toUpperCase() +
-                    words[1].slice(1);
-                } else {
-                  formattedOption = words
-                    .map((word, index) => {
-                      if (index === 1) {
-                        return (
-                          word.charAt(0).toUpperCase() + word.slice(1) + " &"
-                        );
-                      }
-                      return word.charAt(0).toUpperCase() + word.slice(1);
-                    })
-                    .join(" ");
-                }
-              } else {
-                formattedOption = x.charAt(0).toUpperCase() + x.slice(1);
-              }
-              return (
-                <option
-                  key={x}
-                  value={x}
-                  className="capitalize bg-slate-900 text-xs"
-                >
-                  {formattedOption}
-                </option>
-              );
-            })}
+            {gameList
+                .filter((game) =>
+                    moves.some((move) =>
+                        move.version_group_details.some(
+                            (gameDetail) =>
+                                gameDetail.version_group.name === game
+                        )
+                    )
+                )
+                .map((x) => {
+                  let formattedOption = x;
+                  if (x.includes("-")) {
+                    const words = x.split("-");
+                    if (words.length === 2) {
+                      formattedOption =
+                          words[0].charAt(0).toUpperCase() +
+                          words[0].slice(1) +
+                          " & " +
+                          words[1].charAt(0).toUpperCase() +
+                          words[1].slice(1);
+                    } else {
+                      formattedOption = words
+                          .map((word, index) => {
+                            if (index === 1) {
+                              return (
+                                  word.charAt(0).toUpperCase() +
+                                  word.slice(1) +
+                                  " &"
+                              );
+                            }
+                            return word.charAt(0).toUpperCase() + word.slice(1);
+                          })
+                          .join(" ");
+                    }
+                  } else {
+                    formattedOption = x.charAt(0).toUpperCase() + x.slice(1);
+                  }
+                  return (
+                      <option
+                          key={x}
+                          value={x}
+                          className="capitalize bg-slate-900 text-xs"
+                      >
+                        {formattedOption}
+                      </option>
+                  );
+                })}
           </select>
         </div>
       </div>
