@@ -218,7 +218,6 @@ const Moves = ({ moves, baseColor, pokemonDetails }) => {
         methodAndLevel[0].learn_method === learnMethod &&
         name
       ) {
-        console.log(category);
         return {
           name: name,
           category: category,

@@ -25,8 +25,6 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyState
   const [activeTab, setActiveTab] = useState("tab1");
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
 
-  console.log("pokemonDetails", pokemonDetails);
-
   useEffect(() => {
     const getSpeciesInfo = async () => {
       const speciesData = await getPokemonDetails(pokemonDetails.species.url);

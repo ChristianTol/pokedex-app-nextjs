@@ -19,8 +19,6 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
         );
         const typeResponses = await Promise.all(typePromises);
 
-        console.log("typeResponses", typeResponses);
-        
         const relations = {
           double_damage_from: new Set(),
           half_damage_from: new Set(),
