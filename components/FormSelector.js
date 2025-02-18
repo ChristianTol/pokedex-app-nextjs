@@ -13,7 +13,7 @@ const FormSelector = ({speciesInfo, onFormSelect, currentPokemonId}) => {
     const getFormIcon = (pokemonName) => {
         if (pokemonName.includes('-mega')) {
             return `/icons/megastones/${pokemonName}.png`;
-        } if (pokemonName.includes('-origin') || pokemonName.includes('-primal')) {
+        } if (pokemonName.includes('-origin') || pokemonName.includes('-primal') || pokemonName.includes('-black') || pokemonName.includes('-white')) {
             return `/icons/orbs/${pokemonName}.png`;
         } else if (pokemonName.includes('-gmax')) {
             return gmaxIcon;
@@ -51,7 +51,7 @@ const FormSelector = ({speciesInfo, onFormSelect, currentPokemonId}) => {
                     title={form.name}
                 >
                     <img
-                        src={(form.name.includes('mega') || form.name.includes('origin') || form.name.includes('primal')) ? form.image : form.image.src}
+                        src={(form.name.includes('mega') || form.name.includes('origin') || form.name.includes('primal') || form.name.includes('black') || form.name.includes('white')) ? form.image : form.image.src}
                         alt={`${form.name} form`}
                         className="w-8 h-8 object-contain"
                     />
