@@ -2,18 +2,28 @@ import Image from "next/image";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formatPokemonName } from "./Api";
+import FormSelector from "./FormSelector";
 
 const SpriteInfo = ({
   pokemonDetails,
   shiny,
   setShiny,
   loading,
+    handleFormSelect,
   speciesInfo,
 }) => {
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
-  const pokeIndex = ("000" + pokemonDetails.id).slice(pokemonDetails.id > 999 ? -4 : -3);
+    const pokeIndex = ("00000" + pokemonDetails.id).slice(
+        pokemonDetails.id > 9999 ? -5 :
+            pokemonDetails.id > 999 ? -4 : -3
+    );
   return (
     <div className="info-box-sprite info-text">
+        <FormSelector
+            speciesInfo={speciesInfo}
+            onFormSelect={handleFormSelect}
+            currentPokemonId={pokemonDetails.id}
+        />
       <h4 className="font-bold">
         {"No. " + pokeIndex}
       </h4>

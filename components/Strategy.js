@@ -5,8 +5,9 @@ import Image from 'next/image';
 import { formatPokemonName } from './Api';
 import { TYPE_COLORS } from '../constants/constants';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import FormSelector from "./FormSelector";
 
-const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) => {
+const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, handleFormSelect }) => {
   const [typeRelations, setTypeRelations] = useState(null);
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const pokeIndex = ("000" + pokemonDetails.id).slice(pokemonDetails.id > 999 ? -4 : -3);
@@ -96,6 +97,11 @@ const Strategy = ({ pokemonDetails, setShiny, shiny, loading, speciesInfo, }) =>
             src={pokeballIcon}
             alt="pokeball icon"
           /> */}
+      <FormSelector
+          speciesInfo={speciesInfo}
+          onFormSelect={handleFormSelect}
+          currentPokemonId={pokemonDetails.id}
+      />
       <div className="" onClick={() => setShiny(!shiny)}>
         <img
           className="mx-auto"

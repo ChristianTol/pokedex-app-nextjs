@@ -13,6 +13,7 @@ import Moves from "./Moves";
 import Strategy from "./Strategy";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import FormSelector from "./FormSelector";
 
 const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyStates, toggleShiny }) => {
   const modalBackground = useRef();
@@ -73,6 +74,35 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyState
     if (currentPokemonIndex < allPokemonDetails.length - 1) {
       setPokemonDetails(allPokemonDetails[currentPokemonIndex + 1]);
       setCurrentPokemonIndex(currentPokemonIndex + 1);
+    }
+  };
+
+  const handleFormSelect = async (formId) => {
+    try {
+      // get the details of the selected form
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${formId}`);
+      const newPokemonData = await response.json();
+
+      // Update the pokemon details data with the new form.
+      setPokemonDetails(newPokemonData);
+
+      // Reset loading state
+      setLoading(true);
+
+      // get new species info
+      const speciesData = await getPokemonDetails(newPokemonData.species.url);
+      setSpeciesInfo(speciesData);
+
+      // get evolution chain data
+      const evolutionData = await getPokemonEvolutions(
+          speciesData.evolution_chain.url
+      );
+      setEvolutionInfo(evolutionData);
+
+      setLoading(false);
+    } catch (error) {
+      console.error("Fout bij het ophalen van Pokemon vorm:", error);
+      setLoading(false);
     }
   };
 
@@ -148,6 +178,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyState
               setShiny={() => toggleShiny(pokemonDetails.id)}
               loading={loading}
               speciesInfo={speciesInfo}
+              handleFormSelect={handleFormSelect}
             />
             <div className="info-box-right">
               <Abilities
@@ -180,7 +211,7 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyState
             />
           </TabPanel>
           <TabPanel>
-            <Strategy pokemonDetails={pokemonDetails} shiny={shinyStates[pokemonDetails.id]} setShiny={() => toggleShiny(pokemonDetails.id)} loading={loading} />
+            <Strategy pokemonDetails={pokemonDetails} shiny={shinyStates[pokemonDetails.id]} setShiny={() => toggleShiny(pokemonDetails.id)} loading={loading} handleFormSelect={handleFormSelect} speciesInfo={speciesInfo} />
           </TabPanel>
         </Tabs>
       </div>
