@@ -12,7 +12,7 @@ const FormSelector = ({speciesInfo, onFormSelect, currentPokemonId}) => {
 
     const getFormIcon = (pokemonName) => {
         if (pokemonName.includes('-mega')) {
-            return `/icons/megastones/${pokemonName}.png`;
+            return `/icons/items/megastones/${pokemonName}.png`;
         } if (pokemonName.includes('-origin') || pokemonName.includes('-crowned') || pokemonName.includes('calyrex-') || pokemonName.includes('-primal') || pokemonName.includes('necrozma-') || pokemonName.includes('-black') || pokemonName.includes('-white')) {
             return `/icons/items/${pokemonName}.png`;
         } else if (pokemonName.includes('-gmax')) {
