@@ -21,6 +21,7 @@ const SpriteInfo = ({
     <div className="info-box-sprite info-text">
         <FormSelector
             speciesInfo={speciesInfo}
+            pokemonDetails={pokemonDetails}
             onFormSelect={handleFormSelect}
             currentPokemonId={pokemonDetails.id}
         />
