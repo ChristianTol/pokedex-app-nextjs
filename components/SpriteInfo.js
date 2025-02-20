@@ -12,7 +12,15 @@ const SpriteInfo = ({
     handleFormSelect,
   speciesInfo,
 }) => {
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    const handleNameClick = () => {
+        if (pokemonDetails?.cries?.latest) {
+            const audio = new Audio(pokemonDetails.cries.latest);
+            audio.play();
+        }
+    };
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     const pokeIndex = ("00000" + pokemonDetails.id).slice(
         pokemonDetails.id > 9999 ? -5 :
             pokemonDetails.id > 999 ? -4 : -3
@@ -45,7 +53,7 @@ const SpriteInfo = ({
           effect="blur"
         />
       </div>
-      <h3 className="tracking-wider">
+      <h3 className="tracking-wider" style={{cursor: "pointer"}} onClick={handleNameClick}>
         {formatPokemonName(pokemonDetails?.species?.name)}
       </h3>
       {loading

@@ -106,6 +106,8 @@ const DetailModal = ({ detailPokemon, allPokemonDetails, toggleModal, shinyState
     }
   };
 
+  console.log(pokemonDetails);
+
   const typeColorGradient = getTypeColorGradient(pokemonDetails.types);
 
   return (
