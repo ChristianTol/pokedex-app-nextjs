@@ -13,10 +13,16 @@ const SpriteInfo = ({
   speciesInfo,
 }) => {
 
-    const handleNameClick = () => {
+    const handleNameClick = async () => {
         if (pokemonDetails?.cries?.latest) {
-            const audio = new Audio(pokemonDetails.cries.latest);
-            audio.play();
+            try {
+                const audio = new Audio(pokemonDetails.cries.latest);
+                await audio.play().catch((error) => {
+                    console.log('Geluid afspelen mislukt:', error);
+                });
+            } catch (error) {
+                console.log('Audio error:', error);
+            }
         }
     };
 
@@ -53,9 +59,13 @@ const SpriteInfo = ({
           effect="blur"
         />
       </div>
-      <h3 className="tracking-wider" style={{cursor: "pointer"}} onClick={handleNameClick}>
-        {formatPokemonName(pokemonDetails?.species?.name)}
-      </h3>
+        <h3
+            className="tracking-wider cursor-pointer flex items-center gap-2"
+            onClick={handleNameClick}
+        >
+            {formatPokemonName(pokemonDetails?.species?.name)}
+            <span role="img" aria-label="geluid">🔊</span>
+        </h3>
       {loading
         ? "Loading..."
         : <p>{speciesInfo?.genera?.[
