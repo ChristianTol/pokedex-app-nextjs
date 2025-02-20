@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, {useEffect} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formatPokemonName } from "./Api";
 import FormSelector from "./FormSelector";
@@ -13,13 +13,27 @@ const SpriteInfo = ({
   speciesInfo,
 }) => {
 
-    const handleNameClick = async () => {
+    const [audioElement, setAudioElement] = React.useState(null);
+
+    useEffect(() => {
         if (pokemonDetails?.cries?.latest) {
+            const audio = document.createElement('audio');
+            audio.src = pokemonDetails.cries.latest;
+            audio.preload = 'auto';
+            setAudioElement(audio);
+        }
+    }, [pokemonDetails?.cries?.latest]);
+
+    const handleNameClick = async () => {
+        if (audioElement) {
             try {
-                const audio = new Audio(pokemonDetails.cries.latest);
-                await audio.play().catch((error) => {
-                    console.log('Geluid afspelen mislukt:', error);
-                });
+                audioElement.currentTime = 0;
+                const playPromise = audioElement.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch((error) => {
+                        console.log('Geluid afspelen mislukt:', error);
+                    });
+                }
             } catch (error) {
                 console.log('Audio error:', error);
             }
