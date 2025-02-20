@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formatPokemonName } from "./Api";
 import FormSelector from "./FormSelector";
@@ -13,30 +13,53 @@ const SpriteInfo = ({
   speciesInfo,
 }) => {
 
-    const [audioElement, setAudioElement] = React.useState(null);
+    const [audioContext, setAudioContext] = useState(null);
+    const [audioBuffer, setAudioBuffer] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (pokemonDetails?.cries?.latest) {
-            const audio = document.createElement('audio');
-            audio.src = pokemonDetails.cries.latest;
-            audio.preload = 'auto';
-            setAudioElement(audio);
+        if (!audioContext) {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            setAudioContext(new AudioContext());
         }
-    }, [pokemonDetails?.cries?.latest]);
+    }, []);
+
+    const loadAudio = async () => {
+        if (!audioContext || !pokemonDetails?.cries?.latest) return;
+
+        try {
+            setIsLoading(true);
+            const response = await fetch(pokemonDetails.cries.latest);
+            const arrayBuffer = await response.arrayBuffer();
+            const decodedBuffer = await audioContext.decodeAudioData(arrayBuffer);
+            setAudioBuffer(decodedBuffer);
+        } catch (error) {
+            console.log('Audio laden mislukt:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        if (audioContext && pokemonDetails?.cries?.latest) {
+            loadAudio();
+        }
+    }, [pokemonDetails?.cries?.latest, audioContext]);
 
     const handleNameClick = async () => {
-        if (audioElement) {
-            try {
-                audioElement.currentTime = 0;
-                const playPromise = audioElement.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch((error) => {
-                        console.log('Geluid afspelen mislukt:', error);
-                    });
-                }
-            } catch (error) {
-                console.log('Audio error:', error);
+        if (!audioContext || !audioBuffer) return;
+
+        try {
+            if (audioContext.state === 'suspended') {
+                await audioContext.resume();
             }
+
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(audioContext.destination);
+            source.start(0);
+        } catch (error) {
+            console.log('Geluid afspelen mislukt:', error);
         }
     };
 
@@ -45,6 +68,7 @@ const SpriteInfo = ({
         pokemonDetails.id > 9999 ? -5 :
             pokemonDetails.id > 999 ? -4 : -3
     );
+
   return (
     <div className="info-box-sprite info-text">
         <FormSelector
@@ -73,10 +97,19 @@ const SpriteInfo = ({
           effect="blur"
         />
       </div>
-      <h3 className="tracking-wider cursor-pointer" onClick={handleNameClick}>
-        {formatPokemonName(pokemonDetails?.species?.name)}
-      </h3>
-      {loading
+        <h3 className="tracking-wider">
+            {formatPokemonName(pokemonDetails?.species?.name)}
+        </h3>
+        <button
+            className={`p-2 rounded-full ${isLoading ? 'bg-gray-300' : 'bg-gray-200 hover:bg-gray-300'}`}
+            onClick={handleNameClick}
+            disabled={isLoading || !audioBuffer}
+            aria-label="Speel Pokemon geluid af"
+        >
+            {isLoading ? '⌛' : '🔊'}
+        </button>
+
+        {loading
         ? "Loading..."
         : <p>{speciesInfo?.genera?.[
             pokemonDetails.id >= 899 && pokemonDetails.id <= 905
