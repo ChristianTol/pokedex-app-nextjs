@@ -14,64 +14,10 @@ const SpriteInfo = ({
   speciesInfo,
 }) => {
 
-    const [audioContext, setAudioContext] = useState(null);
-    const [audioBuffer, setAudioBuffer] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        if (!audioContext) {
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            setAudioContext(new AudioContext());
-        }
-    }, []);
-
-    const loadAudio = async () => {
-        if (!audioContext || !pokemonDetails?.cries) return;
-
-        try {
-            setIsLoading(true);
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-            // Gebruik legacy versie voor iOS, anders latest
-            const audioUrl = pokemonDetails.cries.latest;
-
-            const response = await fetch(audioUrl);
-            const arrayBuffer = await response.arrayBuffer();
-            const decodedBuffer = await audioContext.decodeAudioData(arrayBuffer);
-            setAudioBuffer(decodedBuffer);
-        } catch (error) {
-            console.log('Audio laden mislukt:', error);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        if (audioContext && pokemonDetails?.cries) {
-            loadAudio();
-        }
-    }, [pokemonDetails?.cries, audioContext]);
-
-
-    const handleNameClick = async () => {
-        if (!audioContext || !audioBuffer) {
-            console.log('Audio nog niet geladen');
-            return;
-        }
-
-        try {
-            if (audioContext.state === 'suspended') {
-                await audioContext.resume();
-            }
-
-            const source = audioContext.createBufferSource();
-            source.buffer = audioBuffer;
-            source.connect(audioContext.destination);
-            source.start(0);
-        } catch (error) {
-            console.log('Geluid afspelen mislukt:', error);
-            // Toon gebruikersvriendelijke foutmelding
-            alert('Het geluid kon niet worden afgespeeld. Probeer het opnieuw.');
+    const handleNameClick = () => {
+        if (pokemonDetails?.cries?.latest) {
+            const audio = new Audio(pokemonDetails.cries.latest);
+            audio.play();
         }
     };
 
