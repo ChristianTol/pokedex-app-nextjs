@@ -4,6 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formatPokemonName } from "./Api";
 import FormSelector from "./FormSelector";
 
+
 const SpriteInfo = ({
   pokemonDetails,
   shiny,
@@ -25,11 +26,16 @@ const SpriteInfo = ({
     }, []);
 
     const loadAudio = async () => {
-        if (!audioContext || !pokemonDetails?.cries?.latest) return;
+        if (!audioContext || !pokemonDetails?.cries) return;
 
         try {
             setIsLoading(true);
-            const response = await fetch(pokemonDetails.cries.latest);
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+            // Gebruik legacy versie voor iOS, anders latest
+            const audioUrl = pokemonDetails.cries.latest;
+
+            const response = await fetch(audioUrl);
             const arrayBuffer = await response.arrayBuffer();
             const decodedBuffer = await audioContext.decodeAudioData(arrayBuffer);
             setAudioBuffer(decodedBuffer);
@@ -41,13 +47,17 @@ const SpriteInfo = ({
     };
 
     useEffect(() => {
-        if (audioContext && pokemonDetails?.cries?.latest) {
+        if (audioContext && pokemonDetails?.cries) {
             loadAudio();
         }
-    }, [pokemonDetails?.cries?.latest, audioContext]);
+    }, [pokemonDetails?.cries, audioContext]);
+
 
     const handleNameClick = async () => {
-        if (!audioContext || !audioBuffer) return;
+        if (!audioContext || !audioBuffer) {
+            console.log('Audio nog niet geladen');
+            return;
+        }
 
         try {
             if (audioContext.state === 'suspended') {
@@ -60,6 +70,8 @@ const SpriteInfo = ({
             source.start(0);
         } catch (error) {
             console.log('Geluid afspelen mislukt:', error);
+            // Toon gebruikersvriendelijke foutmelding
+            alert('Het geluid kon niet worden afgespeeld. Probeer het opnieuw.');
         }
     };
 
