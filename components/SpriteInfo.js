@@ -59,13 +59,9 @@ const SpriteInfo = ({
           effect="blur"
         />
       </div>
-        <h3
-            className="tracking-wider cursor-pointer flex items-center gap-2"
-            onClick={handleNameClick}
-        >
-            {formatPokemonName(pokemonDetails?.species?.name)}
-            <span role="img" aria-label="geluid">🔊</span>
-        </h3>
+      <h3 className="tracking-wider cursor-pointer" onClick={handleNameClick}>
+        {formatPokemonName(pokemonDetails?.species?.name)}
+      </h3>
       {loading
         ? "Loading..."
         : <p>{speciesInfo?.genera?.[
