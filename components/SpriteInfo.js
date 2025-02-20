@@ -97,17 +97,17 @@ const SpriteInfo = ({
           effect="blur"
         />
       </div>
-        <h3 className="tracking-wider">
+        <h3 className="tracking-wider cursor-pointer" onClick={handleNameClick}>
             {formatPokemonName(pokemonDetails?.species?.name)}
         </h3>
-        <button
-            className={`p-2 rounded-full ${isLoading ? 'bg-gray-300' : 'bg-gray-200 hover:bg-gray-300'}`}
-            onClick={handleNameClick}
-            disabled={isLoading || !audioBuffer}
-            aria-label="Speel Pokemon geluid af"
-        >
-            {isLoading ? '⌛' : '🔊'}
-        </button>
+        {/*<button*/}
+        {/*    className={`p-2 rounded-full ${isLoading ? 'bg-gray-300' : 'bg-gray-200 hover:bg-gray-300'}`}*/}
+        {/*    onClick={handleNameClick}*/}
+        {/*    disabled={isLoading || !audioBuffer}*/}
+        {/*    aria-label="Speel Pokemon geluid af"*/}
+        {/*>*/}
+        {/*    {isLoading ? '⌛' : '🔊'}*/}
+        {/*</button>*/}
 
         {loading
         ? "Loading..."
