@@ -53,7 +53,7 @@ const FormSelector = ({speciesInfo, onFormSelect, currentPokemonId, pokemonDetai
         loadFormSprites();
     }, [speciesInfo]);
 
-    if (speciesInfo?.varieties.length <= 1) return null;
+    if (speciesInfo?.varieties.length <= 1 || speciesInfo?.varieties[0].pokemon.name.includes('miraidon') || speciesInfo?.varieties[0].pokemon.name.includes('koraidon')) return null;
 
     return (
         <div className={`forms-container gap-2 justify-center mb-4 p-2 rounded-lg ${
