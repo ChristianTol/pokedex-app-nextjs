@@ -69,13 +69,9 @@ const SpriteInfo = ({
 
         {loading
         ? "Loading..."
-        : <p>{speciesInfo?.genera?.[
-            pokemonDetails.id >= 899 && pokemonDetails.id <= 905
-              ? 5
-              : pokemonDetails.id >= 906 && pokemonDetails.id <= 1025
-              ? 3
-              : 7
-          ]?.genus}</p>}
+        : <p>
+            {speciesInfo?.genera?.find(gen => gen.language.name === "en")?.genus}
+        </p>}
 
       <div className="flex gap-4 my-2 justify-center">
         {pokemonDetails.types?.map((type) => (
