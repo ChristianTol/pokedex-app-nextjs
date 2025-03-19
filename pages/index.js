@@ -128,7 +128,7 @@ export default function Home({ initialPokemon }) {
 
   return (
     <>
-      <Layout title="Pokedex">
+      <Layout title="Pokédex">
         <Filters filters={filters} updateFilters={updateFilters} />
         {loading ? (
           <Loader />
